@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
   <body>
-    <H1>Joseph Carlson</H1>
-    <H3>Technician by Trade, Enthusiast by Nature</H3>
-    <div class="flex-container">
-        <div>About Me</div>
-        <div>Resume</div>
-        <div>Articles</div>
-    </div>
+    <header>
+      <div class="flex-container">
+        <H1>Joseph Carlson</H1>
+        <H3>Technician by Trade, Enthusiast by Nature</H3>
+      </div>
+    </header>
+    <nav id="nav">
+      <button onclick="showContent('about-me')">About Me</button>
+      <button onclick="showContent('resume')">Resume</button>
+      <button onclick="showContent('case-studies')">Case Studies</button>
+      <button onclick="showContent('projects')">Projects</button>
+      <button onclick="showContent('concepts-and-technologies')">Concepts & Technologies</button>
+      <button onclick="showContent('browse')">Browse</button>
+    </nav>
+    <main id="content">Landing Content</main>
+    <script src="script.js"></script>
   </body>
 </html>
