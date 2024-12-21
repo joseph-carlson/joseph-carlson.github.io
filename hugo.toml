@@ -2,3 +2,22 @@ baseURL = 'joseph-carlson.github.io'
 languageCode = 'en-us'
 title = "Joseph Carlson's Blog"
 theme = 'hugo-theme-console'
+
+
+[params]
+  # Cutting off the page title to two chars for mobile (console-demo -> co)
+  titleCutting = true
+
+  # Set the animation style -- https://animate.style/
+  # To disable animations, please remove or comment animationStyle parameter
+  animateStyle = "animated zoomIn fast" 
+
+  [[params.navlinks]]
+  name = "my-thoughts/"
+  url = "my-thoughts/"
+
+  [[params.navlinks]]
+  name = "body-of-work/"
+  url = "body-of-work/"
+
+

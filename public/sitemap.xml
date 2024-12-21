@@ -4,6 +4,13 @@
     
         
         <url>
+            <loc>//localhost:1313/case-studies/</loc>
+            <lastmod>2024-12-20T20:25:14-06:00</lastmod>
+        </url>
+        
+    
+        
+        <url>
             <loc>//localhost:1313/</loc>
             <lastmod>2024-12-20T20:25:14-06:00</lastmod>
         </url>
@@ -11,15 +18,21 @@
     
         
         <url>
-            <loc>//localhost:1313/posts/</loc>
-            <lastmod>2024-12-20T20:25:14-06:00</lastmod>
+            <loc>//localhost:1313/my-thoughts/introduction/</loc>
+            <lastmod>2024-12-20T20:05:23-06:00</lastmod>
         </url>
         
     
         
         <url>
-            <loc>//localhost:1313/posts/introduction/</loc>
+            <loc>//localhost:1313/my-thoughts/</loc>
             <lastmod>2024-12-20T20:05:23-06:00</lastmod>
+        </url>
+        
+    
+        
+        <url>
+            <loc>//localhost:1313/body-of-work/</loc>
         </url>
         
     
@@ -31,7 +44,19 @@
     
         
         <url>
+            <loc>//localhost:1313/projects/</loc>
+        </url>
+        
+    
+        
+        <url>
             <loc>//localhost:1313/tags/</loc>
+        </url>
+        
+    
+        
+        <url>
+            <loc>//localhost:1313/technical-concepts/</loc>
         </url>
         
     

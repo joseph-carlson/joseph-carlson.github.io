@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Joseph Carlson&#39;s Blog</title>
-    <link>//localhost:1313/</link>
-    <description>Recent content on Joseph Carlson&#39;s Blog</description>
+    <title>my thoughts on Joseph Carlson&#39;s Blog</title>
+    <link>//localhost:1313/thoughts/</link>
+    <description>Recent content in my thoughts on Joseph Carlson&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 20 Dec 2024 20:05:23 -0600</lastBuildDate>
-    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/thoughts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Introduction</title>
-      <link>//localhost:1313/my-thoughts/introduction/</link>
+      <link>//localhost:1313/thoughts/introduction/</link>
       <pubDate>Fri, 20 Dec 2024 20:05:23 -0600</pubDate>
-      <guid>//localhost:1313/my-thoughts/introduction/</guid>
+      <guid>//localhost:1313/thoughts/introduction/</guid>
       <description>&lt;p&gt;I can go through the formal education and limited work experience I have in IT. An associate’s degree, a few jobs, some certifications, all supposedly leading indicators of a successful career. My opinion, they’re nice to have, but people rely too much on institutions approving and certifying the competence of certain domains. A piece of paper that says, “you got a chance at being able to do this job” or “maybe you won’t lose this company money”. Maybe it’s just a statement that you can commit yourself to a goal and stick with it for four years in the case of the oh-so-revered Bachelor’s degree.&lt;/p&gt;</description>
     </item>
   </channel>
