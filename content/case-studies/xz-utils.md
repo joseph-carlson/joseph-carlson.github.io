@@ -1,6 +1,6 @@
 ---
 date: '2025-01-08T18:21:47-06:00'
-draft: true
+draft: false
 title: 'Xz Utils'
 tags: 'security'
 ---

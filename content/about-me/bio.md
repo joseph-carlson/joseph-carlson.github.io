@@ -1,6 +1,6 @@
 ---
 date: '2025-01-08T17:30:21-06:00'
-draft: true
+draft: false
 title: 'Bio'
 ---
 ## Bio
