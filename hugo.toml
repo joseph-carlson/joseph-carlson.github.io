@@ -1,0 +1,18 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Joseph Carlson'
+
+[[menus.main]]
+name = 'About Me'
+pageRef = '/about-me'
+weight = 10
+
+[[menus.main]]
+name = 'Case Studies'
+pageRef = '/case-studies'
+weight = 20
+
+[[menus.main]]
+name = 'Projects'
+pageRef = '/projects'
+weight = 30

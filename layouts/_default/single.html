@@ -1,0 +1,9 @@
+{{ define "main" }}
+    Staring the page content...
+    {{ with .GetTerms "tags" }}
+      {{ range . }}
+        <a href="{{ .RelPermalink }}">#{{ lower .LinkTitle }}</a>
+      {{ end }}
+    {{ end }}
+    {{ .Content }}
+{{ end }}

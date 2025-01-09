@@ -1,0 +1,11 @@
+<div style="display: flex; align-items: column; align-items: center; justify-content: space-between;">
+
+    <h1><a href="/" id="pageTitle">Joseph Carlson</a></h1>
+
+    <span>
+        {{ range .Site.Menus.main.ByName }}
+            <a href="{{ .URL }}">{{ .Name }}&nbsp; &nbsp; </a>
+        {{ end }}
+    </span>
+
+</div>

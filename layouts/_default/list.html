@@ -1,0 +1,37 @@
+{{ define "main" }}
+    {{if .IsHome }}
+        {{ range .Site.Taxonomies.tags }}
+                <a href="{{ .Page.Permalink }}">#{{ lower .Page.Title }}</a>
+                <sup>{{ .Count }}</sup>
+        {{ end }}
+        <hr>
+    {{ end }}
+
+    {{ if .IsHome }}
+        {{ range .Pages }}
+            <p style="display: inline"><a href="{{ .RelPermalink }}" style="display: inline">{{ .Title }}</a></p>
+            <p></p>
+        {{ end }}
+    {{ else }}
+        <table style="width:fit-content">
+            <th>Title</th>
+            <th>Date</th>
+            <th>Tags</th>
+        {{ range .Pages }}
+            <tr>
+            <td><p style="display: inline"><a href="{{ .RelPermalink }}" style="display: inline">{{ .Title }}</a>&nbsp;&nbsp;</p></td>
+            <td>{{ .Date | time.Format ":date_medium" }}&nbsp;&nbsp;</td>
+            <td>
+            {{ with .GetTerms "tags" }}
+                {{ range . }}
+                <a href="{{ .RelPermalink }}">#{{ lower .LinkTitle }}</a>
+                {{ end }}
+            {{ end }}
+            </td>
+            </tr>
+            <br>
+        {{ end }}
+        </table>
+    {{ end }}
+    <br>
+{{ end }}
