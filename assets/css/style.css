@@ -9,6 +9,40 @@ a {
     color: #00ffff;
 }
 
-th, td {
+td {
     text-align: center;
+}
+
+th {
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+#header {
+    display: flex; 
+    align-items: column; 
+    align-items: center; 
+    justify-content: space-between;
+}
+
+#pageTitle {
+    padding-right: 2rem;
+}
+
+#headerCategories {
+    display: inline;
+}
+
+@media screen and (max-width: 575px) {
+    #headerCategories {
+        display: block;
+    }
+}
+
+#breadcrumbs > * {
+    display: inline;
+}
+
+#bannerTags {
+    text-wrap: nowrap;
 }

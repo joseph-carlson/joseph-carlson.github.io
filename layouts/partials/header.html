@@ -1,11 +1,8 @@
-<div style="display: flex; align-items: column; align-items: center; justify-content: space-between;">
-
-    <h1><a href="/" id="pageTitle">Joseph Carlson</a></h1>
-
+<div id="header">
+    <h1><a href="/" id="pageTitle">{{- .Title -}}</a></h1>
     <span>
         {{- range .Site.Menus.main.ByWeight -}}
-            <h4 style="display: inline"><a href="{{ .URL }}">{{- .Name -}}&nbsp; &nbsp; </a></h4>
+            <h4 id="headerCategories"><a href="{{ .URL }}">{{- .Name -}}&nbsp;&nbsp;</a></h4>
         {{- end -}}
     </span>
-
 </div>
