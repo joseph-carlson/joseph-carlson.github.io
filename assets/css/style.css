@@ -1,5 +1,3 @@
-
-
 html {
     font-family: monospace;
     color: #f2f2f2;
@@ -11,6 +9,6 @@ a {
     color: #00ffff;
 }
 
-th {
-    text-align: left;
+th, td {
+    text-align: center;
 }

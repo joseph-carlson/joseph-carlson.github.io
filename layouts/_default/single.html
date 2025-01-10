@@ -1,5 +1,5 @@
 {{ define "main" }}
-    Staring the page content...
+    Page content loading...
     {{ with .GetTerms "tags" }}
       {{ range . }}
         <a href="{{ .RelPermalink }}">#{{ lower .LinkTitle }}</a>

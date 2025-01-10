@@ -6,7 +6,7 @@
         {{ end }}
         <hr>
     {{ end }}
-
+    
     {{ if .IsHome }}
         {{ range .Pages }}
             <p style="display: inline"><a href="{{ .RelPermalink }}" style="display: inline">{{ .Title }}</a></p>
@@ -19,7 +19,7 @@
             <th>Tags</th>
         {{ range .Pages }}
             <tr>
-            <td><p style="display: inline"><a href="{{ .RelPermalink }}" style="display: inline">{{ .Title }}</a>&nbsp;&nbsp;</p></td>
+            <td><p style="display: inline"><a href="{{ .RelPermalink }}">{{ .Title }}</a>&nbsp;&nbsp;</p></td>
             <td>{{ .Date | time.Format ":date_medium" }}&nbsp;&nbsp;</td>
             <td>
             {{ with .GetTerms "tags" }}
