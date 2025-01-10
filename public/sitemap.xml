@@ -35,10 +35,10 @@
     <loc>http://localhost:1313/case-studies/stuxnet/</loc>
     <lastmod>2025-01-08T17:30:47-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about-me/</loc>
+    <loc>http://localhost:1313/my-thoughts/bio/</loc>
     <lastmod>2025-01-08T17:30:21-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about-me/bio/</loc>
+    <loc>http://localhost:1313/my-thoughts/</loc>
     <lastmod>2025-01-08T17:30:21-06:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>

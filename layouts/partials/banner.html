@@ -2,7 +2,7 @@
 <div id="breadcrumbs">
     <p style="display: inline">~\</p>
     {{ range .Ancestors.Reverse }}
-        <p style="display: inline;"><a href="{{ .RelPermalink }}">{{ .Title }}</a>&nbsp;\&nbsp;</p>
+        <p style="display: inline;"><a href="{{ .RelPermalink }}">{{ .Title }}</a>&nbsp;\</p>
     {{ end }}
     <p style="display: inline"><a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
 </div>

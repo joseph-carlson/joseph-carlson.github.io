@@ -31,9 +31,9 @@
     </item>
     <item>
       <title>Bio</title>
-      <link>http://localhost:1313/about-me/bio/</link>
+      <link>http://localhost:1313/my-thoughts/bio/</link>
       <pubDate>Wed, 08 Jan 2025 17:30:21 -0600</pubDate>
-      <guid>http://localhost:1313/about-me/bio/</guid>
+      <guid>http://localhost:1313/my-thoughts/bio/</guid>
       <description>&lt;h2 id=&#34;bio&#34;&gt;Bio&lt;/h2&gt;&#xA;&lt;p&gt;This will be all about me&amp;hellip;&lt;/p&gt;</description>
     </item>
   </channel>
