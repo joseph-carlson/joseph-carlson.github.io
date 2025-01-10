@@ -10,6 +10,8 @@
     {{- end -}}
     {{- if .IsHome -}}
         <h2 style="display: inline"><a href="{{ .RelPermalink }}">Root</a></h2>
+    {{- else -}}
+        <h2 style="display: inline"><a href="{{ .RelPermalink }}">{{- .Title -}}</a></h2>
     {{- end -}}
 </div>
 <hr>
