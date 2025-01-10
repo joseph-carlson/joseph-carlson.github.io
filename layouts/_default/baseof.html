@@ -4,22 +4,22 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        {{ $css := resources.Get "css/style.css" }}
+        {{- $css := resources.Get "css/style.css" -}}
         <link rel="stylesheet" href="{{ $css.RelPermalink }}">
         <script src="/javascript/main.js"></script>
 
-        <title> {{ .Title }} </title>
+        <title> {{- .Title -}} </title>
     </head>
     <body>
-        {{ partial "header.html" . }}
+        {{- partial "header.html" . -}}
 
-        {{ partial "banner.html" . }}
+        {{- partial "banner.html" . -}}
 
-        {{ block "main" . }}
+        {{- block "main" . -}}
         
-        {{ end }}
+        {{- end -}}
 
-        {{ partial "footer.html" . }}
+        {{- partial "footer.html" . -}}
     </body>
 </html>
 

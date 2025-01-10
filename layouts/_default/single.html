@@ -1,9 +1,10 @@
-{{ define "main" }}
+{{- define "main" -}}
     Page content loading...
-    {{ with .GetTerms "tags" }}
-      {{ range . }}
-        <a href="{{ .RelPermalink }}">#{{ lower .LinkTitle }}</a>
-      {{ end }}
-    {{ end }}
-    {{ .Content }}
-{{ end }}
+    {{- with .GetTerms "tags" -}}
+      &nbsp;
+      {{- range . -}}
+        <a href="{{ .RelPermalink }}">#{{- lower .LinkTitle -}}&nbsp;</a>
+      {{- end -}}
+    {{- end -}}
+    {{- .Content -}}
+{{- end -}}

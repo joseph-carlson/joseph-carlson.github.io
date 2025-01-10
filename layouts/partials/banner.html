@@ -1,9 +1,9 @@
 <hr>
 <div id="breadcrumbs">
-    <p style="display: inline">~\</p>
-    {{ range .Ancestors.Reverse }}
-        <p style="display: inline;"><a href="{{ .RelPermalink }}">{{ .Title }}</a>&nbsp;\</p>
-    {{ end }}
-    <p style="display: inline"><a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
+    <p style="display: inline">~\&nbsp;</p>
+    {{- range .Ancestors.Reverse -}}
+        <h2 style="display: inline;"><a href="{{ .RelPermalink }}">{{- .Title -}}</a>&nbsp;\&nbsp;</h2>
+    {{- end -}}
+    <h2 style="display: inline"><a href="{{ .RelPermalink }}">{{- .Title -}}</a></h2>
 </div>
 <hr>

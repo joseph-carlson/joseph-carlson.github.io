@@ -1,37 +1,40 @@
-{{ define "main" }}
-    {{if .IsHome }}
-        {{ range .Site.Taxonomies.tags }}
-                <a href="{{ .Page.Permalink }}">#{{ lower .Page.Title }}</a>
-                <sup>{{ .Count }}</sup>
-        {{ end }}
+{{- define "main" -}}
+    {{- if .IsHome -}}
+        {{- range .Site.Taxonomies.tags -}}
+                <a href="{{ .Page.Permalink }}">#{{- lower .Page.Title -}}</a>
+                <sup>{{- .Count -}}&nbsp;</sup>
+        {{- end -}}
         <hr>
-    {{ end }}
-    
-    {{ if .IsHome }}
-        {{ range .Pages }}
-            <p style="display: inline"><a href="{{ .RelPermalink }}" style="display: inline">{{ .Title }}</a></p>
-            <p></p>
-        {{ end }}
-    {{ else }}
+    {{- end -}}
+
+    {{- if .IsHome -}}
+        <br>
+        {{- range .Pages -}}
+            <h3 style="display: inline"><a href="{{ .RelPermalink }}" style="display: inline">{{- .Title -}}</a></h3>
+            <br> <br>
+        {{- end -}}
+    {{- else -}}
         <table style="width:fit-content">
             <th>Title</th>
             <th>Date</th>
             <th>Tags</th>
-        {{ range .Pages }}
+        {{- range .Pages.ByDate -}}
             <tr>
-            <td><p style="display: inline"><a href="{{ .RelPermalink }}">{{ .Title }}</a>&nbsp;&nbsp;</p></td>
-            <td>{{ .Date | time.Format ":date_medium" }}&nbsp;&nbsp;</td>
+            <td><p style="display: inline"><a href="{{ .RelPermalink }}">{{- .Title -}}</a>&nbsp;&nbsp;</p></td>
+            <td>{{- .Date | time.Format ":date_medium" -}}&nbsp;&nbsp;</td>
             <td>
-            {{ with .GetTerms "tags" }}
-                {{ range . }}
-                <a href="{{ .RelPermalink }}">#{{ lower .LinkTitle }}</a>
-                {{ end }}
-            {{ end }}
+            {{- with .GetTerms "tags" -}}
+                {{- range . -}}
+                    <a href="{{ .RelPermalink }}">#{{- lower .LinkTitle -}}&nbsp;</a>
+                {{- end -}}
+            {{- else -}}
+                <p>none</p>
+            {{- end -}}
             </td>
             </tr>
             <br>
-        {{ end }}
+        {{- end -}}
         </table>
-    {{ end }}
+    {{- end -}}
     <br>
-{{ end }}
+{{- end -}}
