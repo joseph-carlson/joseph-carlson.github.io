@@ -2,8 +2,14 @@
 <div id="breadcrumbs">
     <p style="display: inline">~\&nbsp;</p>
     {{- range .Ancestors.Reverse -}}
-        <h2 style="display: inline;"><a href="{{ .RelPermalink }}">{{- .Title -}}</a>&nbsp;\&nbsp;</h2>
+        {{- if .IsHome -}}
+            <h2 style="display: inline;"><a href="{{ .RelPermalink }}">Root</a>&nbsp;\&nbsp;</h2>
+        {{- else -}}
+            <h2 style="display: inline;"><a href="{{ .RelPermalink }}">{{- .Title -}}</a>&nbsp;\&nbsp;</h2>
+        {{- end }}
     {{- end -}}
-    <h2 style="display: inline"><a href="{{ .RelPermalink }}">{{- .Title -}}</a></h2>
+    {{- if .IsHome -}}
+        <h2 style="display: inline"><a href="{{ .RelPermalink }}">Root</a></h2>
+    {{- end -}}
 </div>
 <hr>
