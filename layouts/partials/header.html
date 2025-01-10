@@ -3,8 +3,8 @@
     <h1><a href="/" id="pageTitle">Joseph Carlson</a></h1>
 
     <span>
-        {{- range .Site.Menus.main.ByName -}}
-            <a href="{{ .URL }}">{{- .Name -}}&nbsp; &nbsp; </a>
+        {{- range .Site.Menus.main.ByWeight -}}
+            <p style="display: inline"><a href="{{ .URL }}">{{- .Name -}}&nbsp; &nbsp; </a></p>
         {{- end -}}
     </span>
 
