@@ -4,24 +4,16 @@
         <h2>~</h2>
         {{- range .Ancestors.Reverse -}}
             {{- if .IsHome -}}
-                <span style="text-wrap: wrap;">
-                    <h2 style="display: inline; text-wrap: nowrap;">\&nbsp;<a href="{{- .RelPermalink -}}">Root</a></h2>
-                </span>
+                <h2 style="display: inline; text-wrap: nowrap;">&nbsp;\&nbsp;<a href="{{- .RelPermalink -}}">Root</a></h2>
             {{- else -}}
-                <span style="text-wrap: wrap;">
-                    <h2 style="display: inline; text-wrap: nowrap;">\&nbsp;<a href="{{- .RelPermalink -}}">{{- .Title -}}</a></h2>
-                </span>
+                <h2 style="display: inline; text-wrap: nowrap;">&nbsp;\&nbsp;<a href="{{- .RelPermalink -}}">{{- .Title -}}</a></h2>
             {{- end }}
         {{- end -}}
 
         {{- if .IsHome -}}
-            <span style="text-wrap: wrap;">
-                <h2 style="display: inline; text-wrap: nowrap;">\&nbsp;<a href="{{- .RelPermalink -}}">Root</a></h2>
-            </span>
+            <h2 style="display: inline; text-wrap: nowrap;">&nbsp;\&nbsp;<a href="{{- .RelPermalink -}}">Root</a></h2>
         {{- else -}}
-            <span style="text-wrap: wrap;">
-                <h2 style="display: inline; text-wrap: nowrap;">\&nbsp;<a href="{{- .RelPermalink -}}">{{- .Title -}}</a></h2>
-            </span>
+            <h2 style="display: inline; text-wrap: nowrap;">&nbsp;\&nbsp;<a href="{{- .RelPermalink -}}">{{- .Title -}}</a></h2>
         {{- end -}}
     </div>
     <hr>

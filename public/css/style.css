@@ -42,12 +42,9 @@ th {
 }
 
 #breadcrumbs {
-    text-wrap: wrap;
-}
-
-#breadcrumbs > * {
-    display: inline;
-    text-wrap: nowrap;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 #postBanner {
