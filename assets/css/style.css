@@ -43,9 +43,6 @@ th {
 
 #breadcrumbs > * {
     display: inline;
-}
-
-.nowrap {
     text-wrap: nowrap;
 }
 
