@@ -1,21 +1,27 @@
 <div class="sticky">
     <hr>
     <div id="breadcrumbs">
-        <h2>~\&nbsp;</h2>
+        <h2>~</h2>
         {{- range .Ancestors.Reverse -}}
             {{- if .IsHome -}}
-                <h2><a href="{{- .RelPermalink -}}">Root</a></h2>
-                <h2>\&nbsp;</h2>
+                <span style="text-wrap: wrap;">
+                    <h2 style="display: inline; text-wrap: nowrap;">\&nbsp;<a href="{{- .RelPermalink -}}">Root</a></h2>
+                </span>
             {{- else -}}
-                <h2><a href="{{- .RelPermalink -}}">{{- .Title -}}</a></h2>
-                <h2>\&nbsp;</h2>
+                <span style="text-wrap: wrap;">
+                    <h2 style="display: inline; text-wrap: nowrap;">\&nbsp;<a href="{{- .RelPermalink -}}">{{- .Title -}}</a></h2>
+                </span>
             {{- end }}
         {{- end -}}
 
         {{- if .IsHome -}}
-            <h2><a href="{{- .RelPermalink -}}">Root&nbsp;</a></h2>
+            <span style="text-wrap: wrap;">
+                <h2 style="display: inline; text-wrap: nowrap;">\&nbsp;<a href="{{- .RelPermalink -}}">Root</a></h2>
+            </span>
         {{- else -}}
-            <h2><a href="{{- .RelPermalink -}}">{{- .Title -}}</a></h2>
+            <span style="text-wrap: wrap;">
+                <h2 style="display: inline; text-wrap: nowrap;">\&nbsp;<a href="{{- .RelPermalink -}}">{{- .Title -}}</a></h2>
+            </span>
         {{- end -}}
     </div>
     <hr>
