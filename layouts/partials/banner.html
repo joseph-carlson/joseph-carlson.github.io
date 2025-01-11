@@ -5,15 +5,15 @@
         {{- range .Ancestors.Reverse -}}
             {{- if .IsHome -}}
                 <h2><a href="{{- .RelPermalink -}}">Root</a></h2>
-                <h2>&nbsp;\&nbsp;</h2>
+                <h2>\&nbsp;</h2>
             {{- else -}}
                 <h2><a href="{{- .RelPermalink -}}">{{- .Title -}}</a></h2>
-                <h2>&nbsp;\&nbsp;</h2>
+                <h2>\&nbsp;</h2>
             {{- end }}
         {{- end -}}
 
         {{- if .IsHome -}}
-            <h2><a href="{{- .RelPermalink -}}">Root</a></h2>
+            <h2><a href="{{- .RelPermalink -}}">Root&nbsp;</a></h2>
         {{- else -}}
             <h2><a href="{{- .RelPermalink -}}">{{- .Title -}}</a></h2>
         {{- end -}}

@@ -39,6 +39,7 @@ th {
     z-index: 10;
     background-color: #171717;
     padding: 0.25rem;
+    text-wrap: wrap;
 }
 
 #breadcrumbs > * {
