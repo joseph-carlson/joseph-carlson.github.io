@@ -43,6 +43,6 @@ th {
     display: inline;
 }
 
-#bannerTags {
-    text-wrap: nowrap;
+#footer > * {
+    display: inline;
 }
