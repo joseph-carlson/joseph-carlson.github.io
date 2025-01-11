@@ -41,6 +41,10 @@ th {
     display: inline;
 }
 
+#footerLinks > * {
+    display: inline
+}
+
 @media screen and (max-width: 575px) {
     #headerCategories {
         display: block;
