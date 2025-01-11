@@ -33,12 +33,6 @@ th {
     display: inline;
 }
 
-@media screen and (max-width: 575px) {
-    #headerCategories {
-        display: block;
-    }
-}
-
 #breadcrumbs > * {
     display: inline;
 }
@@ -47,3 +41,12 @@ th {
     display: inline;
 }
 
+@media screen and (max-width: 575px) {
+    #headerCategories {
+        display: block;
+    }
+    #footer > * {
+        display: flex;
+        justify-content: center;
+    }
+}
