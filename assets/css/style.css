@@ -33,8 +33,20 @@ th {
     display: inline;
 }
 
+.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #171717;
+    padding: 0.25rem;
+}
+
 #breadcrumbs > * {
     display: inline;
+}
+
+#postBanner {
+    z-index: 0;
 }
 
 #footer > * {
@@ -42,7 +54,7 @@ th {
 }
 
 #footerLinks > * {
-    display: inline
+    display: inline;
 }
 
 @media screen and (max-width: 575px) {

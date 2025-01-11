@@ -15,11 +15,13 @@
 
         {{- partial "banner.html" . -}}
 
-        {{- block "main" . -}}
-        
-        {{- end -}}
+        <div id="postBanner">
+            {{- block "main" . -}}
+            
+            {{- end -}}
 
-        {{- partial "footer.html" . -}}
+            {{- partial "footer.html" . -}}
+        </div>
     </body>
 </html>
 

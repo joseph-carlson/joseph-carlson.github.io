@@ -1,17 +1,19 @@
-<hr>
-<div id="breadcrumbs">
-    <h2>~\&nbsp;</h2>
-    {{- range .Ancestors.Reverse -}}
+<div class="sticky">
+    <hr>
+    <div id="breadcrumbs">
+        <h2>~\&nbsp;</h2>
+        {{- range .Ancestors.Reverse -}}
+            {{- if .IsHome -}}
+                <h2><a href="{{ .RelPermalink }}">Root</a>&nbsp;\&nbsp;</h2>
+            {{- else -}}
+                <h2><a href="{{ .RelPermalink }}">{{- .Title -}}</a>&nbsp;\&nbsp;</h2>
+            {{- end }}
+        {{- end -}}
         {{- if .IsHome -}}
-            <h2><a href="{{ .RelPermalink }}">Root</a>&nbsp;\&nbsp;</h2>
+            <h2><a href="{{ .RelPermalink }}">Root</a></h2>
         {{- else -}}
-            <h2><a href="{{ .RelPermalink }}">{{- .Title -}}</a>&nbsp;\&nbsp;</h2>
-        {{- end }}
-    {{- end -}}
-    {{- if .IsHome -}}
-        <h2><a href="{{ .RelPermalink }}">Root</a></h2>
-    {{- else -}}
-        <h2><a href="{{ .RelPermalink }}">{{- .Title -}}</a></h2>
-    {{- end -}}
+            <h2><a href="{{ .RelPermalink }}">{{- .Title -}}</a></h2>
+        {{- end -}}
+    </div>
+    <hr>
 </div>
-<hr>
