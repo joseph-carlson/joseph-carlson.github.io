@@ -1,7 +1,7 @@
 html {
     font-family: monospace;
     color: #f2f2f2;
-    background-color: #272727;
+    background-color: #171717;
 }
 
 a {
@@ -46,3 +46,4 @@ th {
 #footer > * {
     display: inline;
 }
+

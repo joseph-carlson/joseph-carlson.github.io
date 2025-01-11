@@ -13,7 +13,7 @@
       <link>http://localhost:1313/projects/portfolio-website/</link>
       <pubDate>Wed, 08 Jan 2025 17:32:22 -0600</pubDate>
       <guid>http://localhost:1313/projects/portfolio-website/</guid>
-      <description>&lt;h2 id=&#34;portfolio-website&#34;&gt;Portfolio Website&lt;/h2&gt;&#xA;&lt;p&gt;the story begins with&amp;hellip;&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;portfolio-website&#34;&gt;Portfolio Website&lt;/h2&gt;&#xA;&lt;h3 id=&#34;why-i-chose-hugo&#34;&gt;Why I Chose Hugo&lt;/h3&gt;&#xA;&lt;h3 id=&#34;getting-started&#34;&gt;Getting Started&lt;/h3&gt;&#xA;&lt;h3 id=&#34;implementation&#34;&gt;Implementation&lt;/h3&gt;&#xA;&lt;h3 id=&#34;go-read-the-source-code&#34;&gt;Go Read the Source Code!&lt;/h3&gt;&#xA;&lt;p&gt;One byproduct of hosting this website on github pages is you can read the source code.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

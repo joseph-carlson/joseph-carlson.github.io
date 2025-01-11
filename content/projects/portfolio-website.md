@@ -6,4 +6,16 @@ tags: 'webdev'
 ---
 ## Portfolio Website
 
-the story begins with...
+
+### Why I Chose Hugo
+
+
+### Getting Started
+
+
+### Implementation
+
+
+### Go Read the Source Code!
+
+One byproduct of hosting this website on github pages is you can read the source code.
