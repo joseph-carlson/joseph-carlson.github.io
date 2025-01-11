@@ -17,5 +17,5 @@ name = 'Projects'
 pageRef = '/projects'
 weight = 30
 
-[markup.goldmark.renderer]
-    unsafe = true # renders html in md files
+# [markup.goldmark.renderer]
+#     unsafe = true # renders html in md files

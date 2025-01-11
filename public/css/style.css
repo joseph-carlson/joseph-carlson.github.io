@@ -45,6 +45,10 @@ th {
     display: inline;
 }
 
+.nowrap {
+    text-wrap: nowrap;
+}
+
 #postBanner {
     z-index: 0;
 }
