@@ -5,4 +5,8 @@
     <a href="mailto:jwcarlson.tech@gmail.com">jwcarlson.tech@gmail.com</a>
     &nbsp;
     <a href="https://www.linkedin.com/in/joseph-carlson-it/" target='_blank'>LinkedIn</a>
+    &nbsp;&nbsp;
+    {{- with resources.Get "documents/resume.pdf" -}}
+        <a href="{{- .RelPermalink -}}" target="_blank">Resume</a>
+    {{- end -}}  
 </div>
