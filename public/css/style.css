@@ -29,8 +29,12 @@ td {
     justify-content: space-between;
 }
 
-.title > *{
+.title p {
     display: inline;
+}
+
+#logo {
+    margin: 3rem;
 }
 
 #headerCategories {
