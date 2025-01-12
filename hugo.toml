@@ -22,5 +22,5 @@ name = 'technical-concepts'
 pageRef = '/technical-concepts'
 weight = 40
 
-# [markup.goldmark.renderer]
-#     unsafe = true # renders html in md files
+[markup.goldmark.renderer]
+    unsafe = true # renders html in md files
