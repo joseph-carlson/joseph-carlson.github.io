@@ -67,8 +67,8 @@ td {
     display: inline;
 }
 
-@media screen and (max-width: 750px) {
-    .title {
+@media screen and (max-width: 850px) {
+    .title p {
         display: block;
     }
     #headerCategories {
