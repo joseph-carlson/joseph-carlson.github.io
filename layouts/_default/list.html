@@ -1,11 +1,13 @@
 {{- define "main" -}}
     {{- if .IsHome -}}
-        {{- range .Site.Taxonomies.tags -}}
-            <a href="{{- .Page.Permalink -}}">
-                #{{- lower .Page.Title -}}
-                <sup>&nbsp;{{- .Count -}}&nbsp;</sup>
-            </a>
-        {{- end -}}
+        <div id="tags">
+            {{- range .Site.Taxonomies.tags -}}
+                <a href="{{- .Page.Permalink -}}">
+                    #{{- lower .Page.Title -}}
+                    <sup>&nbsp;{{- .Count -}}&nbsp;</sup>
+                </a>
+            {{- end -}}
+        </div>
         <hr>
     {{- end -}}
 
@@ -15,13 +17,11 @@
 
     {{- if .IsHome -}}
         <br>
-        <!-- {{- range .Pages -}}
-            <h3><a href="{{- .RelPermalink -}}" style="display: inline">{{- .Title -}}</a></h3>
-        {{- end -}} -->
-        {{- range .Site.Menus.main.ByWeight -}}
-            <h3><a href="{{- .URL -}}" style="display: inline">{{- strings.Title (replace .Name "-" " ") -}}</a></h3>
-        {{- end -}}
-
+        <div id="homePageLinks">
+            {{- range .Site.Menus.main.ByWeight -}}
+                <h3><a href="{{- .URL -}}" style="display: inline">{{- strings.Title (replace .Name "-" " ") -}}</a></h3>
+            {{- end -}}
+        </div>
     {{- else -}}
         <br>
         <table>
