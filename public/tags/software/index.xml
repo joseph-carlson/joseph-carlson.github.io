@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software on Joseph Carlson</title>
+    <link>http://localhost:1313/tags/software/</link>
+    <description>Recent content in Software on Joseph Carlson</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 11 Jan 2025 16:07:28 -0600</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/software/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HTTP Server</title>
+      <link>http://localhost:1313/projects/http-server/</link>
+      <pubDate>Sat, 11 Jan 2025 16:07:28 -0600</pubDate>
+      <guid>http://localhost:1313/projects/http-server/</guid>
+      <description>&lt;h2 id=&#34;http-server&#34;&gt;HTTP Server&lt;/h2&gt;&#xA;&lt;p&gt;How I did it&amp;hellip;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Resources:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Source1&lt;/li&gt;&#xA;&lt;li&gt;Source2&lt;/li&gt;&#xA;&lt;li&gt;Source3&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

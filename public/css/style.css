@@ -9,13 +9,17 @@ a {
     color: #00ffff;
 }
 
-td {
-    text-align: center;
+table {
+    width: fit-content;
 }
 
 th {
     text-align: center;
     padding-bottom: 1rem;
+}
+
+td {
+    text-align: center;
 }
 
 #header {
@@ -25,8 +29,8 @@ th {
     justify-content: space-between;
 }
 
-#pageTitle {
-    padding-right: 2rem;
+.title > *{
+    display: inline;
 }
 
 #headerCategories {
@@ -59,7 +63,10 @@ th {
     display: inline;
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 750px) {
+    .title {
+        display: block;
+    }
     #headerCategories {
         display: block;
     }

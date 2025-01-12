@@ -6,8 +6,15 @@
     <description>Recent content in Projects on Joseph Carlson</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Jan 2025 17:32:22 -0600</lastBuildDate>
+    <lastBuildDate>Sat, 11 Jan 2025 16:07:28 -0600</lastBuildDate>
     <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HTTP Server</title>
+      <link>http://localhost:1313/projects/http-server/</link>
+      <pubDate>Sat, 11 Jan 2025 16:07:28 -0600</pubDate>
+      <guid>http://localhost:1313/projects/http-server/</guid>
+      <description>&lt;h2 id=&#34;http-server&#34;&gt;HTTP Server&lt;/h2&gt;&#xA;&lt;p&gt;How I did it&amp;hellip;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Resources:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Source1&lt;/li&gt;&#xA;&lt;li&gt;Source2&lt;/li&gt;&#xA;&lt;li&gt;Source3&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
     <item>
       <title>Portfolio Website</title>
       <link>http://localhost:1313/projects/portfolio-website/</link>

@@ -1,21 +1,26 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://joseph-carlson.github.io/'
 languageCode = 'en-us'
 title = 'Joseph Carlson'
 
 [[menus.main]]
-name = 'My Thoughts'
-pageRef = '/my-thoughts'
+name = 'case-studies'
+pageRef = '/case-studies'
 weight = 10
 
 [[menus.main]]
-name = 'Case Studies'
-pageRef = '/case-studies'
+name = 'projects'
+pageRef = '/projects'
 weight = 20
 
 [[menus.main]]
-name = 'Projects'
-pageRef = '/projects'
+name = 'hot-takes'
+pageRef = '/hot-takes'
 weight = 30
+
+[[menus.main]]
+name = 'technical-concepts'
+pageRef = '/technical-concepts'
+weight = 40
 
 # [markup.goldmark.renderer]
 #     unsafe = true # renders html in md files

@@ -4,7 +4,7 @@
     {{- with .GetTerms "tags" -}}
       &nbsp;
       {{- range . -}}
-        <a href="{{ .RelPermalink }}">#{{- lower .LinkTitle -}}&nbsp;</a>
+        <a href="{{- .RelPermalink -}}">#{{- lower .LinkTitle -}}&nbsp;</a>
       {{- end -}}
     {{- end -}}
     {{- .Content -}}

@@ -1,7 +1,7 @@
 {{- define "main" -}}
     {{- if .IsHome -}}
         {{- range .Site.Taxonomies.tags -}}
-            <a href="{{ .Page.Permalink }}">
+            <a href="{{- .Page.Permalink -}}">
                 #{{- lower .Page.Title -}}
                 <sup>&nbsp;{{- .Count -}}&nbsp;</sup>
             </a>
@@ -9,25 +9,33 @@
         <hr>
     {{- end -}}
 
+    {{- if eq $.Title "Technical Concepts" -}} 
+        <p>This section will consist of articles on various technical concepts I have learned...</p>
+    {{- end -}}
+
     {{- if .IsHome -}}
         <br>
-        {{- range .Pages -}}
-            <h3><a href="{{ .RelPermalink }}" style="display: inline">{{- .Title -}}</a></h3>
+        <!-- {{- range .Pages -}}
+            <h3><a href="{{- .RelPermalink -}}" style="display: inline">{{- .Title -}}</a></h3>
+        {{- end -}} -->
+        {{- range .Site.Menus.main.ByWeight -}}
+            <h3><a href="{{- .URL -}}" style="display: inline">{{- strings.Title (replace .Name "-" " ") -}}</a></h3>
         {{- end -}}
+
     {{- else -}}
         <br>
-        <table style="width:fit-content">
+        <table>
             <th>Title</th>
             <th>Date</th>
             <th>Tags</th>
         {{- range .Pages.ByDate -}}
             <tr>
-            <td><p style="display: inline"><a href="{{ .RelPermalink }}">{{- .Title -}}</a>&nbsp;&nbsp;</p></td>
+            <td><a href="{{- .RelPermalink -}}">{{- .Title -}}</a>&nbsp;&nbsp;</td>
             <td>{{- .Date | time.Format ":date_medium" -}}&nbsp;&nbsp;</td>
             <td>
             {{- with .GetTerms "tags" -}}
                 {{- range . -}}
-                    <a href="{{ .RelPermalink }}">#{{- lower .LinkTitle -}}&nbsp;</a>
+                    <a href="{{- .RelPermalink -}}">#{{- lower .LinkTitle -}}&nbsp;</a>
                 {{- end -}}
             {{- else -}}
                 <p>none</p>

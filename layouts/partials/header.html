@@ -1,8 +1,17 @@
 <div id="header">
-    <h1><a href="/" id="pageTitle">{{- .Site.Title -}}</a></h1>
+    <h1>
+        <a href="/" class="title">
+            <p class="title">Joseph</p>
+            <p class="title">Carlson</p>
+        </a>
+    </h1>
+    <span>
+        {{- $logo := resources.Get "logo.ico" -}}
+        <a href="/"><img src="{{- $logo.RelPermalink -}}" alt="Logo" height="75" id="logo"></a>
+    </span>
     <span>
         {{- range .Site.Menus.main.ByWeight -}}
-            <h4 id="headerCategories"><a href="{{ .URL }}">{{- .Name -}}&nbsp;&nbsp;</a></h4>
+            <h4 id="headerCategories"><a href="{{- .URL -}}">{{- .Name -}}&nbsp;&nbsp;</a></h4>
         {{- end -}}
     </span>
 </div>

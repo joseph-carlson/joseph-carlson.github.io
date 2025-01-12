@@ -4,6 +4,6 @@ draft: false
 title: 'Stuxnet'
 tags: ['networking', 'ics']
 ---
-## Stuxnet - a wake up call for ICS
+## Stuxnet - a wake up call for ICS Security
 
 the story begins with...

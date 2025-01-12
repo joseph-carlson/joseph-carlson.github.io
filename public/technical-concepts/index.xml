@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Networking on Joseph Carlson</title>
-    <link>http://localhost:1313/tags/networking/</link>
-    <description>Recent content in Networking on Joseph Carlson</description>
+    <title>Technical Concepts on Joseph Carlson</title>
+    <link>http://localhost:1313/technical-concepts/</link>
+    <description>Recent content in Technical Concepts on Joseph Carlson</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 Jan 2025 16:46:30 -0600</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/networking/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Jan 2025 18:07:49 -0600</lastBuildDate>
+    <atom:link href="http://localhost:1313/technical-concepts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The OSI Model</title>
+      <link>http://localhost:1313/technical-concepts/the-osi-model/</link>
+      <pubDate>Sat, 11 Jan 2025 18:07:49 -0600</pubDate>
+      <guid>http://localhost:1313/technical-concepts/the-osi-model/</guid>
+      <description>&lt;p&gt;The OSI Model&amp;hellip;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Fundamental Concepts of Networking</title>
       <link>http://localhost:1313/technical-concepts/fundamental-concepts-of-networking/</link>
       <pubDate>Sat, 11 Jan 2025 16:46:30 -0600</pubDate>
       <guid>http://localhost:1313/technical-concepts/fundamental-concepts-of-networking/</guid>
       <description>&lt;h2 id=&#34;fundamental-concepts-of-networking&#34;&gt;Fundamental Concepts of Networking&lt;/h2&gt;&#xA;&lt;p&gt;Just as interpersonal networking lays the bedrock for transactions and relationships in society, computer networking has enabled the world of technology to do what it does best: facilitate the free flow of information to anyone with the hunger to learn. The golden standard of five-nines of availability is 99.999% uptime, which equates to roughly five minutes a year—five minutes to run updates, perform upgrades, and recover from disasters. While redundancy and strategic planning are crucial in making this possible, it is a high bar, nonetheless.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Stuxnet</title>
-      <link>http://localhost:1313/case-studies/stuxnet/</link>
-      <pubDate>Wed, 08 Jan 2025 17:30:47 -0600</pubDate>
-      <guid>http://localhost:1313/case-studies/stuxnet/</guid>
-      <description>&lt;h2 id=&#34;stuxnet---a-wake-up-call-for-ics-security&#34;&gt;Stuxnet - a wake up call for ICS Security&lt;/h2&gt;&#xA;&lt;p&gt;the story begins with&amp;hellip;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

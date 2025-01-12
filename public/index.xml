@@ -6,21 +6,42 @@
     <description>Recent content on Joseph Carlson</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 Jan 2025 12:46:07 -0600</lastBuildDate>
+    <lastBuildDate>Sat, 11 Jan 2025 18:07:49 -0600</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>The OSI Model</title>
+      <link>http://localhost:1313/technical-concepts/the-osi-model/</link>
+      <pubDate>Sat, 11 Jan 2025 18:07:49 -0600</pubDate>
+      <guid>http://localhost:1313/technical-concepts/the-osi-model/</guid>
+      <description>&lt;p&gt;The OSI Model&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Lorem Ipsum</title>
-      <link>http://localhost:1313/my-thoughts/lorem-ipsum/</link>
-      <pubDate>Sat, 11 Jan 2025 12:46:07 -0600</pubDate>
-      <guid>http://localhost:1313/my-thoughts/lorem-ipsum/</guid>
+      <link>http://localhost:1313/hot-takes/lorem-ipsum/</link>
+      <pubDate>Sat, 11 Jan 2025 17:31:02 -0600</pubDate>
+      <guid>http://localhost:1313/hot-takes/lorem-ipsum/</guid>
       <description>&lt;p&gt;Lorem ipsum odor amet, consectetuer adipiscing elit. Sapien malesuada vestibulum vestibulum netus scelerisque dictum dolor. Sapien ultrices mattis habitant id pellentesque nec morbi. Integer eu laoreet luctus non facilisi ipsum. Imperdiet velit iaculis suscipit nulla elit mollis donec himenaeos. Mollis elit sit consequat donec phasellus egestas. Semper ex magna porta proin faucibus ornare efficitur. Gravida posuere lobortis maximus luctus consectetur quisque. Tellus pharetra non tincidunt hendrerit montes dui condimentum. Porta vel suscipit aliquam vulputate pulvinar quam per.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Xz Utils</title>
+      <title>Fundamental Concepts of Networking</title>
+      <link>http://localhost:1313/technical-concepts/fundamental-concepts-of-networking/</link>
+      <pubDate>Sat, 11 Jan 2025 16:46:30 -0600</pubDate>
+      <guid>http://localhost:1313/technical-concepts/fundamental-concepts-of-networking/</guid>
+      <description>&lt;h2 id=&#34;fundamental-concepts-of-networking&#34;&gt;Fundamental Concepts of Networking&lt;/h2&gt;&#xA;&lt;p&gt;Just as interpersonal networking lays the bedrock for transactions and relationships in society, computer networking has enabled the world of technology to do what it does best: facilitate the free flow of information to anyone with the hunger to learn. The golden standard of five-nines of availability is 99.999% uptime, which equates to roughly five minutes a year—five minutes to run updates, perform upgrades, and recover from disasters. While redundancy and strategic planning are crucial in making this possible, it is a high bar, nonetheless.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HTTP Server</title>
+      <link>http://localhost:1313/projects/http-server/</link>
+      <pubDate>Sat, 11 Jan 2025 16:07:28 -0600</pubDate>
+      <guid>http://localhost:1313/projects/http-server/</guid>
+      <description>&lt;h2 id=&#34;http-server&#34;&gt;HTTP Server&lt;/h2&gt;&#xA;&lt;p&gt;How I did it&amp;hellip;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Resources:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Source1&lt;/li&gt;&#xA;&lt;li&gt;Source2&lt;/li&gt;&#xA;&lt;li&gt;Source3&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>XZ Utils</title>
       <link>http://localhost:1313/case-studies/xz-utils/</link>
       <pubDate>Wed, 08 Jan 2025 18:21:47 -0600</pubDate>
       <guid>http://localhost:1313/case-studies/xz-utils/</guid>
-      <description>&lt;h2 id=&#34;xz-utils---a-wake-up-call-for-open-source&#34;&gt;XZ Utils - a wake up call for Open Source&lt;/h2&gt;&#xA;&lt;p&gt;the story begins with&amp;hellip;&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;xz-utils---a-wake-up-call-for-open-source-software&#34;&gt;XZ Utils - a wake up call for Open Source Software&lt;/h2&gt;&#xA;&lt;p&gt;the story begins with&amp;hellip;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Portfolio Website</title>
@@ -34,14 +55,7 @@
       <link>http://localhost:1313/case-studies/stuxnet/</link>
       <pubDate>Wed, 08 Jan 2025 17:30:47 -0600</pubDate>
       <guid>http://localhost:1313/case-studies/stuxnet/</guid>
-      <description>&lt;h2 id=&#34;stuxnet---a-wake-up-call-for-ics&#34;&gt;Stuxnet - a wake up call for ICS&lt;/h2&gt;&#xA;&lt;p&gt;the story begins with&amp;hellip;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Bio</title>
-      <link>http://localhost:1313/my-thoughts/bio/</link>
-      <pubDate>Wed, 08 Jan 2025 17:30:21 -0600</pubDate>
-      <guid>http://localhost:1313/my-thoughts/bio/</guid>
-      <description>&lt;h2 id=&#34;bio&#34;&gt;Bio&lt;/h2&gt;&#xA;&lt;p&gt;This will be all about me&amp;hellip;&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;stuxnet---a-wake-up-call-for-ics-security&#34;&gt;Stuxnet - a wake up call for ICS Security&lt;/h2&gt;&#xA;&lt;p&gt;the story begins with&amp;hellip;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
