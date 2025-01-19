@@ -12,14 +12,14 @@
     {{- end -}}
 
     {{- if eq $.Title "Technical Concepts" -}} 
-        <p>This section will consist of articles on various technical concepts I have learned...</p>
+        <p id="technicalConcepts">This section will consist of articles on various technical concepts I have learned...</p>
     {{- end -}}
 
     {{- if .IsHome -}}
         <br>
         <div id="homePageLinks">
             {{- range .Site.Menus.main.ByWeight -}}
-                <h3><a href="{{- .URL -}}" style="display: inline">{{- strings.Title (replace .Name "-" " ") -}}</a></h3>
+                <h3><a href="{{- .URL -}}" class="categoryLinks">{{- strings.Title (replace .Name "-" " ") -}}</a></h3>
             {{- end -}}
         </div>
     {{- else -}}

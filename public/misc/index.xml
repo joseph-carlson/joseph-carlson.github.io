@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hot Takes on Joseph Carlson</title>
-    <link>http://localhost:1313/hot-takes/</link>
-    <description>Recent content in Hot Takes on Joseph Carlson</description>
+    <title>Misc on Joseph Carlson</title>
+    <link>http://localhost:1313/misc/</link>
+    <description>Recent content in Misc on Joseph Carlson</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 11 Jan 2025 17:31:02 -0600</lastBuildDate>
-    <atom:link href="http://localhost:1313/hot-takes/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/misc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Lorem Ipsum</title>
-      <link>http://localhost:1313/hot-takes/lorem-ipsum/</link>
+      <link>http://localhost:1313/misc/lorem-ipsum/</link>
       <pubDate>Sat, 11 Jan 2025 17:31:02 -0600</pubDate>
-      <guid>http://localhost:1313/hot-takes/lorem-ipsum/</guid>
+      <guid>http://localhost:1313/misc/lorem-ipsum/</guid>
       <description>&lt;p&gt;Lorem ipsum odor amet, consectetuer adipiscing elit. Sapien malesuada vestibulum vestibulum netus scelerisque dictum dolor. Sapien ultrices mattis habitant id pellentesque nec morbi. Integer eu laoreet luctus non facilisi ipsum. Imperdiet velit iaculis suscipit nulla elit mollis donec himenaeos. Mollis elit sit consequat donec phasellus egestas. Semper ex magna porta proin faucibus ornare efficitur. Gravida posuere lobortis maximus luctus consectetur quisque. Tellus pharetra non tincidunt hendrerit montes dui condimentum. Porta vel suscipit aliquam vulputate pulvinar quam per.&lt;/p&gt;</description>
     </item>
   </channel>

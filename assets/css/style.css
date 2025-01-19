@@ -52,8 +52,17 @@ th {
     flex-wrap: wrap;
 }
 
+.breadcrumbPages {
+    display: inline; 
+    text-wrap: nowrap;
+}
+
 #postBanner {
     z-index: 0;
+}
+
+.categoryLinks {
+    display: inline;
 }
 
 #footer > * {
@@ -78,6 +87,10 @@ th {
     }
     #homePageLinks {
         text-align: center;
+    }
+    #technicalConcepts {
+        text-align: center;
+        padding: 0rem 3rem;
     }
     table {
         width: 100%;
