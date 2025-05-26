@@ -2,10 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/hot-takes/</loc>
+    <lastmod>2025-01-18T20:58:33-06:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/</loc>
     <lastmod>2025-01-18T20:58:33-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/misc/</loc>
+    <loc>http://localhost:1313/hot-takes/self-education/</loc>
     <lastmod>2025-01-18T20:58:33-06:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/technical-concepts/</loc>
@@ -14,7 +17,7 @@
     <loc>http://localhost:1313/technical-concepts/the-osi-model/</loc>
     <lastmod>2025-01-11T18:07:49-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/misc/lorem-ipsum/</loc>
+    <loc>http://localhost:1313/hot-takes/lorem-ipsum/</loc>
     <lastmod>2025-01-11T17:31:02-06:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>

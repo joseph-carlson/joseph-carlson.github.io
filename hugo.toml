@@ -13,8 +13,8 @@ pageRef = '/projects'
 weight = 20
 
 [[menus.main]]
-name = 'misc'
-pageRef = '/misc'
+name = 'hot-takes'
+pageRef = '/hot-takes'
 weight = 30
 
 [[menus.main]]
