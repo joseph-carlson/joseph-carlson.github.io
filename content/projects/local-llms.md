@@ -56,7 +56,6 @@ josephcarlson@Josephs-MacBook-Pro ~ % ollama list
 NAME                    ID              SIZE      MODIFIED     
 deepseek-r1:latest      0a8c26691023    4.7 GB    4 months ago    
 mistral-small:latest    d095cd553b04    12 GB     8 months ago    
-
 {{< /code >}}
 
 ---
@@ -96,6 +95,6 @@ docker pull ghcr.io/open-webui/open-webui:main
 
 ---
 
-{{< img path="/projects/Terminal Ollama.png" caption="Old UI" alt="Running Ollama in Terminal">}}
+{{< img path="/projects/local-llms/Terminal Ollama.png" caption="Old UI" alt="Running Ollama in Terminal">}}
 
-{{< img path="/projects/Open WebUI.png" caption="New UI" alt="Running Ollama in Terminal">}}
+{{< img path="/projects/local-llms/Open WebUI.png" caption="New UI" alt="Running Ollama in Terminal">}}

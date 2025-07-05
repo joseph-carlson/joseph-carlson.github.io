@@ -8,11 +8,11 @@ tags: ['all', 'homelab']
 
 Make things. Break things. Fix things. Then find a new way to break them.
 
-Along the way, there are a points I would like to hit on my implementation.
+Along the way, there are a few points I would like to hit on my implementation.
 
-- Increase my home network security beyond the stock configuration from my ISP via OPNSense.
-- Implement network-wide ad-blocking via PiHole.
-- Allow me to remotely connect to my Windows Laptop from anywhere via Wireguard and RustDesk.
+- Increase my home network security beyond the stock configuration from my ISP via OpenVPN Wireguard Plugin.
+- Implement network-wide ad-blocking via Pi-Hole.
+- Allow me to remotely connect to my Windows laptop from anywhere via Wireguard and RustDesk.
 - Secure the network via 802.1x authentication on ports and a guest Wi-Fi network on an isolated VLAN.
 - Generate, aggregate, and analyze suspicious activity using various tools that will be mentioned later.
 
@@ -29,8 +29,8 @@ Diagram coming soon..
 **The Aliexpress Mini PC**
 
 Considerations
-Q: Why use this PC and not one privided by the ISP, or even an off-the-shelf model?
-A: Definitely not using one from the ISP because after a couple years, this mini pc will pay for itself in the rental costs. Then the off-the-shelf model just seemed a little less fun then taking down my network several times a day when tinkering with the configuration.
+Q: Why use this PC and not device privided by my ISP, or even an off-the-shelf model?
+A: Definitely not using device from my ISP because after a couple years, this mini pc will pay for itself in the rental costs. Then the off-the-shelf model just seemed a little less fun then taking down my network several times a day when tinkering with the configuration.
 
 Q: Why did I decide against virtualizing OPNsense within a Proxmox instance and host the Pi-Hole DNS service on the same device? 
 A: Because that adds an extra point of failure within the system. While I can always hook up my old ASUS router in a pinch, I'm lazy and that seems like a lot of work.
