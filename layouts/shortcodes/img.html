@@ -1,4 +1,5 @@
-<div class="image-shortcode" style="text-align: center; max-width: 100%; height: auto;"> <!-- wrapper div to apply class and style -->
+<div class="standard-padding" style="text-align: center; max-width: 100%; height: auto;"> 
+  <!-- wrapper div to apply class and style -->
   {{ with .Get "caption" }} <!-- checks to see if a caption been passed through -->
     <h3 class="caption">{{ . }}:</h3> <!-- adds the caption followed by a semicolon if present -->
   {{ end }} <!-- ends the caption check -->
