@@ -15,6 +15,7 @@ To do this, we will be using a some tools.
 - Ollama (backend running the models)
 - Open WebUI (front end self-hosted AI platform)
 
+---
 ## {{< newtablink url="https://ollama.com/" text="Ollama">}}
 
 To install Ollama, navigate to https://ollama.com/download to download and install this app for your platform.

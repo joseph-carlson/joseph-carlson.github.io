@@ -36,7 +36,7 @@
 
   .carousel-item {
     display: none;        /* hides all but the selected image */
-    max-width: 70vw;      /* the image can occupy no more than 70% of the viewport width */
+    max-width: 100%;      /* the image can occupy no more than 100% of the parent container #pull-in */
     max-height: 70vh;     /* the image can occupy no more than 70% of the viewport height */
     width: auto;          /* retains aspect ratio before the max-width has been reached */
     height: auto;         /* retains aspect ratio before the max-height has been reached */
@@ -52,8 +52,8 @@
 
   .carousel-controls button,
   .carousel-label {
-    vertical-align: middle;    /* vertical centers elements  */
-    margin: 1rem 0.5rem;       /* adds margin: top/botton left/right */
+    vertical-align: middle;         /* vertical centers elements  */
+    margin: 1rem 0.5rem 0rem;       /* adds margin: top/botton left/right */
   }
 
   .carousel-controls button {

@@ -12,14 +12,17 @@
     </head>
     <body>
         {{- partial "header.html" . -}}
+        <hr>
 
-        {{- partial "banner.html" . -}}
-        
-        <div id="postBanner">
-            {{- block "main" . -}}
-            {{- end -}} 
-            <br>
-            {{- partial "footer.html" . -}}
+        <div id="pull-in">
+            {{- partial "banner.html" . -}}
+            
+            <div id="postBanner">
+                {{- block "main" . -}}
+                {{- end -}} 
+                <br>
+                {{- partial "footer.html" . -}}
+            </div>
         </div>
     </body>
 </html>
