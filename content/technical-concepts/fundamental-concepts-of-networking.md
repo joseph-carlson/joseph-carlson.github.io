@@ -1,8 +1,8 @@
 ---
-date: '2025-01-11T16:46:30-06:00'
+date: ''
 draft: false
 title: 'Fundamental Concepts of Networking'
-tags: networking
+tags: ['all', 'infrastructure', 'networking']
 ---
 
 ## Fundamental Concepts of Networking

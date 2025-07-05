@@ -1,9 +1,51 @@
 ---
-date: '2025-01-08T18:21:47-06:00'
+date: ''
 draft: false
 title: 'XZ Utils'
-tags: 'security'
+tags: ['all', 'security']
 ---
 ## XZ Utils - a wake up call for Open Source Software
 
-the story begins with...
+
+
+### A Brief Introduction
+
+What is XZ Utils?
+
+How was this exploit discovered?
+
+### What Happened?
+
+Timeline of events
+
+### The What If?
+
+Impacted systems
+
+### Open Source to Blame?
+
+Maintainer Fatigue and Burnout
+
+Social Engineering and Trust Abuse
+
+Lacking Formal Review Process
+
+### Can AI Play Into This?
+
+
+### What Can Be Done?
+
+
+Institutional Financial Support
+
+Security Audits and Hardening
+
+Supply Chain Hardening
+
+Governance and Contributor Vetting
+
+---
+
+### Resources
+
+- 

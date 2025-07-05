@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/css/style.css">
+        <script src="/javascript/main.js"></script>
+
+        <title>Home Lab</title>
+    </head>
+    <body><div id="header">
+    <h1 class="title">
+        <a href="/">
+            <p>Joseph&nbsp;</p>
+            <p>Carlson</p>
+        </a>
+    </h1>
+    <span><a href="/"><img src="/logo.ico" alt="Logo" height="75" id="logo"></a>
+    </span>
+    <span><h3 id="headerCategories"><a href="/case-studies/">case-studies</a>&nbsp;&nbsp;</h3><h3 id="headerCategories"><a href="/projects/">projects</a>&nbsp;&nbsp;</h3><h3 id="headerCategories"><a href="/hot-takes/">hot-takes</a>&nbsp;&nbsp;</h3><h3 id="headerCategories"><a href="/technical-concepts/">technical-concepts</a>&nbsp;&nbsp;</h3></span>
+</div><hr>
+<div class="sticky">
+    <div id="breadcrumbs">
+        <h3>~</h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/">Root</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/projects/">Projects</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/projects/home-lab/">Home Lab</a></h3></div>
+    <hr>
+</div><div id="postBanner"><br>
+    Page content loading...&nbsp;<a href="/tags/all/">#all&nbsp;</a><a href="/tags/homelab/">#homelab&nbsp;</a><h2 id="the-plan">The Plan</h2>
+<p>Make things. Break things. Fix things. Then find a new way to break them.</p>
+<p>Along the way, there are a points I would like to hit on my implementation.</p>
+<ul>
+<li>Increase my home network security beyond the stock configuration from my ISP via OPNSense.</li>
+<li>Implement network-wide ad-blocking via PiHole.</li>
+<li>Allow me to remotely connect to my Windows Laptop from anywhere via Wireguard and RustDesk.</li>
+<li>Secure the network via 802.1x authentication on ports and a guest Wi-Fi network on an isolated VLAN.</li>
+<li>Generate, aggregate, and analyze suspicious activity using various tools that will be mentioned later.</li>
+</ul>
+<hr>
+<h2 style="display: center">How to Make The Plan Work...</h2>
+<p>Diagram coming soon..</p>
+<hr>
+<h3 id="stage-1">Stage 1</h3>
+<p><strong>The Aliexpress Mini PC</strong></p>
+<p>Considerations
+Q: Why use this PC and not one privided by the ISP, or even an off-the-shelf model?
+A: Definitely not using one from the ISP because after a couple years, this mini pc will pay for itself in the rental costs. Then the off-the-shelf model just seemed a little less fun then taking down my network several times a day when tinkering with the configuration.</p>
+<p>Q: Why did I decide against virtualizing OPNsense within a Proxmox instance and host the Pi-Hole DNS service on the same device?
+A: Because that adds an extra point of failure within the system. While I can always hook up my old ASUS router in a pinch, I&rsquo;m lazy and that seems like a lot of work.</p>
+<ul>
+<li>Install OPNsense</li>
+<li>Install Wireguard Plugin</li>
+</ul>
+<p>FQDN: OPNsense.localdomain
+IP: 192.168.1.1/24</p>
+<ol start="0">
+<li>Create OPNsense USB installer using Rufus</li>
+<li>Connect eth0 to my modem</li>
+<li>Boot into OPNsense USB</li>
+<li>Enter default credentials:</li>
+</ol>
+<ul>
+<li>username: installer</li>
+<li>password: opnsense</li>
+</ul>
+<ol start="4">
+<li>Continue with default keymap</li>
+<li>Install (ZFS) -&gt; ZFS GPT/UEFI Hybrid (Stripe)</li>
+<li>Select disk</li>
+<li>Accept default swap size of 8GB</li>
+<li>Confirm everything on the disk will be destroyed</li>
+<li>Install, change root password, and reboot</li>
+<li>Configure WAN &amp; LAN ports:</li>
+</ol>
+<ul>
+<li>igc0 - WAN</li>
+<li>igc1 - LAN</li>
+<li>igc2 - opt1 LAN</li>
+<li>igc3 - opt2 LAN</li>
+</ul>
+<ol start="11">
+<li>Power cycle modem to aquire WAN IP</li>
+<li>Update OPNsense firmware</li>
+<li>Search google.com, and sigh in relief</li>
+</ol>
+<p>Next to configure the LAN Bridge for igc1 and igc2
+<a href="https://docs.opnsense.org/manual/how-tos/lan_bridge.html">OPNSense Documentation</a></p>
+<h3 id="stage-2">Stage 2</h3>
+<p><strong>Framework 13 Proxmox Instance</strong></p>
+<ol>
+<li>Create Proxmox VE Installer using Rufus</li>
+<li>Boot to Proxmox VE USB</li>
+<li>Accept the EULA</li>
+<li>Select disk and confirm format (ext4)</li>
+<li>Select Country, Time zone, and Keyboard layout</li>
+<li>Create root password and enter email</li>
+<li>A few more configuration
+Select the management interface
+FQDN: pve.localdomain
+IP Address (CIDR): 192.168.1.3 /24
+** DHCP Range 192.168.1.10 - 192.168.1.245 **</li>
+<li>Click next and install</li>
+<li>Navigate to the web portal
+https://192.168.1.3:8006/
+Accept the risk of the self-signed certifictae
+Sign into the root account with the above password</li>
+<li>Accept that you don&rsquo;t have a valid subscription and decide to do something about it.</li>
+<li>Followed the following directions to get rid of that message.
+You didn&rsquo;t actually think I would pay for the license? Did you?</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>ssh root@192.168.1.3
+</span></span></code></pre></div><ul>
+<li>enter the super secret password</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>cd /usr/share/javascript/proxmox-widget-toolkit
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>cp proxmoxlib.js proxmoxlib.js.bak
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>nano proxmoxlib.js
+</span></span></code></pre></div><p>Ctrl+W
+<code>if (false)</code></p>
+<ul>
+<li>Enter</li>
+<li>That will jump to the line we&rsquo;re looking for.</li>
+<li>then replace</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">Ext</span>.<span style="color:#a6e22e">Msg</span>.<span style="color:#a6e22e">show</span>({
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">gettext</span>(<span style="color:#e6db74">&#39;No valid subscription&#39;</span>),
+</span></span></code></pre></div><p>with</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">void</span>({ <span style="color:#75715e">//Ext.Msg.show({
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">gettext</span>(<span style="color:#e6db74">&#39;No valid subscription&#39;</span>),
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>systemctl restart pveproxy.service
+</span></span></code></pre></div><p>Now for some reason following these instructions didn&rsquo;t work for me&hellip; but it seems to work for everyone else on the internet, so give it a shot.</p>
+<h3 id="stage-2-1">Stage 2</h3>
+<p><strong>Configure VLANs</strong></p>
+<ol>
+<li>TheLowSeas</li>
+<li>TheOpenSeas</li>
+<li>TheHighSeas</li>
+<li>DumbShit</li>
+</ol>
+<hr>
+<h2 id="mistakes">Mistakes</h2>
+<p>#1 Purchasing the Cisco Switch</p>
+<p>In my mind, I was blinded by, I need to learn Cisco. I didn&rsquo;t place enough value on local bandwidth.</p>
+<hr>
+<h2 id="ai">AI&hellip;</h2>
+<p>I decided to splurge and go for the paid tier of OpenAI&rsquo;s ChatGPT.</p>
+<p>TLDR - it was worth it.</p>
+<p>It wasn&rsquo;t long ago when I was an AI cynic. Now don&rsquo;t mistake my words. AI is not to be trusted absolutely, but even with the occasional hallucinations, I can live with them for two reasons.</p>
+<ul>
+<li>Review the output and verify.</li>
+<li>Nothing I am using it for is particularly high stakes.</li>
+</ul>
+<p>I remember using one of the first ChatGPT models and being very impressed yet dissapointed when using it. Impressed because something like this could run without an internet connection. The idea of compressing a large quanity of human knowledge into a nueral network was fascinating. Yet, for my use case, it dissapointed because it did not yet accomadate how I would use it.</p>
+<p>Next, there were the first models that started to reference online resources in real time. Still, it look me longer to determine where the model hallucinated than for me to do it by myself to begin with. It wasn&rsquo;t until I started using the most recent models from ChatGPT while working on this project when it became an asset.</p>
+<p>Though it is useful, all users should be aware of the current state of data confidentiality.</p>
+<p><a href="https://openai.com/index/response-to-nyt-data-demands/">https://openai.com/index/response-to-nyt-data-demands/</a></p>
+<hr>
+<h2 id="hardware-for-this-project">Hardware for this Project</h2>
+<ul>
+<li>Spectrum Provided Modem</li>
+<li>Ubiquiti U6+ Wireless Access Point</li>
+<li>Topton Intel N100 Fanless Mini PC</li>
+</ul>
+<table class="datatable">
+  <thead>
+    <tr>
+       
+      
+        <th>&nbspSpecifications&nbsp</th> 
+        
+       
+      
+        <th>&nbsp Software&nbsp</th> 
+        
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+         
+         
+       
+          
+          <tr>            
+                              
+              <td>&nbsp*&nbsp</td>  
+                              
+              <td>&nbsp *&nbsp</td>  
+             
+          </tr>
+         
+       
+          
+          <tr>            
+                              
+              <td>&nbsp*&nbsp</td>  
+                              
+              <td>&nbsp *&nbsp</td>  
+             
+          </tr>
+         
+       
+          
+          <tr>            
+                              
+              <td>&nbsp*&nbsp</td>  
+                              
+              <td>&nbsp *&nbsp</td>  
+             
+          </tr>
+         
+     
+  </tbody> 
+</table>
+
+<style>  
+  .datatable * { border: 1px solid gray; }
+</style>
+<ul>
+<li>MacBook Pro M3 Pro</li>
+</ul>
+<table class="datatable">
+  <thead>
+    <tr>
+       
+      
+        <th>&nbspSpecifications&nbsp</th> 
+        
+       
+      
+        <th>&nbsp Software&nbsp</th> 
+        
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+         
+         
+       
+          
+          <tr>            
+                              
+              <td>&nbsp*&nbsp</td>  
+                              
+              <td>&nbsp *&nbsp</td>  
+             
+          </tr>
+         
+       
+          
+          <tr>            
+                              
+              <td>&nbsp*&nbsp</td>  
+                              
+              <td>&nbsp *&nbsp</td>  
+             
+          </tr>
+         
+       
+          
+          <tr>            
+                              
+              <td>&nbsp*&nbsp</td>  
+                              
+              <td>&nbsp *&nbsp</td>  
+             
+          </tr>
+         
+     
+  </tbody> 
+</table>
+
+<style>  
+  .datatable * { border: 1px solid gray; }
+</style>
+<ul>
+<li>Framework 13 Laptop</li>
+</ul>
+<table class="datatable">
+  <thead>
+    <tr>
+       
+      
+        <th>&nbspSpecifications&nbsp</th> 
+        
+       
+      
+        <th>&nbsp Software&nbsp</th> 
+        
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+         
+         
+       
+          
+          <tr>            
+                              
+              <td>&nbsp*&nbsp</td>  
+                              
+              <td>&nbsp *&nbsp</td>  
+             
+          </tr>
+         
+       
+          
+          <tr>            
+                              
+              <td>&nbsp*&nbsp</td>  
+                              
+              <td>&nbsp *&nbsp</td>  
+             
+          </tr>
+         
+       
+          
+          <tr>            
+                              
+              <td>&nbsp*&nbsp</td>  
+                              
+              <td>&nbsp *&nbsp</td>  
+             
+          </tr>
+         
+     
+  </tbody> 
+</table>
+
+<style>  
+  .datatable * { border: 1px solid gray; }
+</style>
+<ul>
+<li>Del 2n1 Laptop</li>
+</ul>
+<table class="datatable">
+  <thead>
+    <tr>
+       
+      
+        <th>&nbspSpecifications&nbsp</th> 
+        
+       
+      
+        <th>&nbsp Software&nbsp</th> 
+        
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+         
+         
+       
+          
+          <tr>            
+                              
+              <td>&nbsp*&nbsp</td>  
+                              
+              <td>&nbsp *&nbsp</td>  
+             
+          </tr>
+         
+       
+          
+          <tr>            
+                              
+              <td>&nbsp*&nbsp</td>  
+                              
+              <td>&nbsp *&nbsp</td>  
+             
+          </tr>
+         
+       
+          
+          <tr>            
+                              
+              <td>&nbsp*&nbsp</td>  
+                              
+              <td>&nbsp *&nbsp</td>  
+             
+          </tr>
+         
+     
+  </tbody> 
+</table>
+
+<style>  
+  .datatable * { border: 1px solid gray; }
+</style>
+<ul>
+<li>Lenovo Thinkpad</li>
+</ul>
+<table class="datatable">
+  <thead>
+    <tr>
+       
+      
+        <th>&nbspSpecifications&nbsp</th> 
+        
+       
+      
+        <th>&nbsp Software&nbsp</th> 
+        
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+         
+         
+       
+          
+          <tr>            
+                              
+              <td>&nbsp*&nbsp</td>  
+                              
+              <td>&nbsp *&nbsp</td>  
+             
+          </tr>
+         
+       
+          
+          <tr>            
+                              
+              <td>&nbsp*&nbsp</td>  
+                              
+              <td>&nbsp *&nbsp</td>  
+             
+          </tr>
+         
+       
+          
+          <tr>            
+                              
+              <td>&nbsp*&nbsp</td>  
+                              
+              <td>&nbsp *&nbsp</td>  
+             
+          </tr>
+         
+     
+  </tbody> 
+</table>
+
+<style>  
+  .datatable * { border: 1px solid gray; }
+</style>
+<ul>
+<li>Raspberry Pi 3</li>
+<li>VFD Display controlled by Arduino</li>
+</ul>
+<hr>
+<p>Resources</p>
+<p><strong>Home Network Guy</strong></p>
+<p><strong>Other</strong></p>
+<ol>
+<li><a href="https://logz.io/learn/complete-guide-elk-stack/" target="_blank" rel="noopener noreferrer">
+  
+  ELK Stack 
+</a></li>
+</ol>
+<br><br><hr>
+<div id="footer">
+    <p>@2025&nbsp;&nbsp;</p>
+    
+    <p><a href="mailto:jwcarlson.tech@gmail.com">jwcarlson.tech@gmail.com</a>&nbsp;</p>
+    
+    <span id="footerLinks">
+        <p><a href="https://www.linkedin.com/in/joseph-carlson-it/" target='_blank'>LinkedIn</a>&nbsp;&nbsp;</p><p><a href="/documents/resume.pdf" target="_blank">Resume</a>&nbsp;&nbsp;</p></span>
+</div></div>
+    </body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/css/style.css">
+        <script src="/javascript/main.js"></script>
+
+        <title>Anatomy of DNS</title>
+    </head>
+    <body><div id="header">
+    <h1 class="title">
+        <a href="/">
+            <p>Joseph&nbsp;</p>
+            <p>Carlson</p>
+        </a>
+    </h1>
+    <span><a href="/"><img src="/logo.ico" alt="Logo" height="75" id="logo"></a>
+    </span>
+    <span><h3 id="headerCategories"><a href="/case-studies/">case-studies</a>&nbsp;&nbsp;</h3><h3 id="headerCategories"><a href="/projects/">projects</a>&nbsp;&nbsp;</h3><h3 id="headerCategories"><a href="/hot-takes/">hot-takes</a>&nbsp;&nbsp;</h3><h3 id="headerCategories"><a href="/technical-concepts/">technical-concepts</a>&nbsp;&nbsp;</h3></span>
+</div><hr>
+<div class="sticky">
+    <div id="breadcrumbs">
+        <h3>~</h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/">Root</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/technical-concepts/">Technical Concepts</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/technical-concepts/anatomy-of-dns/">Anatomy of DNS</a></h3></div>
+    <hr>
+</div><div id="postBanner"><br>
+    Page content loading...&nbsp;<a href="/tags/all/">#all&nbsp;</a><a href="/tags/infrastructure/">#infrastructure&nbsp;</a><p>&ldquo;It&rsquo;s Always DNS&rdquo;</p>
+<p>The Domain Name System (DNS) allows us to use the internet without memorizing a 32 or 128-bit address for every single page on the internet. Instead, we can remember the website&rsquo;s name, such as google.com, to arrive at the correct destination.</p>
+<p>Before diving into the conversation required to acquire an IP address for a website, we must first understand the destination. Every website has what&rsquo;s known as a fully qualified domain name consisting of a subdomain, domain, and top-level domain. One example is <a href="https://www.google.com">www.google.com</a>. The www indicates that we will be directed to Google&rsquo;s web server. Google is the name of the website. The com is the top-level domain name; however, for other websites, it can use one of many others, including but not limited to edu and gov.</p>
+<p>The next thing to know is DNS operates in a hierarchical structure, with a cache stored at each location. This cache stores a local record of which IP address is associated with which domain name. </p>
+<p>Okay, so you type google.com into a web browser. Your computer must establish a channel of communication with the server that hosts google.com. To do this, it requires the IP address of the server hosting google.com. Your computer achieves this through ARP and DNS queries.</p>
+<ol>
+<li>
+<p>Your computer checks its local DNS cache for the IP address of google.com.</p>
+</li>
+<li>
+<p>If there is not an entry for google.com, it sends an ARP request over the LAN using the broadcast ID of 255.255.255.255 requesting the MAC address of the local DNS server. The DNS server will reply with its MAC address and the other devices will drop the request. If there is a local entry for google.com in the local cache, it will proceed to the next step.</p>
+</li>
+<li>
+<p>Your computer will then send a DNS query for google.com to the MAC address of the local DNS server. If it has the IP for google.com cached, it will reply to your computer with that IP address. If not, it will refer to the NS record for where to move up the hierarchy to find the IP address of google.com. The local DNS server will send an ARP request out to the broadcast ID for the MAC address of the next name server to reference. If it is on the LAN, it will reply with the MAC address. If it is outside the LAN, the router will respond, saying all traffic destined for that name server outside the LAN will pass through it. The local DNS server then sends the DNS query to the router so it can be sent through the ISP&rsquo;s network to arrive on the next name server&rsquo;s LAN. At each step, an ARP request will be sent out to determine the next step.</p>
+</li>
+<li>
+<p>Lastly, the name server refers to its records and sends the reply back to your computer, caching the IP with google.com for a set period of time at each step.</p>
+</li>
+</ol>
+<p>DNS stores records to associate the domain names with a fully qualified domain name, IP address, or the next DNS server to query at each stage in the hierarchy. Several of the most common DNS records are as follows.</p>
+<ul>
+<li>
+<p>A Record: Holds the IP address of a fully qualified domain name IPv4 address.</p>
+</li>
+<li>
+<p>AAAA Record: Holds the IP addresses of a fully qualified domain name for IPv6-based addresses.</p>
+</li>
+<li>
+<p>CNAME Record: Forwards one domain or subdomain to another (google.com -&gt; <a href="https://www.google.com">www.google.com</a>).</p>
+</li>
+<li>
+<p>MX Record: Directs mail to a mail server.</p>
+</li>
+<li>
+<p>TXT Record: Set for notes and security policies from admins.</p>
+</li>
+</ul>
+<p>              - SPF (Sender Policy Framework): Specifies IP addresses authorized to send an email.</p>
+<p>              - DKIM (DomainKeys Identified Mail): Helps prevent spam by storing a public cryptographic key to authenticate where the email originated.</p>
+<p>              - DMARC (Domain-Based Message Authentication, Reporting and Conformance): Specified how strictly DMARC checks messages and the recommended action if an email fails an authentication check.</p>
+<ul>
+<li>
+<p>NS Record: Stores the next DNS record to refer to if there is no cached record for the requested website.</p>
+</li>
+<li>
+<p>SOA Record: Stores admin information about a domain.</p>
+</li>
+<li>
+<p>SRV Record: Specifies a port for specific services.</p>
+</li>
+<li>
+<p>PTR Record: Provides a domain name for reverse lookup.</p>
+</li>
+</ul>
+<br><br><hr>
+<div id="footer">
+    <p>@2025&nbsp;&nbsp;</p>
+    
+    <p><a href="mailto:jwcarlson.tech@gmail.com">jwcarlson.tech@gmail.com</a>&nbsp;</p>
+    
+    <span id="footerLinks">
+        <p><a href="https://www.linkedin.com/in/joseph-carlson-it/" target='_blank'>LinkedIn</a>&nbsp;&nbsp;</p><p><a href="/documents/resume.pdf" target="_blank">Resume</a>&nbsp;&nbsp;</p></span>
+</div></div>
+    </body>
+</html>
+

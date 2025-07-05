@@ -2,66 +2,64 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/hot-takes/</loc>
-    <lastmod>2025-01-18T20:58:33-06:00</lastmod>
+    <loc>http://localhost:1313/tags/all/</loc>
+    <lastmod>2025-07-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-01-18T20:58:33-06:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/hot-takes/self-education/</loc>
-    <lastmod>2025-01-18T20:58:33-06:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/technical-concepts/</loc>
-    <lastmod>2025-01-11T18:07:49-06:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/technical-concepts/the-osi-model/</loc>
-    <lastmod>2025-01-11T18:07:49-06:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/hot-takes/lorem-ipsum/</loc>
-    <lastmod>2025-01-11T17:31:02-06:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-01-11T17:31:02-06:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/test/</loc>
-    <lastmod>2025-01-11T17:31:02-06:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/technical-concepts/fundamental-concepts-of-networking/</loc>
-    <lastmod>2025-01-11T16:46:30-06:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/networking/</loc>
-    <lastmod>2025-01-11T16:46:30-06:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/projects/http-server/</loc>
-    <lastmod>2025-01-11T16:07:28-06:00</lastmod>
+    <lastmod>2025-07-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/projects/</loc>
-    <lastmod>2025-01-11T16:07:28-06:00</lastmod>
+    <lastmod>2025-07-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/software/</loc>
-    <lastmod>2025-01-11T16:07:28-06:00</lastmod>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-07-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/case-studies/</loc>
-    <lastmod>2025-01-08T18:21:47-06:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/security/</loc>
-    <lastmod>2025-01-08T18:21:47-06:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/case-studies/xz-utils/</loc>
-    <lastmod>2025-01-08T18:21:47-06:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/projects/portfolio-website/</loc>
-    <lastmod>2025-01-08T17:32:22-06:00</lastmod>
+    <loc>http://localhost:1313/projects/this-website/</loc>
+    <lastmod>2025-07-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/webdev/</loc>
-    <lastmod>2025-01-08T17:32:22-06:00</lastmod>
+    <lastmod>2025-07-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ics/</loc>
-    <lastmod>2025-01-08T17:30:47-06:00</lastmod>
+    <loc>http://localhost:1313/hot-takes/a-word-on-higher-education/</loc>
   </url><url>
-    <loc>http://localhost:1313/case-studies/stuxnet/</loc>
-    <lastmod>2025-01-08T17:30:47-06:00</lastmod>
+    <loc>http://localhost:1313/tags/ai/</loc>
+  </url><url>
+    <loc>http://localhost:1313/technical-concepts/anatomy-of-dns/</loc>
+  </url><url>
+    <loc>http://localhost:1313/case-studies/</loc>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/hot-takes/cognitive-offloading/</loc>
+  </url><url>
+    <loc>http://localhost:1313/technical-concepts/fundamental-concepts-of-networking/</loc>
+  </url><url>
+    <loc>http://localhost:1313/projects/home-lab/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/homelab/</loc>
+  </url><url>
+    <loc>http://localhost:1313/hot-takes/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/infrastructure/</loc>
+  </url><url>
+    <loc>http://localhost:1313/projects/local-llms/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/networking/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/policy/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/security/</loc>
+  </url><url>
+    <loc>http://localhost:1313/hot-takes/silicon-valley-of-the-east/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/societal-change/</loc>
+  </url><url>
+    <loc>http://localhost:1313/technical-concepts/tcp-ip-model/</loc>
+  </url><url>
+    <loc>http://localhost:1313/technical-concepts/</loc>
+  </url><url>
+    <loc>http://localhost:1313/technical-concepts/the-osi-model/</loc>
+  </url><url>
+    <loc>http://localhost:1313/case-studies/xz-utils/</loc>
   </url>
 </urlset>

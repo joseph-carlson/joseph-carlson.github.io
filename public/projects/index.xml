@@ -6,21 +6,28 @@
     <description>Recent content in Projects on Joseph Carlson</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 Jan 2025 16:07:28 -0600</lastBuildDate>
+    <lastBuildDate>Thu, 03 Jul 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>HTTP Server</title>
-      <link>http://localhost:1313/projects/http-server/</link>
-      <pubDate>Sat, 11 Jan 2025 16:07:28 -0600</pubDate>
-      <guid>http://localhost:1313/projects/http-server/</guid>
-      <description>&lt;h2 id=&#34;http-server&#34;&gt;HTTP Server&lt;/h2&gt;&#xA;&lt;p&gt;How I did it&amp;hellip;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Resources:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Source1&lt;/li&gt;&#xA;&lt;li&gt;Source2&lt;/li&gt;&#xA;&lt;li&gt;Source3&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+      <title>This Website</title>
+      <link>http://localhost:1313/projects/this-website/</link>
+      <pubDate>Thu, 03 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/this-website/</guid>
+      <description>&lt;h2 id=&#34;portfolio-website&#34;&gt;Portfolio Website&lt;/h2&gt;&#xA;&lt;p&gt;This site will serve as a repository for case studies on historical events, project documentation, technical concept breakdowns and some &amp;ldquo;hot takes&amp;rdquo; I have related to the world of technology and consumer adocacy within the space.&lt;/p&gt;&#xA;&lt;p&gt;The act of publishing my projects, research, and thoughts in these articles not only makes my ideas and values accessible to curious eyes and ears, but also affords me the opportunity to explore what happened, what is happening, and what is possible.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Portfolio Website</title>
-      <link>http://localhost:1313/projects/portfolio-website/</link>
-      <pubDate>Wed, 08 Jan 2025 17:32:22 -0600</pubDate>
-      <guid>http://localhost:1313/projects/portfolio-website/</guid>
-      <description>&lt;h2 id=&#34;portfolio-website&#34;&gt;Portfolio Website&lt;/h2&gt;&#xA;&lt;h3 id=&#34;why-i-chose-hugo&#34;&gt;Why I Chose Hugo&lt;/h3&gt;&#xA;&lt;h3 id=&#34;getting-started&#34;&gt;Getting Started&lt;/h3&gt;&#xA;&lt;h3 id=&#34;implementation&#34;&gt;Implementation&lt;/h3&gt;&#xA;&lt;h3 id=&#34;go-read-the-source-code&#34;&gt;Go Read the Source Code!&lt;/h3&gt;&#xA;&lt;p&gt;One byproduct of hosting this website on github pages is you can read the source code.&lt;/p&gt;</description>
+      <title>Home Lab</title>
+      <link>http://localhost:1313/projects/home-lab/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/home-lab/</guid>
+      <description>&lt;h2 id=&#34;the-plan&#34;&gt;The Plan&lt;/h2&gt;&#xA;&lt;p&gt;Make things. Break things. Fix things. Then find a new way to break them.&lt;/p&gt;&#xA;&lt;p&gt;Along the way, there are a points I would like to hit on my implementation.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Increase my home network security beyond the stock configuration from my ISP via OPNSense.&lt;/li&gt;&#xA;&lt;li&gt;Implement network-wide ad-blocking via PiHole.&lt;/li&gt;&#xA;&lt;li&gt;Allow me to remotely connect to my Windows Laptop from anywhere via Wireguard and RustDesk.&lt;/li&gt;&#xA;&lt;li&gt;Secure the network via 802.1x authentication on ports and a guest Wi-Fi network on an isolated VLAN.&lt;/li&gt;&#xA;&lt;li&gt;Generate, aggregate, and analyze suspicious activity using various tools that will be mentioned later.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 style=&#34;display: center&#34;&gt;How to Make The Plan Work...&lt;/h2&gt;&#xA;&lt;p&gt;Diagram coming soon..&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Local LLMs</title>
+      <link>http://localhost:1313/projects/local-llms/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/local-llms/</guid>
+      <description>&lt;p&gt;Now you can use ChatGPT, or Claude, or Gemeni, or Apple Intelligence. Just kidding, definitely not Apple Intelligence. For general queries, there&amp;rsquo;s absolutely nothing wrong with that, but in the back of your mind, you have to wonder where all your chat logs go. Deleted into the abysse of unknown history, fragments of a memory as they make their own impact of the next AI model, or stored just in case for a rainy day.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

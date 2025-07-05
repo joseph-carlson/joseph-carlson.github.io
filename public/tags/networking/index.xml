@@ -6,21 +6,27 @@
     <description>Recent content in Networking on Joseph Carlson</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 Jan 2025 16:46:30 -0600</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/networking/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fundamental Concepts of Networking</title>
       <link>http://localhost:1313/technical-concepts/fundamental-concepts-of-networking/</link>
-      <pubDate>Sat, 11 Jan 2025 16:46:30 -0600</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/technical-concepts/fundamental-concepts-of-networking/</guid>
       <description>&lt;h2 id=&#34;fundamental-concepts-of-networking&#34;&gt;Fundamental Concepts of Networking&lt;/h2&gt;&#xA;&lt;p&gt;Just as interpersonal networking lays the bedrock for transactions and relationships in society, computer networking has enabled the world of technology to do what it does best: facilitate the free flow of information to anyone with the hunger to learn. The golden standard of five-nines of availability is 99.999% uptime, which equates to roughly five minutes a year—five minutes to run updates, perform upgrades, and recover from disasters. While redundancy and strategic planning are crucial in making this possible, it is a high bar, nonetheless.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Stuxnet</title>
-      <link>http://localhost:1313/case-studies/stuxnet/</link>
-      <pubDate>Wed, 08 Jan 2025 17:30:47 -0600</pubDate>
-      <guid>http://localhost:1313/case-studies/stuxnet/</guid>
-      <description>&lt;h2 id=&#34;stuxnet---a-wake-up-call-for-ics-security&#34;&gt;Stuxnet - a wake up call for ICS Security&lt;/h2&gt;&#xA;&lt;p&gt;the story begins with&amp;hellip;&lt;/p&gt;</description>
+      <title>TCP IP Model</title>
+      <link>http://localhost:1313/technical-concepts/tcp-ip-model/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/technical-concepts/tcp-ip-model/</guid>
+      <description>&lt;h2 id=&#34;a-little-context&#34;&gt;A Little Context&lt;/h2&gt;&#xA;&lt;p&gt;The origins of computer networking can be traced back to ARPANET (The U.S. Advanced Research Projects Agency Network) in 1969. ARPANET was the first wide-area packet-switched network relying on TCP/IP, enabling communication between universities across the country.&lt;/p&gt;&#xA;&lt;p&gt;As mentioned in the last article, the TCP/IP model is a more targeted approach for modeling modern networks, as nearly every network in use these days rely on TCP and UDP traffic. While this is extremely useful, the OSI model is still used to break down networking infrastructure with more granularity while allowing for more flexibility in implementing these networks.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The OSI Model</title>
+      <link>http://localhost:1313/technical-concepts/the-osi-model/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/technical-concepts/the-osi-model/</guid>
+      <description>&lt;p&gt;Networks are complex. Modems, routers, switches, hubs, wireless access points, repeaters, media converters, twisted pair, fiber, coax, bits, frames, packets, segments, TCP, UDP, and so much more. Organizing the concepts and technologies in a way that makes it comprehensible to those that did not engineer the systems was an extremely high priority for the pioneers of computing. That is where the OSI model comes in.&lt;/p&gt;&#xA;&lt;p&gt;The OSI, or Open Systems Interconnection Model, divides networks into seven layers. Each layer has its own devices, protocols, terms, and role in enabling the flow of data. While the OSI model provides a general framework for how to conceptualize and troubleshoot all networks, the TCP/IP model more cleanly applies to most networks in use today.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
