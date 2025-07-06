@@ -5,9 +5,9 @@ title: 'Local LLMs'
 tags: ['all', 'AI']
 ---
 
-Now you can use ChatGPT, or Claude, or Gemeni, or Apple Intelligence. Just kidding, definitely not Apple Intelligence. For general queries, there's absolutely nothing wrong with that, but in the back of your mind, you have to wonder where all your chat logs go. Deleted into the abysse of unknown history, fragments of a memory as they make their own impact of the next AI model, or stored just in case for a rainy day.
+Now you can use ChatGPT, or Claude, or Gemeni, or Apple Intelligence. Just kidding, definitely not Apple Intelligence. For general queries, there's absolutely nothing wrong with that, but in the back of your mind, you have to wonder where all your chat logs go. Deleted into the abyss of unknown history, fragments of a memory as they make their own impact of the next AI model, or stored just in case for a rainy day.
 
-How I'm not naive, privacy simply does not exist in the mordern world except for very few exceptions where people took exceptional efforts of cover their tracks. If they can't track your IP because the YouTube Nord VPN ads buried themselves into your subconscious, there are numerous known ad unknown mechanisms that can be employed to rebuild your digital footprint.
+How I'm not naive, privacy simply does not exist in the modern world except for very few exceptions where people took exceptional efforts of cover their tracks. If they can't track your IP because the YouTube NordVPN ads buried themselves into your subconscious, there are numerous known ad unknown mechanisms that can be employed to rebuild your digital footprint.
 
 The good news is that they can't track what is run locally on your device (in most cases). The better news, some really smart people made our lives easy developing user friendly tools and platforms to run AI models locally on your device. Because of this, hardware is critical for smooth operation, and even high end software is not capable of running most of the large models Big Tech are employing. 
 

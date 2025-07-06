@@ -29,7 +29,7 @@ Diagram coming soon..
 **The Aliexpress Mini PC**
 
 Considerations
-Q: Why use this PC and not device privided by my ISP, or even an off-the-shelf model?
+Q: Why use this PC and not device provided by my ISP, or even an off-the-shelf model?
 A: Definitely not using device from my ISP because after a couple years, this mini pc will pay for itself in the rental costs. Then the off-the-shelf model just seemed a little less fun then taking down my network several times a day when tinkering with the configuration.
 
 Q: Why did I decide against virtualizing OPNsense within a Proxmox instance and host the Pi-Hole DNS service on the same device? 
@@ -59,7 +59,7 @@ IP: 192.168.1.1/24
   - igc1 - LAN
   - igc2 - opt1 LAN
   - igc3 - opt2 LAN
-11. Power cycle modem to aquire WAN IP
+11. Power cycle modem to acquire WAN IP
 12. Update OPNsense firmware
 13. Search google.com, and sigh in relief
 
@@ -83,7 +83,7 @@ Next to configure the LAN Bridge for igc1 and igc2
     <br>
     #4 WAP Interface
     <br>
-    #5 Member Inferface Tunable
+    #5 Member Interface Tunable
     <br>
     #6 Bridge Interface Tunable
     
@@ -107,7 +107,7 @@ IP Address (CIDR): 192.168.1.3 /24
 8. Click next and install
 9. Navigate to the web portal
 https://192.168.1.3:8006/
-Accept the risk of the self-signed certifictae
+Accept the risk of the self-signed certificate
 Sign into the root account with the above password
 10. Accept that you don't have a valid subscription and decide to do something about it.
 11. Followed the following directions to get rid of that message.
@@ -176,7 +176,7 @@ It wasn't long ago when I was an AI cynic. Now don't mistake my words. AI is not
 - Review the output and verify.
 - Nothing I am using it for is particularly high stakes.
 
-I remember using one of the first ChatGPT models and being very impressed yet dissapointed when using it. Impressed because something like this could run without an internet connection. The idea of compressing a large quanity of human knowledge into a nueral network was fascinating. Yet, for my use case, it dissapointed because it did not yet accomadate how I would use it.
+I remember using one of the first ChatGPT models and being very impressed yet disappointed when using it. Impressed because something like this could run without an internet connection. The idea of compressing a large quantity of human knowledge into a neural network was fascinating. Yet, for my use case, it disappointed because it did not yet accommodate how I would use it.
 
 Next, there were the first models that started to reference online resources in real time. Still, it look me longer to determine where the model hallucinated than for me to do it by myself to begin with. It wasn't until I started using the most recent models from ChatGPT while working on this project when it became an asset.
 
@@ -189,7 +189,6 @@ https://openai.com/index/response-to-nyt-data-demands/
 ## Hardware for this Project
 
 - Spectrum Provided Modem
-- Ubiquiti U6+ Wireless Access Point
 - Topton Intel N100 Fanless Mini PC
 
 {{< datatable headers="Specifications, Software" >}}
@@ -223,7 +222,7 @@ https://openai.com/index/response-to-nyt-data-demands/
 *, *
 {{< /datatable >}}
 
-- Lenovo Thinkpad 
+- Lenovo ThinkPad 
 
 {{< datatable headers="Specifications, Software" >}}
 *, *
