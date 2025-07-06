@@ -6,7 +6,6 @@
 
         {{- $css := resources.Get "css/style.css" -}}
         <link rel="stylesheet" href="{{- $css.RelPermalink -}}">
-        <script src="/javascript/main.js"></script>
 
         <title> {{- .Title -}} </title>
     </head>
@@ -14,7 +13,7 @@
         {{- partial "header.html" . -}}
         <hr>
 
-        <div id="pull-in">
+        <div id="narrowOnDesktop">
             {{- partial "banner.html" . -}}
             
             <div id="postBanner">

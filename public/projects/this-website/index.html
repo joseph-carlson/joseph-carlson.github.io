@@ -3,7 +3,6 @@
     <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/css/style.css">
-        <script src="/javascript/main.js"></script>
 
         <title>This Website</title>
     </head>
@@ -19,7 +18,7 @@
     <span><h3 id="headerCategories"><a href="/case-studies/">case-studies</a>&nbsp;&nbsp;</h3><h3 id="headerCategories"><a href="/projects/">projects</a>&nbsp;&nbsp;</h3><h3 id="headerCategories"><a href="/hot-takes/">hot-takes</a>&nbsp;&nbsp;</h3><h3 id="headerCategories"><a href="/technical-concepts/">technical-concepts</a>&nbsp;&nbsp;</h3></span>
 </div><hr>
 
-        <div id="pull-in"><div class="sticky">
+        <div id="narrowOnDesktop"><div class="sticky">
     <div id="breadcrumbs">
         <h3>~</h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/">Root</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/projects/">Projects</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/projects/this-website/">This Website</a></h3></div>
     <hr>
@@ -63,8 +62,7 @@
 <hr>
 <h3 id="test-open-link-in-new-tab">Test Open Link in New Tab</h3>
 <p><a href="https://google.com" target="_blank" rel="noopener noreferrer">
-  
-  Google 
+  Google
 </a>
 <br></p>
 <hr>
@@ -72,53 +70,24 @@
 <p><table class="datatable">
   <thead>
     <tr>
-       
-      
         <th>&nbspHeader #1&nbsp</th> 
         
-       
-      
         <th>&nbsp Header #2&nbsp</th> 
-        
-      
-    </tr>
+        </tr>
   </thead>
   <tbody>
-    
-    
-         
-         
-       
-          
           <tr>            
-                              
               <td>&nbspdata 1a&nbsp</td>  
-                              
               <td>&nbsp data 1b&nbsp</td>  
-             
           </tr>
-         
-       
-          
           <tr>            
-                              
               <td>&nbspdata 2a&nbsp</td>  
-                              
               <td>&nbsp data 2b&nbsp</td>  
-             
           </tr>
-         
-       
-          
           <tr>            
-                              
               <td>&nbspdata 3a&nbsp</td>  
-                              
               <td>&nbsp data 3b&nbsp</td>  
-             
           </tr>
-         
-     
   </tbody> 
 </table>
 
@@ -128,11 +97,9 @@
 <br></p>
 <hr>
 <h3 id="test-dynamically-resizing-single-photo">Test Dynamically Resizing Single Photo</h3>
-<p><div class="standard-padding" style="text-align: center; max-width: 100%; height: auto;"> 
+<p><div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
   
-   
     <h3 class="caption">Coffee:</h3> 
-   
   <div style="max-width: 1000px;">
     <img
       src="/projects/this-website/coffee.jpg" 
@@ -143,32 +110,30 @@
     </div>
 </div>
 <div style="text-align: center; padding-top: 1em;">
-    
     Photo by <a href="https://unsplash.com/@nate_dumlao?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Nathan Dumlao</a> on <a href="https://unsplash.com/photos/focus-photography-of-coffee-artwork-r-KfktlyBL0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-
 </div>
 <br></p>
 <hr>
 <h3 id="test-photo-carousel">Test Photo Carousel</h3>
 
 
-<div class="carousel standard-padding"> 
+<div class="carousel standardPadding"> 
 
   <div class="carousel-inner"> 
       <img
         src="/projects/this-website/luca-bravo-O453M2Liufs-unsplash.jpg" 
-        class="carousel-item active" 
-        alt="Slide 1"/> 
+        class="carousel-itemactive" 
+        alt="Slide1"/> 
         
       <img
         src="/projects/this-website/nils-nedel-ONpGBpns3cs-unsplash.jpg" 
-        class="carousel-item " 
-        alt="Slide 2"/> 
+        class="carousel-item" 
+        alt="Slide2"/> 
         
       <img
         src="/projects/this-website/stefan-stefancik-0wMmxNB6Xzc-unsplash.jpg" 
-        class="carousel-item " 
-        alt="Slide 3"/> 
+        class="carousel-item" 
+        alt="Slide3"/> 
         
   </div>
 
@@ -229,45 +194,41 @@
 
 <script>
 
-(function(){  
-              
-  const carousel = document.currentScript.parentNode;         
-  const items = carousel.querySelectorAll('.carousel-item');  
-  const label = carousel.querySelector('.carousel-label');    
-  let index = 0;  
+  (function(){  
+                
+    const carousel = document.currentScript.parentNode;         
+    const items = carousel.querySelectorAll('.carousel-item');  
+    const label = carousel.querySelector('.carousel-label');    
+    let index = 0;  
 
-  function show(i) {
-    index = (i + items.length) % items.length;            
-    items.forEach(el => el.classList.remove('active'));   
-    items[index].classList.add('active');                 
-    label.textContent = `${index+1}/${items.length}`;     
-  }
+    function show(i) {
+      index = (i + items.length) % items.length;            
+      items.forEach(el => el.classList.remove('active'));   
+      items[index].classList.add('active');                 
+      label.textContent = `${index+1}/${items.length}`;     
+    }
 
-  carousel.querySelector('.carousel-prev')  
-    .addEventListener('click', () => show(index - 1));  
-  carousel.querySelector('.carousel-next')
-    .addEventListener('click', () => show(index + 1)); 
+    carousel.querySelector('.carousel-prev')  
+      .addEventListener('click', () => show(index - 1));  
+    carousel.querySelector('.carousel-next')
+      .addEventListener('click', () => show(index + 1)); 
 
-  show(0); 
+    show(0); 
 
-})(); 
+  })(); 
 
 </script>
 <p><div style="text-align: center; padding-top: 1em;">
-    
     #1 Photo by <a href="https://unsplash.com/@lucabravo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank">Luca Bravo</a> on <a href="https://unsplash.com/photos/brown-wooden-boat-moving-towards-the-mountain-O453M2Liufs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank">Unsplash</a>
     <br>
     #2 Photo by <a href="https://unsplash.com/@nilsnedel?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank">Nils Nedel</a> on <a href="https://unsplash.com/photos/airplane-on-sky-during-golden-hour-ONpGBpns3cs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank">Unsplash</a>
     <br>
     #3 Photo by <a href="https://unsplash.com/@cikstefan?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank">Štefan Štefančík</a> on <a href="https://unsplash.com/photos/man-standing-on-cliff-near-falls-0wMmxNB6Xzc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank">Unsplash</a>
-
 </div>
 <br></p>
 <hr>
 <h3 id="test-code-block">Test Code Block</h3>
 <div style="padding: 0% 2%;"> 
-  
-   
   
   <div class="code-block"
     style="border:1px solid grey; 
@@ -289,7 +250,6 @@
                       border-radius: 0.25rem;
                       font-weight: bold;"
                       >C&#43;&#43;
-                      
       </span>
       <button onclick="(function(btn){
                 const code = btn.closest('.code-block').querySelector('pre code');
@@ -308,8 +268,7 @@
     <div class="code-body"
           style="overflow-x: auto; 
                   padding: 0rem 0.5rem; 
-                  background-color: rgb(0, 50, 50);">
-          <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C++" data-lang="C++"><span style="display:flex;"><span>
+                  background-color: rgb(0, 50, 50);"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C++" data-lang="C++"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// This is to hit the right edge for the horizontal scroll bar to appear because it is invisible before then.
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
@@ -341,8 +300,7 @@
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div> 
-          
+</span></span></code></pre></div>
     </div> 
 
   </div> 
@@ -364,7 +322,7 @@
 </ul>
 <hr>
 <h3 id="resources">Resources:</h3>
-<div class="standard-padding">
+<div class="standardPadding">
   
       <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
         <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/0RKpf3rK57I?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>

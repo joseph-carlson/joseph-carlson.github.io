@@ -73,12 +73,12 @@ th {
     display: inline;
 }
 
-#pull-in {
+#narrowOnDesktop {
     max-width: 1000px;
     margin: 0 auto;
 }
 
-.standard-padding { /* standard padding for images, gallery, and YouTube iframes */
+.standardPadding { /* standard padding for images, gallery, and YouTube iframes */
     padding: 2% 5%;
 }
 
@@ -111,7 +111,10 @@ th {
         display: flex;
         justify-content: center;
     }
-    #pull-in {
+    #narrowOnDesktop {
         max-width: 100vw;
+    }
+    .removeOnMobile {
+        display: none;
     }
 }

@@ -1,6 +1,6 @@
 <div style="padding: 0% 2%;"> <!-- applies padding to buffer code from edge of page -->
   
-  {{ $lang := .Get "lang" | default "text" }} <!-- pulls the lang parameter and defaults to text if not present -->
+  {{- $lang := .Get "lang" | default "text" -}} <!-- pulls the lang parameter and defaults to text if not present -->
   
   <div class="code-block"
     style="border:1px solid grey; 
@@ -21,7 +21,7 @@
                       padding: 0.25rem 0.5rem;
                       border-radius: 0.25rem;
                       font-weight: bold;"
-                      >{{ $lang | upper }}
+                      >{{- $lang | upper -}}
                       <!-- adds and applies style to the language label in top left -->
       </span>
       <button onclick="(function(btn){
@@ -42,7 +42,7 @@
           style="overflow-x: auto; 
                   padding: 0rem 0.5rem; 
                   background-color: rgb(0, 50, 50);">
-          {{ highlight .Inner $lang }} 
+          {{- highlight .Inner $lang -}} 
           <!-- adds text between opening and closing shortcode tags with lang utilizing native shortcode for syntax highlighting -->
     </div> <!-- closes code-body div-->
 

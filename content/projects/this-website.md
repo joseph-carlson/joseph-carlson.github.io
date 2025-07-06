@@ -168,7 +168,7 @@ If you're looking to spin up a website like this, perfection is the enemy of pro
 
 ### Resources:
 
-<div class="standard-padding">
+<div class="standardPadding">
   {{< youtube 0RKpf3rK57I >}}
 </div>
 

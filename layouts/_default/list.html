@@ -40,7 +40,7 @@
         <table>
             <th>Title&nbsp;&nbsp;</th>
             <th>Date&nbsp;&nbsp;</th>
-            <th>Tags&nbsp;&nbsp;</th>
+            <th class="removeOnMobile">Tags&nbsp;&nbsp;</th>
         {{- range .Pages.ByDate.Reverse -}}
             <tr>
             <td>
@@ -49,11 +49,11 @@
             <td>
                 {{- .Date | time.Format ":date_medium" -}}&nbsp;&nbsp;
             </td>
-            <td>
+            <td class="removeOnMobile">
                 {{- with .GetTerms "tags" -}}
                     {{- range . -}}
-                        {{- if ne (lower .LinkTitle) "all" -}}
-                            <a href="{{- .RelPermalink -}}">#{{- lower .LinkTitle -}}</a>&nbsp;&nbsp;
+                        {{- if (ne (lower .LinkTitle) "all") -}}
+                            <a href="{{- .RelPermalink -}}" style="display: inline">#{{- lower .LinkTitle -}}</a>&nbsp;&nbsp;
                         {{- end -}}
                     {{- end -}}
                 {{- else -}}
@@ -63,7 +63,7 @@
             </tr>
         {{- end -}}
         </table>
-    {{ else }} <!-- Root Taxonomy Page -->
+    {{- else -}} <!-- Root Taxonomy Page -->
         <br>
         <table>
             <th>Title</th>

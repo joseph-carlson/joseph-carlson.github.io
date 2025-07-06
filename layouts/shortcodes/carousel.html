@@ -1,13 +1,13 @@
 {{- $images := .Params -}}  <!-- assign the passed in parameters to a variable -->
 
-<div class="carousel standard-padding"> <!-- wrapper class to apply style -->
+<div class="carousel standardPadding"> <!-- wrapper class to apply style -->
 
   <div class="carousel-inner"> <!-- wrapper class for image array -->
     {{- range $i, $img := $images -}} <!-- iterate through all passed in images -->
       <img
-        src="{{ $img }}" 
-        class="carousel-item {{ if eq $i 0 }}active{{ end }}" 
-        alt="Slide {{ add $i 1 }}"/> 
+        src="{{- $img -}}" 
+        class="carousel-item {{- if eq $i 0 -}}active{{- end -}}" 
+        alt="Slide {{- add $i 1 -}}"/> 
         <!-- add image html element 
               src pulls the path of the image with root in static folder 
               every photo is in carousel-item class 
@@ -36,7 +36,7 @@
 
   .carousel-item {
     display: none;        /* hides all but the selected image */
-    max-width: 100%;      /* the image can occupy no more than 100% of the parent container #pull-in */
+    max-width: 100%;      /* the image can occupy no more than 100% of the parent container #narrowOnDesktop */
     max-height: 70vh;     /* the image can occupy no more than 70% of the viewport height */
     width: auto;          /* retains aspect ratio before the max-width has been reached */
     height: auto;         /* retains aspect ratio before the max-height has been reached */
@@ -73,27 +73,27 @@
 
 <script>
 
-(function(){  // starts an IIFE (immediately invoked function expression)
-              // prevented from leaking into global scope
-  const carousel = document.currentScript.parentNode;         // reference to root carousel container
-  const items = carousel.querySelectorAll('.carousel-item');  // using the above const to grab container for images
-  const label = carousel.querySelector('.carousel-label');    // using the above const to grab container for navigation
-  let index = 0;  // sets the default image to the first
+  (function(){  // starts an IIFE (immediately invoked function expression)
+                // prevented from leaking into global scope
+    const carousel = document.currentScript.parentNode;         // reference to root carousel container
+    const items = carousel.querySelectorAll('.carousel-item');  // using the above const to grab container for images
+    const label = carousel.querySelector('.carousel-label');    // using the above const to grab container for navigation
+    let index = 0;  // sets the default image to the first
 
-  function show(i) {
-    index = (i + items.length) % items.length;            // changes index and enables wrap around navigation
-    items.forEach(el => el.classList.remove('active'));   // loops through active image to mark all as inactive
-    items[index].classList.add('active');                 // marks previously calculated index as active
-    label.textContent = `${index+1}/${items.length}`;     // updates the image index label
-  }
+    function show(i) {
+      index = (i + items.length) % items.length;            // changes index and enables wrap around navigation
+      items.forEach(el => el.classList.remove('active'));   // loops through active image to mark all as inactive
+      items[index].classList.add('active');                 // marks previously calculated index as active
+      label.textContent = `${index+1}/${items.length}`;     // updates the image index label
+    }
 
-  carousel.querySelector('.carousel-prev')  
-    .addEventListener('click', () => show(index - 1));  // adds event listener to change image index on click
-  carousel.querySelector('.carousel-next')
-    .addEventListener('click', () => show(index + 1)); // adds event listener to change image index on click
+    carousel.querySelector('.carousel-prev')  
+      .addEventListener('click', () => show(index - 1));  // adds event listener to change image index on click
+    carousel.querySelector('.carousel-next')
+      .addEventListener('click', () => show(index + 1)); // adds event listener to change image index on click
 
-  show(0); // makes the first image visible on first load
+    show(0); // makes the first image visible on first load
 
-})(); // closing IIFE
+  })(); // closing IIFE
 
 </script>

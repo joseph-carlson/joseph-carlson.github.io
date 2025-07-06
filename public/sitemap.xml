@@ -20,6 +20,12 @@
     <loc>http://localhost:1313/tags/webdev/</loc>
     <lastmod>2025-07-05T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/technical-concepts/</loc>
+    <lastmod>2025-07-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/hot-takes/</loc>
+    <lastmod>2025-06-28T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/hot-takes/a-word-on-higher-education/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/ai/</loc>
@@ -38,8 +44,6 @@
   </url><url>
     <loc>http://localhost:1313/tags/homelab/</loc>
   </url><url>
-    <loc>http://localhost:1313/hot-takes/</loc>
-  </url><url>
     <loc>http://localhost:1313/tags/infrastructure/</loc>
   </url><url>
     <loc>http://localhost:1313/projects/local-llms/</loc>
@@ -55,8 +59,6 @@
     <loc>http://localhost:1313/tags/societal-change/</loc>
   </url><url>
     <loc>http://localhost:1313/technical-concepts/tcp-ip-model/</loc>
-  </url><url>
-    <loc>http://localhost:1313/technical-concepts/</loc>
   </url><url>
     <loc>http://localhost:1313/technical-concepts/the-osi-model/</loc>
   </url><url>
