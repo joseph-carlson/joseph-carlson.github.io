@@ -78,7 +78,7 @@ th {
     margin: 0 auto;
 }
 
-.standard-padding {
+.standard-padding { /* standard padding for images, gallery, and YouTube iframes */
     padding: 2% 5%;
 }
 
@@ -113,6 +113,5 @@ th {
     }
     #pull-in {
         max-width: 100vw;
-        overflow: hidden;
     }
 }

@@ -54,10 +54,11 @@ git push
 In a few minutes, everything will be updated on my GitHub pages website.
 
 ---
+## A Note on AI
 
-Q: Did I use AI in the development of this site?
+Did I use AI in the development of this site? For sure, but I have reviewed and know what every single line of code does. It was especially useful when developing the shortcodes shown below.
 
-A: For sure, but I have reviewed and know what every single line of code does.
+Though when it comes to the articles, I write those. I'll sometimes do preliminary research with LLMs to provide a starting point, but after that, it's that dusty 'ol thing between my ears. As of now, the ability to write, no matter how good or bad I may be right now, is not a skill I am willing to offload to AI. 
 
 ---
 ## Custom Shortcodes
