@@ -8,7 +8,7 @@ tags: ['all', 'webdev']
 
 This site will serve as a repository for case studies on historical events, project documentation, technical concept breakdowns, and some "hot takes" I have related to the world of technology and consumer advocacy within the space.
 
-The act of publishing my projects, research, and thoughts in these articles not only makes my ideas and values accessible to curious eyes and ears, but also affords me the opportunity to explore what happened, what is happening, and what is possible.
+The act of publishing my projects, research, and thoughts in these articles not only makes my ideas accessible to curious eyes and ears, but also affords me the opportunity to explore what happened, what is happening, and what is possible.
 
 ---
 
@@ -97,7 +97,7 @@ data 3a, data 3b
 ---
 ### Test Photo Carousel
 
-{{< carousel
+{{< imgs
     "/projects/this-website/luca-bravo-O453M2Liufs-unsplash.jpg"
     "/projects/this-website/nils-nedel-ONpGBpns3cs-unsplash.jpg"
     "/projects/this-website/stefan-stefancik-0wMmxNB6Xzc-unsplash.jpg"

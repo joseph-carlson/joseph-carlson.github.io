@@ -79,7 +79,7 @@ th {
 }
 
 .standardPadding { /* standard padding for images, gallery, and YouTube iframes */
-    padding: 2% 5%;
+    padding: 1% 1%;
 }
 
 @media screen and (max-width: 875px) {

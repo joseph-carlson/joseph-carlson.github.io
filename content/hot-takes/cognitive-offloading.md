@@ -20,3 +20,7 @@ Attention Span
 ## So what can be done?
 
 Only time will tell if Idiocracy was a warning of what could be or a documentary ahead of it's time.
+
+{{< newtablink url="https://arxiv.org/abs/2506.08872" text="resource" >}}
+
+{{< youtube qz_ZYa3oRSE >}}

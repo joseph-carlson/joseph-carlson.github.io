@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reverse-Engineering on Joseph Carlson</title>
+    <link>http://localhost:1313/tags/reverse-engineering/</link>
+    <description>Recent content in Reverse-Engineering on Joseph Carlson</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/tags/reverse-engineering/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ghidra</title>
+      <link>http://localhost:1313/projects/ghidra/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/ghidra/</guid>
+      <description>&lt;h3 id=&#34;what-is-ghidra&#34;&gt;What is Ghidra?&lt;/h3&gt;&#xA;&lt;h3 id=&#34;what-can-we-do&#34;&gt;What Can We Do?&lt;/h3&gt;&#xA;&lt;p&gt;Malware Analysis&lt;/p&gt;&#xA;&lt;p&gt;Reverse Engineering Firmware&lt;/p&gt;&#xA;&lt;p&gt;Software Security Research&lt;/p&gt;&#xA;&lt;p&gt;** Learning and Education&lt;/p&gt;&#xA;&lt;h3 id=&#34;lets-do-it&#34;&gt;Let&amp;rsquo;s Do It&lt;/h3&gt;&#xA;&lt;p&gt;Lets analyze Wannacry&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;How ransomware encrypts files&lt;/li&gt;&#xA;&lt;li&gt;How a hardcoded kill switch was implemented&lt;/li&gt;&#xA;&lt;li&gt;How the malware utilizes SMB protocol exploit (EternalBlue)&lt;/li&gt;&#xA;&lt;li&gt;Suspicious API calls&lt;/li&gt;&#xA;&lt;li&gt;Obfuscation and malware evasion techniques&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;VirusShare&lt;/p&gt;&#xA;&lt;p&gt;Remember&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Use a secure isolated VM&lt;/li&gt;&#xA;&lt;li&gt;Disable networking to prevent unintended spread&lt;/li&gt;&#xA;&lt;li&gt;Validate hash&lt;/li&gt;&#xA;&lt;li&gt;Open Ghidra and import malware binary&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;sources&#34;&gt;Sources&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.malwarebytes.com/blog/news/2017/05/the-worm-that-spreads-wanacrypt0r&#34;&gt;https://www.malwarebytes.com/blog/news/2017/05/the-worm-that-spreads-wanacrypt0r&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://blog.talosintelligence.com/wannacry/&#34;&gt;https://blog.talosintelligence.com/wannacry/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

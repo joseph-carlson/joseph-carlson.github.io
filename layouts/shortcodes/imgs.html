@@ -2,6 +2,12 @@
 
 <div class="carousel standardPadding"> <!-- wrapper class to apply style -->
 
+  <div class="carousel-controls"> <!-- wrapper class for controls -->
+    <button class="carousel-prev" aria-label="Previous slide">‹</button> <!-- creates the previous button element -->
+    <span class="carousel-label"></span> <!-- creates a span where Javascript can inject index of current image  (x / y) -->
+    <button class="carousel-next" aria-label="Next slide">›</button> <!-- creates the previous button element -->
+  </div>
+
   <div class="carousel-inner"> <!-- wrapper class for image array -->
     {{- range $i, $img := $images -}} <!-- iterate through all passed in images -->
       <img
@@ -15,13 +21,7 @@
           -->
     {{- end -}} <!-- ends loop over images -->
   </div>
-
-  <div class="carousel-controls"> <!-- wrapper class for controls -->
-    <button class="carousel-prev" aria-label="Previous slide">‹</button> <!-- creates the previous button element -->
-    <span class="carousel-label"></span> <!-- creates a span where Javascript can inject index of current image  (x / y) -->
-    <button class="carousel-next" aria-label="Next slide">›</button> <!-- creates the previous button element -->
-  </div>
-
+  
 </div>
 
 <style>

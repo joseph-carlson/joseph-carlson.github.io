@@ -66,6 +66,28 @@ IP: 192.168.1.1/24
 Next to configure the LAN Bridge for igc1 and igc2
 [OPNSense Documentation](https://docs.opnsense.org/manual/how-tos/lan_bridge.html)
 
+{{< imgs
+    "/projects/home-lab/bridge-config.png"
+    "/projects/home-lab/interface-assignment.png"
+    "/projects/home-lab/lan-interface.png"
+    "/projects/home-lab/wap-interface.png"
+    "/projects/home-lab/tunable-member.png"
+    "/projects/home-lab/tunable-bridge.png"
+>}}
+{{< credit >}}
+    #1 Bridge Configuration
+    <br>
+    #2 Interface Assignment
+    <br>
+    #3 LAN Interface
+    <br>
+    #4 WAP Interface
+    <br>
+    #5 Member Inferface Tunable
+    <br>
+    #6 Bridge Interface Tunable
+    
+{{< /credit >}}
 
 ### Stage 2
 

@@ -5,7 +5,7 @@ title: 'A Word on Higher Education'
 tags: ['all', 'societal-change']
 ---
 
-This article will just be a quick dump of my stance on the current state of "higher" education in America.
+
 
 --- 
 1. The Current University System
