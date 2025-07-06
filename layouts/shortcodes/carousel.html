@@ -6,8 +6,8 @@
     {{- range $i, $img := $images -}} <!-- iterate through all passed in images -->
       <img
         src="{{- $img -}}" 
-        class="carousel-item {{- if eq $i 0 -}}active{{- end -}}" 
-        alt="Slide {{- add $i 1 -}}"/> 
+        class="carousel-item {{ if eq $i 0 }}active{{ end }}" 
+        alt="Slide {{ add $i 1 }}"/> 
         <!-- add image html element 
               src pulls the path of the image with root in static folder 
               every photo is in carousel-item class 
