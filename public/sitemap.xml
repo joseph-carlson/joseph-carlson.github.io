@@ -2,66 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/all/</loc>
+    <loc>https://joseph-carlson.github.io/tags/all/</loc>
     <lastmod>2025-07-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://joseph-carlson.github.io/</loc>
     <lastmod>2025-07-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/</loc>
+    <loc>https://joseph-carlson.github.io/projects/</loc>
     <lastmod>2025-07-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://joseph-carlson.github.io/tags/</loc>
     <lastmod>2025-07-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/this-website/</loc>
+    <loc>https://joseph-carlson.github.io/projects/this-website/</loc>
     <lastmod>2025-07-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/webdev/</loc>
+    <loc>https://joseph-carlson.github.io/tags/webdev/</loc>
     <lastmod>2025-07-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/technical-concepts/</loc>
+    <loc>https://joseph-carlson.github.io/technical-concepts/</loc>
     <lastmod>2025-07-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/hot-takes/</loc>
+    <loc>https://joseph-carlson.github.io/hot-takes/</loc>
     <lastmod>2025-06-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/hot-takes/a-word-on-higher-education/</loc>
+    <loc>https://joseph-carlson.github.io/hot-takes/a-word-on-higher-education/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/ai/</loc>
+    <loc>https://joseph-carlson.github.io/tags/ai/</loc>
   </url><url>
-    <loc>http://localhost:1313/technical-concepts/anatomy-of-dns/</loc>
+    <loc>https://joseph-carlson.github.io/technical-concepts/anatomy-of-dns/</loc>
   </url><url>
-    <loc>http://localhost:1313/case-studies/</loc>
+    <loc>https://joseph-carlson.github.io/case-studies/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://joseph-carlson.github.io/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/hot-takes/cognitive-offloading/</loc>
+    <loc>https://joseph-carlson.github.io/hot-takes/cognitive-offloading/</loc>
   </url><url>
-    <loc>http://localhost:1313/technical-concepts/fundamental-concepts-of-networking/</loc>
+    <loc>https://joseph-carlson.github.io/technical-concepts/fundamental-concepts-of-networking/</loc>
   </url><url>
-    <loc>http://localhost:1313/projects/home-lab/</loc>
+    <loc>https://joseph-carlson.github.io/projects/home-lab/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/homelab/</loc>
+    <loc>https://joseph-carlson.github.io/tags/homelab/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/infrastructure/</loc>
+    <loc>https://joseph-carlson.github.io/tags/infrastructure/</loc>
   </url><url>
-    <loc>http://localhost:1313/projects/local-llms/</loc>
+    <loc>https://joseph-carlson.github.io/projects/local-llms/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/networking/</loc>
+    <loc>https://joseph-carlson.github.io/tags/networking/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/policy/</loc>
+    <loc>https://joseph-carlson.github.io/tags/policy/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/security/</loc>
+    <loc>https://joseph-carlson.github.io/tags/security/</loc>
   </url><url>
-    <loc>http://localhost:1313/hot-takes/silicon-valley-of-the-east/</loc>
+    <loc>https://joseph-carlson.github.io/hot-takes/silicon-valley-of-the-east/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/societal-change/</loc>
+    <loc>https://joseph-carlson.github.io/tags/societal-change/</loc>
   </url><url>
-    <loc>http://localhost:1313/technical-concepts/tcp-ip-model/</loc>
+    <loc>https://joseph-carlson.github.io/technical-concepts/tcp-ip-model/</loc>
   </url><url>
-    <loc>http://localhost:1313/technical-concepts/the-osi-model/</loc>
+    <loc>https://joseph-carlson.github.io/technical-concepts/the-osi-model/</loc>
   </url><url>
-    <loc>http://localhost:1313/case-studies/xz-utils/</loc>
+    <loc>https://joseph-carlson.github.io/case-studies/xz-utils/</loc>
   </url>
 </urlset>

@@ -2,87 +2,87 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Joseph Carlson</title>
-    <link>http://localhost:1313/</link>
+    <link>https://joseph-carlson.github.io/</link>
     <description>Recent content on Joseph Carlson</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 05 Jul 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://joseph-carlson.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>This Website</title>
-      <link>http://localhost:1313/projects/this-website/</link>
+      <link>https://joseph-carlson.github.io/projects/this-website/</link>
       <pubDate>Sat, 05 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/this-website/</guid>
+      <guid>https://joseph-carlson.github.io/projects/this-website/</guid>
       <description>&lt;h2 id=&#34;portfolio-website&#34;&gt;Portfolio Website&lt;/h2&gt;&#xA;&lt;p&gt;This site will serve as a repository for case studies on historical events, project documentation, technical concept breakdowns, and some &amp;ldquo;hot takes&amp;rdquo; I have related to the world of technology and consumer advocacy within the space.&lt;/p&gt;&#xA;&lt;p&gt;The act of publishing my projects, research, and thoughts in these articles not only makes my ideas and values accessible to curious eyes and ears, but also affords me the opportunity to explore what happened, what is happening, and what is possible.&lt;/p&gt;</description>
     </item>
     <item>
       <title>A Word on Higher Education</title>
-      <link>http://localhost:1313/hot-takes/a-word-on-higher-education/</link>
+      <link>https://joseph-carlson.github.io/hot-takes/a-word-on-higher-education/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/hot-takes/a-word-on-higher-education/</guid>
+      <guid>https://joseph-carlson.github.io/hot-takes/a-word-on-higher-education/</guid>
       <description>&lt;p&gt;This article will just be a quick dump of my stance on the current state of &amp;ldquo;higher&amp;rdquo; education in America.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;The Current University System&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Federal government guaranteeing student loans&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Summary&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Benefits&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Community of young like-minded people&lt;/li&gt;&#xA;&lt;li&gt;Professional network on departure&lt;/li&gt;&#xA;&lt;li&gt;Structured learning path through the foundation&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Drawbacks&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Outdated learning material&lt;/li&gt;&#xA;&lt;li&gt;The fluff&lt;/li&gt;&#xA;&lt;li&gt;Loans in the gaps&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Situation Dependent Cost Benefit&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;The conclusion reached after a well thought out cost-benefit analysis for the traditional or non-traditional path to higher education is entirely situationally dependent. If you have the opportunity to attend college without accruing a significant amount of student loans, I say go for it.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Anatomy of DNS</title>
-      <link>http://localhost:1313/technical-concepts/anatomy-of-dns/</link>
+      <link>https://joseph-carlson.github.io/technical-concepts/anatomy-of-dns/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/technical-concepts/anatomy-of-dns/</guid>
+      <guid>https://joseph-carlson.github.io/technical-concepts/anatomy-of-dns/</guid>
       <description>&lt;p&gt;&amp;ldquo;It&amp;rsquo;s Always DNS&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;The Domain Name System (DNS) allows us to use the internet without memorizing a 32 or 128-bit address for every single page on the internet. Instead, we can remember the website&amp;rsquo;s name, such as google.com, to arrive at the correct destination.&lt;/p&gt;&#xA;&lt;p&gt;Before diving into the conversation required to acquire an IP address for a website, we must first understand the destination. Every website has what&amp;rsquo;s known as a fully qualified domain name consisting of a subdomain, domain, and top-level domain. One example is &lt;a href=&#34;https://www.google.com&#34;&gt;www.google.com&lt;/a&gt;. The www indicates that we will be directed to Google&amp;rsquo;s web server. Google is the name of the website. The com is the top-level domain name; however, for other websites, it can use one of many others, including but not limited to edu and gov.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Cognitive Offloading</title>
-      <link>http://localhost:1313/hot-takes/cognitive-offloading/</link>
+      <link>https://joseph-carlson.github.io/hot-takes/cognitive-offloading/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/hot-takes/cognitive-offloading/</guid>
+      <guid>https://joseph-carlson.github.io/hot-takes/cognitive-offloading/</guid>
       <description>&lt;h2 id=&#34;the-offloading-of-cognitive-workloads&#34;&gt;The Offloading of Cognitive Workloads&lt;/h2&gt;&#xA;&lt;p&gt;Digital Dimentia&lt;/p&gt;&#xA;&lt;p&gt;GPS and the Decline of Spacial Awareness&lt;/p&gt;&#xA;&lt;p&gt;Critical Thinking for Critical Decisions&lt;/p&gt;&#xA;&lt;p&gt;Attention Span&lt;/p&gt;&#xA;&lt;h2 id=&#34;so-what-can-be-done&#34;&gt;So what can be done?&lt;/h2&gt;&#xA;&lt;p&gt;Only time will tell if Idiocracy was a warning of what could be or a documentary ahead of it&amp;rsquo;s time.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Fundamental Concepts of Networking</title>
-      <link>http://localhost:1313/technical-concepts/fundamental-concepts-of-networking/</link>
+      <link>https://joseph-carlson.github.io/technical-concepts/fundamental-concepts-of-networking/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/technical-concepts/fundamental-concepts-of-networking/</guid>
+      <guid>https://joseph-carlson.github.io/technical-concepts/fundamental-concepts-of-networking/</guid>
       <description>&lt;h2 id=&#34;fundamental-concepts-of-networking&#34;&gt;Fundamental Concepts of Networking&lt;/h2&gt;&#xA;&lt;p&gt;Just as interpersonal networking lays the bedrock for transactions and relationships in society, computer networking has enabled the world of technology to do what it does best: facilitate the free flow of information to anyone with the hunger to learn. The golden standard of five-nines of availability is 99.999% uptime, which equates to roughly five minutes a year—five minutes to run updates, perform upgrades, and recover from disasters. While redundancy and strategic planning are crucial in making this possible, it is a high bar, nonetheless.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Home Lab</title>
-      <link>http://localhost:1313/projects/home-lab/</link>
+      <link>https://joseph-carlson.github.io/projects/home-lab/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/home-lab/</guid>
+      <guid>https://joseph-carlson.github.io/projects/home-lab/</guid>
       <description>&lt;h2 id=&#34;the-plan&#34;&gt;The Plan&lt;/h2&gt;&#xA;&lt;p&gt;Make things. Break things. Fix things. Then find a new way to break them.&lt;/p&gt;&#xA;&lt;p&gt;Along the way, there are a few points I would like to hit on my implementation.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Increase my home network security beyond the stock configuration from my ISP via OpenVPN Wireguard Plugin.&lt;/li&gt;&#xA;&lt;li&gt;Implement network-wide ad-blocking via Pi-Hole.&lt;/li&gt;&#xA;&lt;li&gt;Allow me to remotely connect to my Windows laptop from anywhere via Wireguard and RustDesk.&lt;/li&gt;&#xA;&lt;li&gt;Secure the network via 802.1x authentication on ports and a guest Wi-Fi network on an isolated VLAN.&lt;/li&gt;&#xA;&lt;li&gt;Generate, aggregate, and analyze suspicious activity using various tools that will be mentioned later.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 style=&#34;display: center&#34;&gt;How to Make The Plan Work...&lt;/h2&gt;&#xA;&lt;p&gt;Diagram coming soon..&lt;/p&gt;</description>
     </item>
     <item>
       <title>Local LLMs</title>
-      <link>http://localhost:1313/projects/local-llms/</link>
+      <link>https://joseph-carlson.github.io/projects/local-llms/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/local-llms/</guid>
+      <guid>https://joseph-carlson.github.io/projects/local-llms/</guid>
       <description>&lt;p&gt;Now you can use ChatGPT, or Claude, or Gemeni, or Apple Intelligence. Just kidding, definitely not Apple Intelligence. For general queries, there&amp;rsquo;s absolutely nothing wrong with that, but in the back of your mind, you have to wonder where all your chat logs go. Deleted into the abysse of unknown history, fragments of a memory as they make their own impact of the next AI model, or stored just in case for a rainy day.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Silicon Valley of the East</title>
-      <link>http://localhost:1313/hot-takes/silicon-valley-of-the-east/</link>
+      <link>https://joseph-carlson.github.io/hot-takes/silicon-valley-of-the-east/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/hot-takes/silicon-valley-of-the-east/</guid>
+      <guid>https://joseph-carlson.github.io/hot-takes/silicon-valley-of-the-east/</guid>
       <description>&lt;p&gt;While there are many things which can be deemed questionable coming out of congress, the sanctions preventing acccess to silicon valley technology such as Google Android, Microsoft Windows, and NVIDIA graphics cards are high up on that list in my eyes. It&amp;rsquo;s actually funny. Necessecity is the mother of invention. We imposed necessity, so they got budy inventing.&lt;/p&gt;&#xA;&lt;p&gt;To my eyes, the headlines hit the mainstreak with DeepSeek.&lt;/p&gt;&#xA;&lt;p&gt;DeepSeek was only the beginning.&lt;/p&gt;</description>
     </item>
     <item>
       <title>TCP IP Model</title>
-      <link>http://localhost:1313/technical-concepts/tcp-ip-model/</link>
+      <link>https://joseph-carlson.github.io/technical-concepts/tcp-ip-model/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/technical-concepts/tcp-ip-model/</guid>
+      <guid>https://joseph-carlson.github.io/technical-concepts/tcp-ip-model/</guid>
       <description>&lt;h2 id=&#34;a-little-context&#34;&gt;A Little Context&lt;/h2&gt;&#xA;&lt;p&gt;The origins of computer networking can be traced back to ARPANET (The U.S. Advanced Research Projects Agency Network) in 1969. ARPANET was the first wide-area packet-switched network relying on TCP/IP, enabling communication between universities across the country.&lt;/p&gt;&#xA;&lt;p&gt;As mentioned in the last article, the TCP/IP model is a more targeted approach for modeling modern networks, as nearly every network in use these days rely on TCP and UDP traffic. While this is extremely useful, the OSI model is still used to break down networking infrastructure with more granularity while allowing for more flexibility in implementing these networks.&lt;/p&gt;</description>
     </item>
     <item>
       <title>The OSI Model</title>
-      <link>http://localhost:1313/technical-concepts/the-osi-model/</link>
+      <link>https://joseph-carlson.github.io/technical-concepts/the-osi-model/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/technical-concepts/the-osi-model/</guid>
+      <guid>https://joseph-carlson.github.io/technical-concepts/the-osi-model/</guid>
       <description>&lt;p&gt;Networks are complex. Modems, routers, switches, hubs, wireless access points, repeaters, media converters, twisted pair, fiber, coax, bits, frames, packets, segments, TCP, UDP, and so much more. Organizing the concepts and technologies in a way that makes it comprehensible to those that did not engineer the systems was an extremely high priority for the pioneers of computing. That is where the OSI model comes in.&lt;/p&gt;&#xA;&lt;p&gt;The OSI, or Open Systems Interconnection Model, divides networks into seven layers. Each layer has its own devices, protocols, terms, and role in enabling the flow of data. While the OSI model provides a general framework for how to conceptualize and troubleshoot all networks, the TCP/IP model more cleanly applies to most networks in use today.&lt;/p&gt;</description>
     </item>
     <item>
       <title>XZ Utils</title>
-      <link>http://localhost:1313/case-studies/xz-utils/</link>
+      <link>https://joseph-carlson.github.io/case-studies/xz-utils/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/case-studies/xz-utils/</guid>
+      <guid>https://joseph-carlson.github.io/case-studies/xz-utils/</guid>
       <description>&lt;h2 id=&#34;xz-utils---a-wake-up-call-for-open-source-software&#34;&gt;XZ Utils - a wake up call for Open Source Software&lt;/h2&gt;&#xA;&lt;h3 id=&#34;a-brief-introduction&#34;&gt;A Brief Introduction&lt;/h3&gt;&#xA;&lt;p&gt;What is XZ Utils?&lt;/p&gt;&#xA;&lt;p&gt;How was this exploit discovered?&lt;/p&gt;&#xA;&lt;h3 id=&#34;what-happened&#34;&gt;What Happened?&lt;/h3&gt;&#xA;&lt;p&gt;Timeline of events&lt;/p&gt;&#xA;&lt;h3 id=&#34;the-what-if&#34;&gt;The What If?&lt;/h3&gt;&#xA;&lt;p&gt;Impacted systems&lt;/p&gt;&#xA;&lt;h3 id=&#34;open-source-to-blame&#34;&gt;Open Source to Blame?&lt;/h3&gt;&#xA;&lt;p&gt;Maintainer Fatigue and Burnout&lt;/p&gt;&#xA;&lt;p&gt;Social Engineering and Trust Abuse&lt;/p&gt;&#xA;&lt;p&gt;Lacking Formal Review Process&lt;/p&gt;&#xA;&lt;h3 id=&#34;can-ai-play-into-this&#34;&gt;Can AI Play Into This?&lt;/h3&gt;&#xA;&lt;h3 id=&#34;what-can-be-done&#34;&gt;What Can Be Done?&lt;/h3&gt;&#xA;&lt;p&gt;Institutional Financial Support&lt;/p&gt;&#xA;&lt;p&gt;Security Audits and Hardening&lt;/p&gt;&#xA;&lt;p&gt;Supply Chain Hardening&lt;/p&gt;&#xA;&lt;p&gt;Governance and Contributor Vetting&lt;/p&gt;</description>
     </item>
   </channel>

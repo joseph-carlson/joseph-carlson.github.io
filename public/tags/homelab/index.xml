@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Homelab on Joseph Carlson</title>
-    <link>http://localhost:1313/tags/homelab/</link>
+    <link>https://joseph-carlson.github.io/tags/homelab/</link>
     <description>Recent content in Homelab on Joseph Carlson</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/tags/homelab/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://joseph-carlson.github.io/tags/homelab/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Home Lab</title>
-      <link>http://localhost:1313/projects/home-lab/</link>
+      <link>https://joseph-carlson.github.io/projects/home-lab/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/home-lab/</guid>
+      <guid>https://joseph-carlson.github.io/projects/home-lab/</guid>
       <description>&lt;h2 id=&#34;the-plan&#34;&gt;The Plan&lt;/h2&gt;&#xA;&lt;p&gt;Make things. Break things. Fix things. Then find a new way to break them.&lt;/p&gt;&#xA;&lt;p&gt;Along the way, there are a few points I would like to hit on my implementation.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Increase my home network security beyond the stock configuration from my ISP via OpenVPN Wireguard Plugin.&lt;/li&gt;&#xA;&lt;li&gt;Implement network-wide ad-blocking via Pi-Hole.&lt;/li&gt;&#xA;&lt;li&gt;Allow me to remotely connect to my Windows laptop from anywhere via Wireguard and RustDesk.&lt;/li&gt;&#xA;&lt;li&gt;Secure the network via 802.1x authentication on ports and a guest Wi-Fi network on an isolated VLAN.&lt;/li&gt;&#xA;&lt;li&gt;Generate, aggregate, and analyze suspicious activity using various tools that will be mentioned later.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 style=&#34;display: center&#34;&gt;How to Make The Plan Work...&lt;/h2&gt;&#xA;&lt;p&gt;Diagram coming soon..&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,37 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Infrastructure on Joseph Carlson</title>
-    <link>http://localhost:1313/tags/infrastructure/</link>
+    <link>https://joseph-carlson.github.io/tags/infrastructure/</link>
     <description>Recent content in Infrastructure on Joseph Carlson</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/tags/infrastructure/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://joseph-carlson.github.io/tags/infrastructure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Anatomy of DNS</title>
-      <link>http://localhost:1313/technical-concepts/anatomy-of-dns/</link>
+      <link>https://joseph-carlson.github.io/technical-concepts/anatomy-of-dns/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/technical-concepts/anatomy-of-dns/</guid>
+      <guid>https://joseph-carlson.github.io/technical-concepts/anatomy-of-dns/</guid>
       <description>&lt;p&gt;&amp;ldquo;It&amp;rsquo;s Always DNS&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;The Domain Name System (DNS) allows us to use the internet without memorizing a 32 or 128-bit address for every single page on the internet. Instead, we can remember the website&amp;rsquo;s name, such as google.com, to arrive at the correct destination.&lt;/p&gt;&#xA;&lt;p&gt;Before diving into the conversation required to acquire an IP address for a website, we must first understand the destination. Every website has what&amp;rsquo;s known as a fully qualified domain name consisting of a subdomain, domain, and top-level domain. One example is &lt;a href=&#34;https://www.google.com&#34;&gt;www.google.com&lt;/a&gt;. The www indicates that we will be directed to Google&amp;rsquo;s web server. Google is the name of the website. The com is the top-level domain name; however, for other websites, it can use one of many others, including but not limited to edu and gov.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Fundamental Concepts of Networking</title>
-      <link>http://localhost:1313/technical-concepts/fundamental-concepts-of-networking/</link>
+      <link>https://joseph-carlson.github.io/technical-concepts/fundamental-concepts-of-networking/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/technical-concepts/fundamental-concepts-of-networking/</guid>
+      <guid>https://joseph-carlson.github.io/technical-concepts/fundamental-concepts-of-networking/</guid>
       <description>&lt;h2 id=&#34;fundamental-concepts-of-networking&#34;&gt;Fundamental Concepts of Networking&lt;/h2&gt;&#xA;&lt;p&gt;Just as interpersonal networking lays the bedrock for transactions and relationships in society, computer networking has enabled the world of technology to do what it does best: facilitate the free flow of information to anyone with the hunger to learn. The golden standard of five-nines of availability is 99.999% uptime, which equates to roughly five minutes a year—five minutes to run updates, perform upgrades, and recover from disasters. While redundancy and strategic planning are crucial in making this possible, it is a high bar, nonetheless.&lt;/p&gt;</description>
     </item>
     <item>
       <title>TCP IP Model</title>
-      <link>http://localhost:1313/technical-concepts/tcp-ip-model/</link>
+      <link>https://joseph-carlson.github.io/technical-concepts/tcp-ip-model/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/technical-concepts/tcp-ip-model/</guid>
+      <guid>https://joseph-carlson.github.io/technical-concepts/tcp-ip-model/</guid>
       <description>&lt;h2 id=&#34;a-little-context&#34;&gt;A Little Context&lt;/h2&gt;&#xA;&lt;p&gt;The origins of computer networking can be traced back to ARPANET (The U.S. Advanced Research Projects Agency Network) in 1969. ARPANET was the first wide-area packet-switched network relying on TCP/IP, enabling communication between universities across the country.&lt;/p&gt;&#xA;&lt;p&gt;As mentioned in the last article, the TCP/IP model is a more targeted approach for modeling modern networks, as nearly every network in use these days rely on TCP and UDP traffic. While this is extremely useful, the OSI model is still used to break down networking infrastructure with more granularity while allowing for more flexibility in implementing these networks.&lt;/p&gt;</description>
     </item>
     <item>
       <title>The OSI Model</title>
-      <link>http://localhost:1313/technical-concepts/the-osi-model/</link>
+      <link>https://joseph-carlson.github.io/technical-concepts/the-osi-model/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/technical-concepts/the-osi-model/</guid>
+      <guid>https://joseph-carlson.github.io/technical-concepts/the-osi-model/</guid>
       <description>&lt;p&gt;Networks are complex. Modems, routers, switches, hubs, wireless access points, repeaters, media converters, twisted pair, fiber, coax, bits, frames, packets, segments, TCP, UDP, and so much more. Organizing the concepts and technologies in a way that makes it comprehensible to those that did not engineer the systems was an extremely high priority for the pioneers of computing. That is where the OSI model comes in.&lt;/p&gt;&#xA;&lt;p&gt;The OSI, or Open Systems Interconnection Model, divides networks into seven layers. Each layer has its own devices, protocols, terms, and role in enabling the flow of data. While the OSI model provides a general framework for how to conceptualize and troubleshoot all networks, the TCP/IP model more cleanly applies to most networks in use today.&lt;/p&gt;</description>
     </item>
   </channel>
