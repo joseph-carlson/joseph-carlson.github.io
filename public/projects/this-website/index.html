@@ -23,27 +23,30 @@
         <h3>~</h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/">Root</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/projects/">Projects</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/projects/this-website/">This Website</a></h3></div>
     <hr>
 </div><div id="postBanner"><br>
-    Page content loading...&nbsp;<a href="/tags/all/">#all&nbsp;</a><a href="/tags/webdev/">#webdev&nbsp;</a><h2 id="portfolio-website">Portfolio Website</h2>
-<p>This site will serve as a repository for case studies on historical events, project documentation, technical concept breakdowns, and some &ldquo;hot takes&rdquo; I have related to the world of technology and consumer advocacy within the space.</p>
+    Page content loading...&nbsp;<a href="/tags/all/">#all&nbsp;</a><a href="/tags/webdev/">#webdev&nbsp;</a><br>
+<br>
+<p>This website will serve as a repository for case studies on historical events, project documentation, technical concept breakdowns, and some &ldquo;hot takes&rdquo; I have related to the world of technology and consumer advocacy within the space.</p>
 <p>The act of publishing my projects, research, and thoughts in these articles not only makes my ideas accessible to curious eyes and ears, but also affords me the opportunity to explore what happened, what is happening, and what is possible.</p>
 <hr>
 <h2 id="why-i-chose-hugo">Why I Chose Hugo</h2>
 <p>I chose Hugo because it&rsquo;s fast, simple, and cheap.</p>
-<p>Articles literally being Markdown files while still being able to add shortcodes and embed HTML when needed makes my life a whole lot easier. What you see is what you get; nothing more, nothing less.</p>
+<p>Articles literally being markdown files while still being able to add shortcodes and embed HTML when needed makes my life a whole lot easier when compared to something like WordPress. What you see is what you get; nothing more, nothing less.</p>
 <p>As one does when they can&rsquo;t find exactly what they were looking for, I designed this page from the ground up after spending some time with the Hugo documentation, YouTube, and a few LLMs.</p>
 <hr>
 <h2 id="implementation">Implementation</h2>
 <p>All of the project files exist within a folder I open up in Visual Studio Code. I draft, edit, proofread, and post.</p>
-<p>New Article:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo new content parent-folder/article.md
-</span></span></code></pre></div><p>Refresh All Elements:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo --cleanDestinationDir
-</span></span></code></pre></div><p>Add All Changes:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git add -A
-</span></span></code></pre></div><p>Commit Those Changes:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;update&#34;</span>
-</span></span></code></pre></div><p>Push Those Changes:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git push
+<p>New Article</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>hugo new content parent-folder/article.md
+</span></span></code></pre></div><p>Refresh All Elements</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>hugo --cleanDestinationDir
+</span></span></code></pre></div><p>View on localhost:1313</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>hugo server --disableFastRender
+</span></span></code></pre></div><p>Add All Changes</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>git add -A
+</span></span></code></pre></div><p>Commit Those Changes</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;update&#34;</span>
+</span></span></code></pre></div><p>Push Those Changes</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>git push
 </span></span></code></pre></div><p>In a few minutes, everything will be updated on my GitHub pages website.</p>
 <hr>
 <h2 id="a-note-on-ai">A Note on AI</h2>

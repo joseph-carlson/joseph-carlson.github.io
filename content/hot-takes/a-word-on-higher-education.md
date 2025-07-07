@@ -1,6 +1,6 @@
 ---
 date: ''
-draft: false
+draft: true
 title: 'A Word on Higher Education'
 tags: ['all', 'societal-change']
 ---

@@ -1,12 +1,14 @@
 ---
-date: '2025-07-05'
+date: '2025-07-06'
 draft: false
 title: 'This Website'
 tags: ['all', 'webdev']
 ---
-## Portfolio Website
 
-This site will serve as a repository for case studies on historical events, project documentation, technical concept breakdowns, and some "hot takes" I have related to the world of technology and consumer advocacy within the space.
+<br>
+<br>
+
+This website will serve as a repository for case studies on historical events, project documentation, technical concept breakdowns, and some "hot takes" I have related to the world of technology and consumer advocacy within the space.
 
 The act of publishing my projects, research, and thoughts in these articles not only makes my ideas accessible to curious eyes and ears, but also affords me the opportunity to explore what happened, what is happening, and what is possible.
 
@@ -16,7 +18,7 @@ The act of publishing my projects, research, and thoughts in these articles not 
 
 I chose Hugo because it's fast, simple, and cheap. 
 
-Articles literally being Markdown files while still being able to add shortcodes and embed HTML when needed makes my life a whole lot easier. What you see is what you get; nothing more, nothing less.
+Articles literally being markdown files while still being able to add shortcodes and embed HTML when needed makes my life a whole lot easier when compared to something like WordPress. What you see is what you get; nothing more, nothing less.
 
 As one does when they can't find exactly what they were looking for, I designed this page from the ground up after spending some time with the Hugo documentation, YouTube, and a few LLMs.
 
@@ -26,28 +28,30 @@ As one does when they can't find exactly what they were looking for, I designed 
 
 All of the project files exist within a folder I open up in Visual Studio Code. I draft, edit, proofread, and post.
 
-New Article: 
-
-```bash 
+New Article
+```zsh 
 hugo new content parent-folder/article.md
 ``` 
 
-Refresh All Elements: 
-
-```bash
+Refresh All Elements
+```zsh
 hugo --cleanDestinationDir
 ```
+View on localhost:1313
+```zsh
+hugo server --disableFastRender
+```
 
-Add All Changes: 
-```bash
+Add All Changes 
+```zsh
 git add -A
 ```
-Commit Those Changes: 
-```bash
+Commit Those Changes
+```zsh
 git commit -m "update"
 ```
-Push Those Changes: 
-```bash
+Push Those Changes
+```zsh
 git push
 ```
 

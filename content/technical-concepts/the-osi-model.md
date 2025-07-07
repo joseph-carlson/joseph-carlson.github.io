@@ -1,6 +1,6 @@
 ---
 date: ''
-draft: false
+draft: true
 title: 'The OSI Model'
 tags: ['all', 'infrastructure', 'networking']
 ---

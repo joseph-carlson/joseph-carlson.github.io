@@ -1,6 +1,6 @@
 ---
 date: ''
-draft: false
+draft: true
 title: 'Home Lab'
 tags: ['all', 'homelab']
 ---
@@ -88,6 +88,12 @@ Next to configure the LAN Bridge for igc1 and igc2
     #6 Bridge Interface Tunable
     
 {{< /credit >}}
+
+Next to configure TheHighSeas
+
+This is to keep any clients connected to igc3 isolated from the rest of my network. Since I have the luxury of a dedicated physical NIC on my router, there is no need for VLAN tagging.
+
+
 
 ### Stage 2
 

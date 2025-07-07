@@ -1,6 +1,6 @@
 ---
 date: ''
-draft: false
+draft: true
 title: 'Fundamental Concepts of Networking'
 tags: ['all', 'infrastructure', 'networking']
 ---

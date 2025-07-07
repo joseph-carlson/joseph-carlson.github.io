@@ -7,12 +7,5 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/tags/ai/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Local LLMs</title>
-      <link>http://localhost:1313/projects/local-llms/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/local-llms/</guid>
-      <description>&lt;p&gt;Now you can use ChatGPT, or Claude, or Gemeni, or Apple Intelligence. Just kidding, definitely not Apple Intelligence. For general queries, there&amp;rsquo;s absolutely nothing wrong with that, but in the back of your mind, you have to wonder where all your chat logs go. Deleted into the abysse of unknown history, fragments of a memory as they make their own impact of the next AI model, or stored just in case for a rainy day.&lt;/p&gt;</description>
-    </item>
   </channel>
 </rss>

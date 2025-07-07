@@ -1,6 +1,6 @@
 ---
 date: ''
-draft: false
+draft: true
 title: 'TCP IP Model'
 tags: ['all', 'infrastructure', 'networking']
 ---
