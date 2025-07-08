@@ -1,6 +1,6 @@
 ---
-date: '2025-07-06'
-draft: false
+date: '2025-07-07'
+draft: true
 title: 'This Website'
 tags: ['all', 'webdev']
 ---
@@ -8,9 +8,7 @@ tags: ['all', 'webdev']
 <br>
 <br>
 
-This website will serve as a repository for case studies on historical events, project documentation, technical concept breakdowns, and some "hot takes" I have related to the world of technology and consumer advocacy within the space.
-
-The act of publishing my projects, research, and thoughts in these articles not only makes my ideas accessible to curious eyes and ears, but also affords me the opportunity to explore what happened, what is happening, and what is possible.
+This website will serve as a central repository for case studies on historical events, project documentation, technical concept breakdowns, and some "hot takes" I have related to the world of technology and consumer advocacy within the space.
 
 ---
 
@@ -18,15 +16,15 @@ The act of publishing my projects, research, and thoughts in these articles not 
 
 I chose Hugo because it's fast, simple, and cheap. 
 
-Articles literally being markdown files while still being able to add shortcodes and embed HTML when needed makes my life a whole lot easier when compared to something like WordPress. What you see is what you get; nothing more, nothing less.
+Writing the articles in markdown files while being able to add shortcodes and embed HTML when needed makes my life a whole lot easier when compared to platforms like WordPress. What you see is what you get; nothing more, nothing less.
 
-As one does when they can't find exactly what they were looking for, I designed this page from the ground up after spending some time with the Hugo documentation, YouTube, and a few LLMs.
+As one does when they can't find exactly what they're looking for, I designed this page from the ground up after spending some time with the Hugo documentation, YouTube, and a few LLMs.
 
 ---
 
 ## Implementation
 
-All of the project files exist within a folder I open up in Visual Studio Code. I draft, edit, proofread, and post.
+All of the project files exist within a folder I open up in Visual Studio Code. I draft, edit, proofread, and post. 
 
 New Article
 ```zsh 
@@ -55,12 +53,12 @@ Push Those Changes
 git push
 ```
 
-In a few minutes, everything will be updated on my GitHub pages website.
+After running those last three commands, everything will be updated on my website within minutes.
 
 ---
 ## A Note on AI
 
-Did I use AI in the development of this site? For sure, but I have reviewed and know what every single line of code does. It was especially useful when developing the shortcodes shown below.
+Did I use AI in the development of this site? For sure, but I review and know what every single line of code does. It was especially useful when developing the shortcodes (custom templates invoked to insert elements on the page) shown below.
 
 Though when it comes to the articles, I write those. I'll sometimes do preliminary research with LLMs to provide a starting point, but after that, it's that dusty 'ol thing between my ears. As of now, the ability to write, no matter how good or bad I may be right now, is not a skill I am willing to offload to AI. 
 

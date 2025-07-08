@@ -6,6 +6,35 @@
     <description>Recent content in Homelab on Joseph Carlson</description>
     <generator>Hugo</generator>
     <language>en-us</language>
+    <lastBuildDate>Wed, 02 Jul 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/homelab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nginx Proxy Manager</title>
+      <link>http://localhost:1313/projects/nginx-proxy-manager/</link>
+      <pubDate>Wed, 02 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/nginx-proxy-manager/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Disaster Recovery</title>
+      <link>http://localhost:1313/projects/disaster-recovery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/disaster-recovery/</guid>
+      <description>&lt;p&gt;Shit happens, and time is valuable, so you gotta back up your configs.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ELK Stack</title>
+      <link>http://localhost:1313/projects/elk-stack/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/elk-stack/</guid>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;Framework 13 &amp;gt; Proxmox Hypervisor &amp;gt; Docker Containers&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Elasticsearch &amp;gt; Search &amp;amp; Analytics Engine&lt;/li&gt;&#xA;&lt;li&gt;Logstash &amp;gt; Data Processing Pipeline&lt;/li&gt;&#xA;&lt;li&gt;Kibana &amp;gt; Visualization and User Interface&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Log Shippers&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Elastic Agent&lt;/li&gt;&#xA;&lt;li&gt;Syslog&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Home Lab</title>
+      <link>http://localhost:1313/projects/home-lab/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/home-lab/</guid>
+      <description>&lt;h2 id=&#34;the-plan&#34;&gt;The Plan&lt;/h2&gt;&#xA;&lt;p&gt;Make things. Break things. Fix things. Then find a new way to break them.&lt;/p&gt;&#xA;&lt;p&gt;Along the way, there are a few points I would like to hit on my implementation.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Increase my home network security beyond the stock configuration from my ISP via OpenVPN Wireguard Plugin.&lt;/li&gt;&#xA;&lt;li&gt;Implement network-wide ad-blocking via Pi-Hole.&lt;/li&gt;&#xA;&lt;li&gt;Allow me to remotely connect to my Windows laptop from anywhere via Wireguard and RustDesk.&lt;/li&gt;&#xA;&lt;li&gt;Secure the network via 802.1x authentication on ports and a guest Wi-Fi network on an isolated VLAN.&lt;/li&gt;&#xA;&lt;li&gt;Generate, aggregate, and analyze suspicious activity using various tools that will be mentioned later.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 style=&#34;display: center&#34;&gt;How to Make The Plan Work...&lt;/h2&gt;&#xA;&lt;p&gt;Diagram coming soon..&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

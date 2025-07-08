@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/css/style.css">
+
+        <title>What Are Shortcodes?</title>
+    </head>
+    <body><div id="header">
+    <h1 class="title">
+        <a href="/">
+            <p>Joseph&nbsp;</p>
+            <p>Carlson</p>
+        </a>
+    </h1>
+    <span><a href="/"><img src="/logo.ico" alt="Logo" height="75" id="logo"></a>
+    </span>
+    <span><h3 id="headerCategories"><a href="/case-studies/">case-studies</a>&nbsp;&nbsp;</h3><h3 id="headerCategories"><a href="/projects/">projects</a>&nbsp;&nbsp;</h3><h3 id="headerCategories"><a href="/hot-takes/">hot-takes</a>&nbsp;&nbsp;</h3><h3 id="headerCategories"><a href="/technical-concepts/">technical-concepts</a>&nbsp;&nbsp;</h3></span>
+</div><hr>
+
+        <div id="narrowOnDesktop"><div class="sticky">
+    <div id="breadcrumbs">
+        <h3>~</h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/">Root</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/projects/">Projects</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/projects/what-are-shortcodes/">What Are Shortcodes?</a></h3></div>
+    <hr>
+</div><div id="postBanner"><br>
+    Page content loading...&nbsp;<a href="/tags/all/">#all&nbsp;</a><a href="/tags/null/">#null&nbsp;</a><p>Shortcodes are templates that reside in the &ldquo;/layouts/shortcodes&rdquo; directory, which cam be invoked to easily embed media within pages.</p>
+<p>To see what each of these look like, check out <a href="/projects/this-website/" target="_blank" rel="noopener noreferrer">
+  this page
+</a> where an example for each of this is shown.</p>
+<hr>
+<h2 id="new-tab-link-embedding-shortcode">New Tab Link Embedding Shortcode</h2>
+<div style="padding: 0% 2%;"> 
+  
+  <div class="code-block"
+    style="border:1px solid grey; 
+              border-radius:1rem; 
+              overflow: hidden; "> 
+              
+
+    <div style="display:flex; 
+                justify-content:space-between; 
+                align-items:center; 
+                background:#a8a8a8; 
+                padding:0.5rem 1rem; 
+                font-size:0.9em;">
+                
+      
+      <span style="color:rgb(0, 0, 0); 
+                      background-color: rgb(229, 229, 229);
+                      padding: 0.25rem 0.5rem;
+                      border-radius: 0.25rem;
+                      font-weight: bold;"
+                      >HTML
+      </span>
+      <button onclick="(function(btn){
+                const code = btn.closest('.code-block').querySelector('pre code');
+                // selects the closest element that has class code-block
+                // then search for code element that is a descendent of a pre element
+                navigator.clipboard.writeText(code.textContent).then(function(){
+                  btn.textContent = 'Copied!';
+                  setTimeout(function(){ btn.textContent = 'Copy'; }, 2000);
+                }); // copies the text to clipboard and temporarily changes Copy to Copies!
+              })(this)"
+        >Copy</button> 
+
+    </div> 
+
+    
+    <div class="code-body"
+          style="overflow-x: auto; 
+                  padding: 0rem 0.5rem; 
+                  background-color: rgb(0, 50, 50);"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{- .Get &#34;</span><span style="color:#a6e22e">url</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#a6e22e">-</span><span style="color:#960050;background-color:#1e0010">}}&#34;</span> <span style="color:#a6e22e">target</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;_blank&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;noopener noreferrer&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">&lt;!-- gets the url parameter for link
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">      &#34;_blank&#34; opens in new tab
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">      &#34;noopener noreferrer&#34; is a security measure --&gt;</span>
+</span></span><span style="display:flex;"><span>  {{- .Get &#34;text&#34; -}} <span style="color:#75715e">&lt;!-- gets the text parameter for what will be shown--&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span></code></pre></div>
+    </div> 
+
+  </div> 
+
+  <style>  
+    .code-body * { background-color: rgb(0, 50, 50); }
+  </style>
+
+</div> 
+<p>This allows me to write&hellip;</p>
+<div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
+  
+  <div style="max-width: 1000px;">
+    <img
+      src="/projects/shortcodes/newtablink-shortcode.png" 
+      alt="HMTL Code Snippet"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
+</div>
+<p>Instead of writing this&hellip;</p>
+<div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
+  
+  <div style="max-width: 1000px;">
+    <img
+      src="/projects/shortcodes/newtablink-html.png" 
+      alt="HMTL Code Snippet"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
+</div>
+<p>Now even though in this instance, it only saves me a few characters, the concept scales remarkably well for more complex structures.</p>
+<hr>
+<h2 id="data-table-embedding-shortcode">Data Table Embedding Shortcode</h2>
+<div style="padding: 0% 2%;"> 
+  
+  <div class="code-block"
+    style="border:1px solid grey; 
+              border-radius:1rem; 
+              overflow: hidden; "> 
+              
+
+    <div style="display:flex; 
+                justify-content:space-between; 
+                align-items:center; 
+                background:#a8a8a8; 
+                padding:0.5rem 1rem; 
+                font-size:0.9em;">
+                
+      
+      <span style="color:rgb(0, 0, 0); 
+                      background-color: rgb(229, 229, 229);
+                      padding: 0.25rem 0.5rem;
+                      border-radius: 0.25rem;
+                      font-weight: bold;"
+                      >HTML
+      </span>
+      <button onclick="(function(btn){
+                const code = btn.closest('.code-block').querySelector('pre code');
+                // selects the closest element that has class code-block
+                // then search for code element that is a descendent of a pre element
+                navigator.clipboard.writeText(code.textContent).then(function(){
+                  btn.textContent = 'Copied!';
+                  setTimeout(function(){ btn.textContent = 'Copy'; }, 2000);
+                }); // copies the text to clipboard and temporarily changes Copy to Copies!
+              })(this)"
+        >Copy</button> 
+
+    </div> 
+
+    
+    <div class="code-body"
+          style="overflow-x: auto; 
+                  padding: 0rem 0.5rem; 
+                  background-color: rgb(0, 50, 50);"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;datatable&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">thead</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>      {{- range (split (.Get &#34;headers&#34;) &#34;,&#34;) -}} 
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">&lt;!-- iterates through the headers with &#34;,&#34; delimiter --&gt;</span>
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">th</span>&gt;<span style="color:#960050;background-color:#1e0010">&amp;</span>nbsp{{- . | htmlEscape -}}<span style="color:#960050;background-color:#1e0010">&amp;</span>nbsp&lt;/<span style="color:#f92672">th</span>&gt; 
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!-- adds that text to a table header buffered with a space on each side
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">              then escapes to parent element table context --&gt;</span>
+</span></span><span style="display:flex;"><span>      {{- end -}}
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">thead</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">tbody</span>&gt;
+</span></span><span style="display:flex;"><span>    {{- $rows := split (.Inner | chomp | replaceRE &#34;\r&#34; &#34;&#34;) &#34;\n&#34; -}}
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- iterates through the rows with new line &#34;\n&#34; delimeter
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">          replaceRE runs a regular expression to remove all carriage returns &#34;\r&#34; 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">          in case of Windows-style line endings &#34;\r\n&#34; 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">          unix-based systems do not include the carriage return --&gt;</span>
+</span></span><span style="display:flex;"><span>      {{- range $rows -}}   <span style="color:#75715e">&lt;!-- loops over each element in the current row --&gt;</span>
+</span></span><span style="display:flex;"><span>        {{- if ne . &#34;&#34; -}}  <span style="color:#75715e">&lt;!-- skips empty strings --&gt;</span>
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">tr</span>&gt;            <span style="color:#75715e">&lt;!-- opens row for non-empty lines --&gt;</span>
+</span></span><span style="display:flex;"><span>            {{- range (split . &#34;,&#34;) -}}                  <span style="color:#75715e">&lt;!-- splits with comma delimeter for columns--&gt;</span>
+</span></span><span style="display:flex;"><span>              &lt;<span style="color:#f92672">td</span>&gt;<span style="color:#960050;background-color:#1e0010">&amp;</span>nbsp{{- . | htmlEscape -}}<span style="color:#960050;background-color:#1e0010">&amp;</span>nbsp&lt;/<span style="color:#f92672">td</span>&gt;  <span style="color:#75715e">&lt;!-- adds the table data buffered with a space on each side
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                                                            and escapes to parent element context --&gt;</span>
+</span></span><span style="display:flex;"><span>            {{- end -}} <span style="color:#75715e">&lt;!-- table data loop end --&gt;</span>
+</span></span><span style="display:flex;"><span>          &lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>        {{- end -}} <span style="color:#75715e">&lt;!-- table row loop end  --&gt;</span>
+</span></span><span style="display:flex;"><span>    {{- end -}} <span style="color:#75715e">&lt;!-- windows new line correction end --&gt;</span>
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">tbody</span>&gt; 
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">table</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">style</span>&gt; <span style="color:#75715e">/* renders table cell borders */</span>
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">datatable</span> <span style="color:#f92672">*</span> { <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#66d9ef">gray</span>; }
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">style</span>&gt;
+</span></span></code></pre></div>
+    </div> 
+
+  </div> 
+
+  <style>  
+    .code-body * { background-color: rgb(0, 50, 50); }
+  </style>
+
+</div> 
+<h2 id="code-embedding-shortcode">Code Embedding Shortcode</h2>
+<div style="padding: 0% 2%;"> 
+  
+  <div class="code-block"
+    style="border:1px solid grey; 
+              border-radius:1rem; 
+              overflow: hidden; "> 
+              
+
+    <div style="display:flex; 
+                justify-content:space-between; 
+                align-items:center; 
+                background:#a8a8a8; 
+                padding:0.5rem 1rem; 
+                font-size:0.9em;">
+                
+      
+      <span style="color:rgb(0, 0, 0); 
+                      background-color: rgb(229, 229, 229);
+                      padding: 0.25rem 0.5rem;
+                      border-radius: 0.25rem;
+                      font-weight: bold;"
+                      >HTML
+      </span>
+      <button onclick="(function(btn){
+                const code = btn.closest('.code-block').querySelector('pre code');
+                // selects the closest element that has class code-block
+                // then search for code element that is a descendent of a pre element
+                navigator.clipboard.writeText(code.textContent).then(function(){
+                  btn.textContent = 'Copied!';
+                  setTimeout(function(){ btn.textContent = 'Copy'; }, 2000);
+                }); // copies the text to clipboard and temporarily changes Copy to Copies!
+              })(this)"
+        >Copy</button> 
+
+    </div> 
+
+    
+    <div class="code-body"
+          style="overflow-x: auto; 
+                  padding: 0rem 0.5rem; 
+                  background-color: rgb(0, 50, 50);"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;padding: 0% 2%;&#34;</span>&gt; <span style="color:#75715e">&lt;!-- applies padding to buffer code from edge of page --&gt;</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  {{- $lang := .Get &#34;lang&#34; | default &#34;text&#34; -}} <span style="color:#75715e">&lt;!-- pulls the lang parameter and defaults to text if not present --&gt;</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;code-block&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;border:1px solid grey; 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              border-radius:1rem; 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              overflow: hidden; &#34;</span>&gt; 
+</span></span><span style="display:flex;"><span>              <span style="color:#75715e">&lt;!-- applies background and bounds the outer-mode code box --&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;display:flex; 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                justify-content:space-between; 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                align-items:center; 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                background:#a8a8a8; 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                padding:0.5rem 1rem; 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                font-size:0.9em;&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">&lt;!-- style for header --&gt;</span>
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:rgb(0, 0, 0); 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                      background-color: rgb(229, 229, 229);
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                      padding: 0.25rem 0.5rem;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                      border-radius: 0.25rem;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                      font-weight: bold;&#34;</span>
+</span></span><span style="display:flex;"><span>                      &gt;{{- $lang | upper -}}
+</span></span><span style="display:flex;"><span>                      <span style="color:#75715e">&lt;!-- adds and applies style to the language label in top left --&gt;</span>
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;(function(btn){
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                const code = btn.closest(&#39;.code-block&#39;).querySelector(&#39;pre code&#39;);
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                // selects the closest element that has class code-block
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                // then search for code element that is a descendent of a pre element
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                navigator.clipboard.writeText(code.textContent).then(function(){
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                  btn.textContent = &#39;Copied!&#39;;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                  setTimeout(function(){ btn.textContent = &#39;Copy&#39;; }, 2000);
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                }); // copies the text to clipboard and temporarily changes Copy to Copies!
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              })(this)&#34;</span>
+</span></span><span style="display:flex;"><span>        &gt;Copy&lt;/<span style="color:#f92672">button</span>&gt; 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt; <span style="color:#75715e">&lt;!-- closes 3rd nested div --&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- body with syntax highlighting and horizontal scroll --&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;code-body&#34;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;overflow-x: auto; 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                  padding: 0rem 0.5rem; 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                  background-color: rgb(0, 50, 50);&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>          {{- highlight .Inner $lang -}} 
+</span></span><span style="display:flex;"><span>          <span style="color:#75715e">&lt;!-- adds text between opening and closing shortcode tags with lang utilizing native shortcode for syntax highlighting --&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt; <span style="color:#75715e">&lt;!-- closes code-body div--&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt; <span style="color:#75715e">&lt;!-- closes code-block div --&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">style</span>&gt; <span style="color:#75715e">/* matches RGB background color of code-body for full coverage */</span>
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">code-body</span> <span style="color:#f92672">*</span> { <span style="color:#66d9ef">background-color</span>: rgb(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">50</span>, <span style="color:#ae81ff">50</span>); }
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt; <span style="color:#75715e">&lt;!-- closes top level div for padding --&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span></code></pre></div>
+    </div> 
+
+  </div> 
+
+  <style>  
+    .code-body * { background-color: rgb(0, 50, 50); }
+  </style>
+
+</div> 
+<h2 id="image-embedding-shortcode">Image Embedding Shortcode</h2>
+<div style="padding: 0% 2%;"> 
+  
+  <div class="code-block"
+    style="border:1px solid grey; 
+              border-radius:1rem; 
+              overflow: hidden; "> 
+              
+
+    <div style="display:flex; 
+                justify-content:space-between; 
+                align-items:center; 
+                background:#a8a8a8; 
+                padding:0.5rem 1rem; 
+                font-size:0.9em;">
+                
+      
+      <span style="color:rgb(0, 0, 0); 
+                      background-color: rgb(229, 229, 229);
+                      padding: 0.25rem 0.5rem;
+                      border-radius: 0.25rem;
+                      font-weight: bold;"
+                      >HTML
+      </span>
+      <button onclick="(function(btn){
+                const code = btn.closest('.code-block').querySelector('pre code');
+                // selects the closest element that has class code-block
+                // then search for code element that is a descendent of a pre element
+                navigator.clipboard.writeText(code.textContent).then(function(){
+                  btn.textContent = 'Copied!';
+                  setTimeout(function(){ btn.textContent = 'Copy'; }, 2000);
+                }); // copies the text to clipboard and temporarily changes Copy to Copies!
+              })(this)"
+        >Copy</button> 
+
+    </div> 
+
+    
+    <div class="code-body"
+          style="overflow-x: auto; 
+                  padding: 0rem 0.5rem; 
+                  background-color: rgb(0, 50, 50);"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;standardPadding&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text-align: center; max-width: 100%; height: auto;&#34;</span>&gt; 
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">&lt;!-- wrapper div to apply class and style --&gt;</span>
+</span></span><span style="display:flex;"><span>  {{- with .Get &#34;caption&#34; -}} <span style="color:#75715e">&lt;!-- checks to see if a caption been passed through --&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">h3</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;caption&#34;</span>&gt;{{- . -}}:&lt;/<span style="color:#f92672">h3</span>&gt; <span style="color:#75715e">&lt;!-- adds the caption followed by a semicolon if present --&gt;</span>
+</span></span><span style="display:flex;"><span>  {{- end -}} <span style="color:#75715e">&lt;!-- ends the caption check --&gt;</span>
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;max-width: 1000px;&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">img</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{- .Get &#34;</span><span style="color:#a6e22e">path</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#a6e22e">-</span><span style="color:#960050;background-color:#1e0010">}}&#34;</span> 
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{- .Get &#34;</span><span style="color:#a6e22e">alt</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#a6e22e">-</span><span style="color:#960050;background-color:#1e0010">}}&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">loading</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;lazy&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;&#34;</span>&gt; 
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">&lt;!-- grabs the path and alt text when the image is unable to load from parameters
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">            sets the loading as lazy - will defer image download until near the viewport
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">            applies style to dynamically resize image within parent container and viewport --&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div>
+    </div> 
+
+  </div> 
+
+  <style>  
+    .code-body * { background-color: rgb(0, 50, 50); }
+  </style>
+
+</div> 
+<hr>
+<h2 id="multiple-image-embedding-shortcode">Multiple Image Embedding Shortcode</h2>
+<div style="padding: 0% 2%;"> 
+  
+  <div class="code-block"
+    style="border:1px solid grey; 
+              border-radius:1rem; 
+              overflow: hidden; "> 
+              
+
+    <div style="display:flex; 
+                justify-content:space-between; 
+                align-items:center; 
+                background:#a8a8a8; 
+                padding:0.5rem 1rem; 
+                font-size:0.9em;">
+                
+      
+      <span style="color:rgb(0, 0, 0); 
+                      background-color: rgb(229, 229, 229);
+                      padding: 0.25rem 0.5rem;
+                      border-radius: 0.25rem;
+                      font-weight: bold;"
+                      >HTML
+      </span>
+      <button onclick="(function(btn){
+                const code = btn.closest('.code-block').querySelector('pre code');
+                // selects the closest element that has class code-block
+                // then search for code element that is a descendent of a pre element
+                navigator.clipboard.writeText(code.textContent).then(function(){
+                  btn.textContent = 'Copied!';
+                  setTimeout(function(){ btn.textContent = 'Copy'; }, 2000);
+                }); // copies the text to clipboard and temporarily changes Copy to Copies!
+              })(this)"
+        >Copy</button> 
+
+    </div> 
+
+    
+    <div class="code-body"
+          style="overflow-x: auto; 
+                  padding: 0rem 0.5rem; 
+                  background-color: rgb(0, 50, 50);"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{{- $images := .Params -}}  <span style="color:#75715e">&lt;!-- assign the passed in parameters to a variable --&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;carousel standardPadding&#34;</span>&gt; <span style="color:#75715e">&lt;!-- wrapper class to apply style --&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;carousel-controls&#34;</span>&gt; <span style="color:#75715e">&lt;!-- wrapper class for controls --&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;carousel-prev&#34;</span> <span style="color:#a6e22e">aria-label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Previous slide&#34;</span>&gt;‹&lt;/<span style="color:#f92672">button</span>&gt; <span style="color:#75715e">&lt;!-- creates the previous button element --&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;carousel-label&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt; <span style="color:#75715e">&lt;!-- creates a span where Javascript can inject index of current image  (x / y) --&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;carousel-next&#34;</span> <span style="color:#a6e22e">aria-label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Next slide&#34;</span>&gt;›&lt;/<span style="color:#f92672">button</span>&gt; <span style="color:#75715e">&lt;!-- creates the previous button element --&gt;</span>
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;carousel-inner&#34;</span>&gt; <span style="color:#75715e">&lt;!-- wrapper class for image array --&gt;</span>
+</span></span><span style="display:flex;"><span>    {{- range $i, $img := $images -}} <span style="color:#75715e">&lt;!-- iterate through all passed in images --&gt;</span>
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">img</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{- $img -}}&#34;</span> 
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;carousel-item {{ if eq $i 0 }}active{{ end }}&#34;</span> 
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Slide {{ add $i 1 }}&#34;</span>/&gt; 
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!-- add image html element 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">              src pulls the path of the image with root in static folder 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">              every photo is in carousel-item class 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">              the first photo (index 0) is in the active class 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">          --&gt;</span>
+</span></span><span style="display:flex;"><span>    {{- end -}} <span style="color:#75715e">&lt;!-- ends loop over images --&gt;</span>
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">carousel</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">carousel-inner</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">inline-block</span>; <span style="color:#75715e">/* centers the active image */</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">carousel-item</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">none</span>;        <span style="color:#75715e">/* hides all but the selected image */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">max-width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;      <span style="color:#75715e">/* the image can occupy no more than 100% of the parent container #narrowOnDesktop */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">max-height</span>: <span style="color:#ae81ff">70</span><span style="color:#66d9ef">vh</span>;     <span style="color:#75715e">/* the image can occupy no more than 70% of the viewport height */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">width</span>: <span style="color:#66d9ef">auto</span>;          <span style="color:#75715e">/* retains aspect ratio before the max-width has been reached */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">height</span>: <span style="color:#66d9ef">auto</span>;         <span style="color:#75715e">/* retains aspect ratio before the max-height has been reached */</span>
+</span></span><span style="display:flex;"><span>  } 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">carousel-item</span>.<span style="color:#a6e22e">active</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">block</span>;       <span style="color:#75715e">/* changes from display: none to block, making visible the active image */</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">carousel-controls</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0.5</span><span style="color:#66d9ef">rem</span> <span style="color:#66d9ef">auto</span>;  <span style="color:#75715e">/* top, left/right, bottom */</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">carousel-controls</span> <span style="color:#f92672">button</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">carousel-label</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">vertical-align</span>: <span style="color:#66d9ef">middle</span>;         <span style="color:#75715e">/* vertical centers elements  */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">rem</span> <span style="color:#ae81ff">0.5</span><span style="color:#66d9ef">rem</span> <span style="color:#ae81ff">0</span><span style="color:#66d9ef">rem</span>;       <span style="color:#75715e">/* adds margin: top/botton left/right */</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">carousel-controls</span> <span style="color:#f92672">button</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background</span>: rgba(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0.5</span>);  <span style="color:#75715e">/* background color of buttons */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#fff</span>;                  <span style="color:#75715e">/* text color in buttons */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">1.5</span><span style="color:#66d9ef">rem</span>;              <span style="color:#75715e">/* text size in buttons */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0.5</span><span style="color:#66d9ef">rem</span> <span style="color:#ae81ff">1</span><span style="color:#66d9ef">rem</span>;           <span style="color:#75715e">/* padding between character and edge of button: top/botton left/right */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">cursor</span>: <span style="color:#66d9ef">pointer</span>;                <span style="color:#75715e">/* changes cursor to pointer icon on hover */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">0.25</span><span style="color:#66d9ef">rem</span>;         <span style="color:#75715e">/* round off the edges of the boxes */</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">carousel-label</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-weight</span>: <span style="color:#66d9ef">bold</span>;         <span style="color:#75715e">/* makes the text bold - x/y */</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#66d9ef">function</span>(){  <span style="color:#75715e">// starts an IIFE (immediately invoked function expression)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#75715e">// prevented from leaking into global scope
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">carousel</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">currentScript</span>.<span style="color:#a6e22e">parentNode</span>;         <span style="color:#75715e">// reference to root carousel container
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">items</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">carousel</span>.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;.carousel-item&#39;</span>);  <span style="color:#75715e">// using the above const to grab container for images
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">label</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">carousel</span>.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.carousel-label&#39;</span>);    <span style="color:#75715e">// using the above const to grab container for navigation
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;  <span style="color:#75715e">// sets the default image to the first
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">show</span>(<span style="color:#a6e22e">i</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">length</span>) <span style="color:#f92672">%</span> <span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">length</span>;            <span style="color:#75715e">// changes index and enables wrap around navigation
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">el</span> =&gt; <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#39;active&#39;</span>));   <span style="color:#75715e">// loops through active image to mark all as inactive
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#a6e22e">items</span>[<span style="color:#a6e22e">index</span>].<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;active&#39;</span>);                 <span style="color:#75715e">// marks previously calculated index as active
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#a6e22e">label</span>.<span style="color:#a6e22e">textContent</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">index</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">length</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>;     <span style="color:#75715e">// updates the image index label
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">carousel</span>.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.carousel-prev&#39;</span>)  
+</span></span><span style="display:flex;"><span>      .<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, () =&gt; <span style="color:#a6e22e">show</span>(<span style="color:#a6e22e">index</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>));  <span style="color:#75715e">// adds event listener to change image index on click
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">carousel</span>.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.carousel-next&#39;</span>)
+</span></span><span style="display:flex;"><span>      .<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, () =&gt; <span style="color:#a6e22e">show</span>(<span style="color:#a6e22e">index</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)); <span style="color:#75715e">// adds event listener to change image index on click
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">show</span>(<span style="color:#ae81ff">0</span>); <span style="color:#75715e">// makes the first image visible on first load
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  })(); <span style="color:#75715e">// closing IIFE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div>
+    </div> 
+
+  </div> 
+
+  <style>  
+    .code-body * { background-color: rgb(0, 50, 50); }
+  </style>
+
+</div> 
+<br><br><br><hr>
+<div id="footer">
+    <p>@2025&nbsp;&nbsp;</p>
+    
+    <p><a href="mailto:jwcarlson.tech@gmail.com">jwcarlson.tech@gmail.com</a>&nbsp;</p>
+    
+    <span id="footerLinks">
+        <p><a href="https://www.linkedin.com/in/joseph-carlson-it/" target='_blank'>LinkedIn</a>&nbsp;&nbsp;</p><p><a href="/documents/resume.pdf" target="_blank">Resume</a>&nbsp;&nbsp;</p></span>
+</div></div>
+        </div>
+    </body>
+</html>
+

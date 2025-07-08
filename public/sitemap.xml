@@ -2,23 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/all/</loc>
-    <lastmod>2025-07-06T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-07-06T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/projects/</loc>
-    <lastmod>2025-07-06T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-07-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/projects/this-website/</loc>
-    <lastmod>2025-07-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/webdev/</loc>
-    <lastmod>2025-07-06T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/all/</loc>
   </url><url>
     <loc>http://localhost:1313/case-studies/</loc>
   </url><url>
@@ -26,6 +16,12 @@
   </url><url>
     <loc>http://localhost:1313/hot-takes/</loc>
   </url><url>
+    <loc>http://localhost:1313/tags/null/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+  </url><url>
     <loc>http://localhost:1313/technical-concepts/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/webdev/</loc>
   </url>
 </urlset>

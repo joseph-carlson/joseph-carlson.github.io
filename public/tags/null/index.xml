@@ -7,26 +7,5 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/tags/null/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Entry Level Jobs?</title>
-      <link>http://localhost:1313/hot-takes/entry-level-jobs/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/hot-takes/entry-level-jobs/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>How Numbers Lie</title>
-      <link>http://localhost:1313/hot-takes/how-numbers-lie/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/hot-takes/how-numbers-lie/</guid>
-      <description>&lt;p&gt;Unemployment Statistics&lt;/p&gt;&#xA;&lt;p&gt;Congressional Budget&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>The Illusion of Privacy</title>
-      <link>http://localhost:1313/hot-takes/the-illusion-of-privacy/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/hot-takes/the-illusion-of-privacy/</guid>
-      <description>&lt;h3 id=&#34;you-signed-it-away&#34;&gt;You Signed It Away&lt;/h3&gt;&#xA;&lt;p&gt;Facebook using your camera role for AI model training data&lt;/p&gt;&#xA;&lt;a href=&#34;https://www.cyber.nj.gov/threat-landscape/malware/mobile-malware/ios-malware/pegasus&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&#xA;  resource #1&#xA;&lt;/a&gt;</description>
-    </item>
   </channel>
 </rss>
