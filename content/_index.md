@@ -1,0 +1,3 @@
+---
+title: 'Joseph Carlson Blog'
+---

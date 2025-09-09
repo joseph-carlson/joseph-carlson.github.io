@@ -1,0 +1,19 @@
+<div class="sticky">
+    <div id="breadcrumbs">
+        <h3>~</h3>
+        {{- range .Ancestors.Reverse -}}
+            {{- if .IsHome -}}
+                <h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="{{- .RelPermalink -}}">Root</a></h3>
+            {{- else -}}
+                <h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="{{- .RelPermalink -}}">{{- .Title -}}</a></h3>
+            {{- end }}
+        {{- end -}}
+
+        {{- if .IsHome -}}
+            <h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="{{- .RelPermalink -}}">Root</a></h3>
+        {{- else -}}
+            <h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="{{- .RelPermalink -}}">{{- .Title -}}</a></h3>
+        {{- end -}}
+    </div>
+    <hr>
+</div>

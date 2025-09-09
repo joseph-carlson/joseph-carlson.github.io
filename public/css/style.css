@@ -1,0 +1,120 @@
+html {
+    font-family: monospace;
+    color: #f2f2f2;
+    background-color: #171717;
+}
+
+a {
+    text-decoration: none;
+    color: #00ffff;
+}
+
+table {
+    width: fit-content;
+}
+
+th {
+    text-align: left;
+    padding-bottom: 1rem;
+}
+
+#header {
+    display: flex; 
+    align-items: column; 
+    align-items: center; 
+    justify-content: space-between;
+}
+
+.title p {
+    display: inline;
+}
+
+#logo {
+    padding: 1rem, 5rem;
+}
+
+#headerCategories {
+    display: inline;
+    text-align: right;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #171717;
+    padding: 0rem 0.25rem 0.25rem;
+}
+
+#breadcrumbs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.breadcrumbPages {
+    display: inline; 
+    text-wrap: nowrap;
+}
+
+#postBanner {
+    z-index: 0;
+}
+
+.categoryLinks {
+    display: inline;
+}
+
+#footer > * {
+    display: inline;
+}
+
+#footerLinks > * {
+    display: inline;
+}
+
+#narrowOnDesktop {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.standardPadding { /* standard padding for images, gallery, and YouTube iframes */
+    padding: 1% 1%;
+}
+
+@media screen and (max-width: 875px) {
+    .title p {
+        display: block;
+    }
+    #headerCategories {
+        display: block;
+    }
+    #tags {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    #homePageLinks {
+        text-align: center;
+    }
+    #technicalConcepts {
+        text-align: center;
+        padding: 0rem 3rem;
+    }
+    table {
+        width: 100%;
+    }
+    th, td {
+        text-align: center;
+    }
+    #footer > * {
+        display: flex;
+        justify-content: center;
+    }
+    #narrowOnDesktop {
+        max-width: 100vw;
+    }
+    .removeOnMobile {
+        display: none;
+    }
+}

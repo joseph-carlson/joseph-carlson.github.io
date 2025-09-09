@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Open-Source on Joseph Carlson</title>
+    <link>http://localhost:1313/tags/open-source/</link>
+    <description>Recent content in Open-Source on Joseph Carlson</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 11 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/open-source/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>XZ Utils: Open-Source Exploitation</title>
+      <link>http://localhost:1313/case-studies/xz-utils/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/case-studies/xz-utils/</guid>
+      <description>&lt;h2 id=&#34;xz-utils---a-wake-up-call-for-open-source-software&#34;&gt;XZ Utils - a wake-up call for open-source software&lt;/h2&gt;&#xA;&lt;a href=&#34;https://www.cve.org/CVERecord?id=CVE-2024-3094&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&#xA;  CVE-2024-3094&#xA;&lt;/a&gt;&#xA;&lt;p&gt;Free and open-source software is great. People assume it is secure- after all, it has the eyes of the world on it. Like most things, the reality is much more nuanced than it appears. Much of the responsibility of this open-source code lies on individual maintainers, who are oftentimes unpaid volunteers working in isolation without institutional support. These conditions could have set the stage for open-source&amp;rsquo;s worst-case scenario, if it weren&amp;rsquo;t for a single engineer who discovered the backdoor by chance.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

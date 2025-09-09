@@ -1,0 +1,33 @@
+<table class="datatable">
+  <thead>
+    <tr>
+      {{- range (split (.Get "headers") ",") -}} 
+      <!-- iterates through the headers with "," delimiter -->
+        <th>&nbsp{{- . | htmlEscape -}}&nbsp</th> 
+        <!-- adds that text to a table header buffered with a space on each side
+              then escapes to parent element table context -->
+      {{- end -}}
+    </tr>
+  </thead>
+  <tbody>
+    {{- $rows := split (.Inner | chomp | replaceRE "\r" "") "\n" -}}
+    <!-- iterates through the rows with new line "\n" delimeter
+          replaceRE runs a regular expression to remove all carriage returns "\r" 
+          in case of Windows-style line endings "\r\n" 
+          unix-based systems do not include the carriage return -->
+      {{- range $rows -}}   <!-- loops over each element in the current row -->
+        {{- if ne . "" -}}  <!-- skips empty strings -->
+          <tr>            <!-- opens row for non-empty lines -->
+            {{- range (split . ",") -}}                  <!-- splits with comma delimeter for columns-->
+              <td>&nbsp{{- . | htmlEscape -}}&nbsp</td>  <!-- adds the table data buffered with a space on each side
+                                                            and escapes to parent element context -->
+            {{- end -}} <!-- table data loop end -->
+          </tr>
+        {{- end -}} <!-- table row loop end  -->
+    {{- end -}} <!-- windows new line correction end -->
+  </tbody> 
+</table>
+
+<style> /* renders table cell borders */
+  .datatable * { border: 1px solid gray; }
+</style>

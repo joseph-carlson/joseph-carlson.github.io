@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/css/style.css">
+
+        <title>XZ Utils: Open-Source Exploitation</title>
+    </head>
+    <body><div id="header">
+    <h1 class="title">
+        <a href="/">
+            <p>Joseph&nbsp;</p>
+            <p>Carlson</p>
+        </a>
+    </h1>
+    <span><a href="/"><img src="/logo.ico" alt="Logo" height="75" id="logo"></a>
+    </span>
+    <span><h3 id="headerCategories"><a href="/case-studies/">case-studies</a>&nbsp;&nbsp;</h3><h3 id="headerCategories"><a href="/projects/">projects</a>&nbsp;&nbsp;</h3><h3 id="headerCategories"><a href="/interesting-stuff/">interesting-stuff</a>&nbsp;&nbsp;</h3></span>
+</div><hr>
+
+        <div id="narrowOnDesktop"><div class="sticky">
+    <div id="breadcrumbs">
+        <h3>~</h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/">Root</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/case-studies/">Case Studies</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/case-studies/xz-utils/">XZ Utils: Open-Source Exploitation</a></h3></div>
+    <hr>
+</div><div id="postBanner"><br>
+    Page content loading...&nbsp;<a href="/tags/all/">#all&nbsp;</a><a href="/tags/malware/">#malware&nbsp;</a><a href="/tags/open-source/">#open-source&nbsp;</a><h2 id="xz-utils---a-wake-up-call-for-open-source-software">XZ Utils - a wake-up call for open-source software</h2>
+<a href="https://www.cve.org/CVERecord?id=CVE-2024-3094" target="_blank" rel="noopener noreferrer">
+  CVE-2024-3094
+</a>
+<p>Free and open-source software is great. People assume it is secure- after all, it has the eyes of the world on it. Like most things, the reality is much more nuanced than it appears. Much of the responsibility of this open-source code lies on individual maintainers, who are oftentimes unpaid volunteers working in isolation without institutional support. These conditions could have set the stage for open-source&rsquo;s worst-case scenario, if it weren&rsquo;t for a single engineer who discovered the backdoor by chance.</p>
+<hr>
+<h3 id="high-level-root-cause-analysis">High-Level Root Cause Analysis</h3>
+<p>In March of 2024, a severe backdoor was discovered in XZ Utils, a widely used core compression utility in several Linux distributions. This backdoor, discovered by Andres Freund and announced to the public on Openwall&rsquo;s &ldquo;oss-security&rdquo; mailing list<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, demonstrated how a long-con insider threat successfully committed malicious code to this open-source project.</p>
+<p>The attacker who goes by &ldquo;Jia Tan&rdquo; (JiaT75), presented themselves as a helpful contributor and gradually gained trust in the XZ Utils project over the duration of two years. Through several commits, detailed in the picture below (created by Thomas Roccia and posted on infosec.exchange)<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, JiaT75 introduced one of the most impressive supply chain exploits ever discovered.</p>
+<p>Three main factors aided in the obscurity of the malicious code:</p>
+<ul>
+<li>Blended with legitimate commits</li>
+<li>Spread across multiple files</li>
+<li>Dormant under normal circumstances</li>
+</ul>
+<div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
+  
+    <h3 class="caption">Backdoor Infographic:</h3> 
+  <div style="max-width: 1000px;">
+    <img
+      src="/case-studies/xz-utils.png" 
+      alt="Backdoor Infographic"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
+</div>
+<p>For more details, visit <a href="https://daily.dev/blog/xz-backdoor-the-full-story-in-one-place" target="_blank" rel="noopener noreferrer">
+  daily.dev
+</a>or <a href="https://www.akamai.com/blog/security-research/critical-linux-backdoor-xz-utils-discovered-what-to-know?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">
+  Akamai Breakdown
+</a>for great breakdowns on the exploit.</p>
+<hr>
+<h3 id="open-source-to-blame">Open Source to Blame?</h3>
+<p>While JiaT75 was the sole contributor behind the backdoor, we still don&rsquo;t know who was behind that alias. Due to the complexity of this backdoor, most industry professionals have speculated that this was a nation-state threat actor. Unfortunately, this alone doesn&rsquo;t do us much good moving forward. The circumstances that allowed JiaT75 to commit such a severe backdoor into such a widely utilized tool must be scrutinized to prevent a future where the next backdoor goes undetected.</p>
+<hr>
+<h3 id="what-can-be-done">What Can be Done?</h3>
+<p>CISA highlighted some takeaways following the discovery and remediation of this backdoor<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>. Though we got lucky this time with early detection, there needs to be a fundamental shift where for-profit corporations that use these open-source projects must help contribute to the sustainability of these projects. Whether that be through more dedicated developer time where employees can directory contribute, funding through grants and sponsorships, security audits, bug bounty programs, and legal support.</p>
+<p>Though companies like Google contribute to open source with the Chromium and Android projects, that funding rarely makes it to the individual contributors maintaining smaller, lesser-known repositories.</p>
+<hr>
+<h3 id="resources">Resources</h3>
+<ul>
+<li><a href="https://youtu.be/vV_WdTBbww4?si=6xFXWjXsMSkz-f9w" target="_blank" rel="noopener noreferrer">
+  For a Deeper Explanation: Ed from Low Level
+</a></li>
+<li><a href="https://youtu.be/F7iLfuci75Y?si=1n9KBi4UV3kseKLz" target="_blank" rel="noopener noreferrer">
+  Excellent Story with Animations: Fern
+</a></li>
+<li><a href="https://youtu.be/vtce4vmZIC8?si=qBOLjGZnhrSuxY3G" target="_blank" rel="noopener noreferrer">
+  Linus Torvalds: Trust in the Open Source Community
+</a></li>
+</ul>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/bS9em7Bg0iU?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://www.openwall.com/lists/oss-security/2024/03/29/4">https://www.openwall.com/lists/oss-security/2024/03/29/4</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://infosec.exchange/@fr0gger/112189232773640259">https://infosec.exchange/@fr0gger/112189232773640259</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://www.cisa.gov/news-events/news/lessons-xz-utils-achieving-more-sustainable-open-source-ecosystem">https://www.cisa.gov/news-events/news/lessons-xz-utils-achieving-more-sustainable-open-source-ecosystem</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+<br><br><hr>
+<div id="footer">
+    <p>@2025&nbsp;&nbsp;</p>
+    
+    <p><a href="mailto:jwcarlson.tech@gmail.com">jwcarlson.tech@gmail.com</a>&nbsp;</p>
+    
+    <span id="footerLinks">
+        <p><a href="https://www.linkedin.com/in/joseph-carlson-it/" target='_blank'>LinkedIn</a>&nbsp;&nbsp;</p><p><a href="/documents/resume.pdf" target="_blank">Resume</a>&nbsp;&nbsp;</p></span>
+</div></div>
+        </div>
+    </body>
+</html>
+

@@ -1,0 +1,55 @@
+<div style="padding: 0% 2%;"> <!-- applies padding to buffer code from edge of page -->
+  
+  {{- $lang := .Get "lang" | default "text" -}} <!-- pulls the lang parameter and defaults to text if not present -->
+  
+  <div class="code-block"
+    style="border:1px solid grey; 
+              border-radius:1rem; 
+              overflow: hidden; "> 
+              <!-- applies background and bounds the outer-mode code box -->
+
+    <div style="display:flex; 
+                justify-content:space-between; 
+                align-items:center; 
+                background:#a8a8a8; 
+                padding:0.5rem 1rem; 
+                font-size:0.9em;">
+                <!-- style for header -->
+      
+      <span style="color:rgb(0, 0, 0); 
+                      background-color: rgb(229, 229, 229);
+                      padding: 0.25rem 0.5rem;
+                      border-radius: 0.25rem;
+                      font-weight: bold;"
+                      >{{- $lang | upper -}}
+                      <!-- adds and applies style to the language label in top left -->
+      </span>
+      <button onclick="(function(btn){
+                const code = btn.closest('.code-block').querySelector('pre code');
+                // selects the closest element that has class code-block
+                // then search for code element that is a descendent of a pre element
+                navigator.clipboard.writeText(code.textContent).then(function(){
+                  btn.textContent = 'Copied!';
+                  setTimeout(function(){ btn.textContent = 'Copy'; }, 2000);
+                }); // copies the text to clipboard and temporarily changes Copy to Copies!
+              })(this)"
+        >Copy</button> 
+
+    </div> <!-- closes 3rd nested div -->
+
+    <!-- body with syntax highlighting and horizontal scroll -->
+    <div class="code-body"
+          style="overflow-x: auto; 
+                  padding: 0rem 0.5rem; 
+                  background-color: rgb(0, 50, 50);">
+          {{- highlight .Inner $lang -}} 
+          <!-- adds text between opening and closing shortcode tags with lang utilizing native shortcode for syntax highlighting -->
+    </div> <!-- closes code-body div-->
+
+  </div> <!-- closes code-block div -->
+
+  <style> /* matches RGB background color of code-body for full coverage */
+    .code-body * { background-color: rgb(0, 50, 50); }
+  </style>
+
+</div> <!-- closes top level div for padding -->

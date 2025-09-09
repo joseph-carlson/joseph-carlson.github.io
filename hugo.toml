@@ -1,0 +1,29 @@
+baseURL = 'https://joseph-carlson.github.io/'
+languageCode = 'en-us'
+title = 'Joseph Carlson'
+
+[[menus.main]]
+name = 'case-studies'
+pageRef = '/case-studies'
+weight = 10
+
+[[menus.main]]
+name = 'projects'
+pageRef = '/projects'
+weight = 20
+
+[[menus.main]]
+name = 'interesting-stuff'
+pageRef = '/interesting-stuff'
+weight = 30
+
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true # renders html in md files
+        [markup.goldmark.parser]
+            attribute = true
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'

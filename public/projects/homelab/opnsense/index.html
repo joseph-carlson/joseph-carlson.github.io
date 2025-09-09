@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/css/style.css">
+
+        <title>OPNsense</title>
+    </head>
+    <body><div id="header">
+    <h1 class="title">
+        <a href="/">
+            <p>Joseph&nbsp;</p>
+            <p>Carlson</p>
+        </a>
+    </h1>
+    <span><a href="/"><img src="/logo.ico" alt="Logo" height="75" id="logo"></a>
+    </span>
+    <span><h3 id="headerCategories"><a href="/case-studies/">case-studies</a>&nbsp;&nbsp;</h3><h3 id="headerCategories"><a href="/projects/">projects</a>&nbsp;&nbsp;</h3><h3 id="headerCategories"><a href="/interesting-stuff/">interesting-stuff</a>&nbsp;&nbsp;</h3></span>
+</div><hr>
+
+        <div id="narrowOnDesktop"><div class="sticky">
+    <div id="breadcrumbs">
+        <h3>~</h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/">Root</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/projects/">Projects</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/projects/homelab/">Home Lab</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/projects/homelab/opnsense/">OPNsense</a></h3></div>
+    <hr>
+</div><div id="postBanner"><br>
+    Page content loading...&nbsp;<a href="/tags/all/">#all&nbsp;</a><a href="/tags/homelab/">#homelab&nbsp;</a><h3 id="stage-1-opnsense-router--firewall">Stage 1. OPNsense Router + Firewall</h3>
+<p>Hosted on a Topton Fanless Mini PC from AliExpress.</p>
+<p>Q: Why use this PC and not a router provided by my ISP, or even an off-the-shelf model?</p>
+<p>A: I&rsquo;m not using a router from my ISP because after a couple years, this mini pc will pay for itself in the rental costs. As for the off-the-shelf model, I don&rsquo;t trust the manufacturer to maintain security updates. These updates are especially high priority because I am exposing a port to the internet for VPN access.</p>
+<p>Q: Why did I decide against virtualizing OPNsense within my Proxmox server?</p>
+<p>A: Because that adds an extra point of failure within the system. When I break things, I prefer it not take down my whole home network.</p>
+<hr>
+<p>FQDN: opnsense.localdomain</p>
+<p><em>Later changed to opnsense.home.arpa</em></p>
+<p>IP: 192.168.1.1/24</p>
+<p><em>Will later be changed to a non-standard IP range to avoid conflicts</em></p>
+<p>Later</p>
+<ol start="0">
+<li>Create OPNsense USB installer using Rufus</li>
+<li>Connect eth0 to my modem</li>
+<li>Boot into OPNsense USB</li>
+<li>Enter default credentials:</li>
+</ol>
+<ul>
+<li>username: installer</li>
+<li>password: opnsense</li>
+</ul>
+<ol start="4">
+<li>Continue with default keymap</li>
+<li>Install (ZFS) -&gt; ZFS GPT/UEFI Hybrid (Stripe)</li>
+<li>Select disk</li>
+<li>Accept default swap size of 8GB</li>
+<li>Confirm everything on the disk will be destroyed</li>
+<li>Install, change root password, and reboot</li>
+<li>Configure WAN &amp; LAN ports:</li>
+</ol>
+<ul>
+<li>igc0 - WAN</li>
+<li>igc1 - LAN</li>
+<li>igc2 - opt1 LAN</li>
+<li>igc3 - opt2 LAN</li>
+</ul>
+<ol start="11">
+<li>Power cycle modem to acquire WAN IP</li>
+<li>Update OPNsense firmware</li>
+<li>Search google.com, and take a sign of relief</li>
+</ol>
+<p>Next to configure the LAN Bridge for igc1 and igc2: <a href="https://docs.opnsense.org/manual/how-tos/lan_bridge.html" target="_blank" rel="noopener noreferrer">
+  OPNSense Documentation
+</a></p>
+<p>
+
+<div class="carousel standardPadding"> 
+
+  <div class="carousel-controls"> 
+    <button class="carousel-prev" aria-label="Previous slide">‹</button> 
+    <span class="carousel-label"></span> 
+    <button class="carousel-next" aria-label="Next slide">›</button> 
+  </div>
+
+  <div class="carousel-inner"> 
+      <img
+        src="/projects/home-lab/bridge-config.png" 
+        class="carousel-item active" 
+        alt="Slide 1"/> 
+        
+      <img
+        src="/projects/home-lab/interface-assignment.png" 
+        class="carousel-item " 
+        alt="Slide 2"/> 
+        
+      <img
+        src="/projects/home-lab/lan-interface.png" 
+        class="carousel-item " 
+        alt="Slide 3"/> 
+        
+      <img
+        src="/projects/home-lab/wap-interface.png" 
+        class="carousel-item " 
+        alt="Slide 4"/> 
+        
+      <img
+        src="/projects/home-lab/tunable-member.png" 
+        class="carousel-item " 
+        alt="Slide 5"/> 
+        
+      <img
+        src="/projects/home-lab/tunable-bridge.png" 
+        class="carousel-item " 
+        alt="Slide 6"/> 
+        
+  </div>
+  
+</div>
+
+<style>
+
+  .carousel {
+    text-align: center;
+  }
+
+  .carousel-inner {
+    display: inline-block;  
+  }
+
+  .carousel-item {
+    display: none;         
+    max-width: 100%;       
+    max-height: 70vh;      
+    width: auto;           
+    height: auto;          
+  } 
+
+  .carousel-item.active {
+    display: block;        
+  }
+
+  .carousel-controls {
+    margin: 0.5rem auto;   
+  }
+
+  .carousel-controls button,
+  .carousel-label {
+    vertical-align: middle;          
+    margin: 1rem 0.5rem 0rem;        
+  }
+
+  .carousel-controls button {
+    background: rgba(0,0,0,0.5);   
+    color: #fff;                   
+    font-size: 1.5rem;               
+    padding: 0.5rem 1rem;            
+    cursor: pointer;                 
+    border-radius: 0.25rem;          
+  }
+
+  .carousel-label {
+    font-weight: bold;          
+  }
+
+</style>
+
+<script>
+
+  (function(){  
+                
+    const carousel = document.currentScript.parentNode;         
+    const items = carousel.querySelectorAll('.carousel-item');  
+    const label = carousel.querySelector('.carousel-label');    
+    let index = 0;  
+
+    function show(i) {
+      index = (i + items.length) % items.length;            
+      items.forEach(el => el.classList.remove('active'));   
+      items[index].classList.add('active');                 
+      label.textContent = `${index+1}/${items.length}`;     
+    }
+
+    carousel.querySelector('.carousel-prev')  
+      .addEventListener('click', () => show(index - 1));  
+    carousel.querySelector('.carousel-next')
+      .addEventListener('click', () => show(index + 1)); 
+
+    show(0); 
+
+  })(); 
+
+</script>
+<div style="text-align: center; padding-top: 1em;">
+    #1 Bridge Configuration
+    <br>
+    #2 Interface Assignment
+    <br>
+    #3 LAN Interface
+    <br>
+    #4 WAP Interface
+    <br>
+    #5 Member Interface Tunable
+    <br>
+    #6 Bridge Interface Tunable
+    
+</div></p>
+<hr>
+<p>Later, I will configure WireGuard for remote access, Unbound DNS to serve upstream of AdGuard Home, and igc3 as a secure VLAN isolated from my main network (configured for downstream ports on my managed switch).</p>
+<br><br><hr>
+<div id="footer">
+    <p>@2025&nbsp;&nbsp;</p>
+    
+    <p><a href="mailto:jwcarlson.tech@gmail.com">jwcarlson.tech@gmail.com</a>&nbsp;</p>
+    
+    <span id="footerLinks">
+        <p><a href="https://www.linkedin.com/in/joseph-carlson-it/" target='_blank'>LinkedIn</a>&nbsp;&nbsp;</p><p><a href="/documents/resume.pdf" target="_blank">Resume</a>&nbsp;&nbsp;</p></span>
+</div></div>
+        </div>
+    </body>
+</html>
+

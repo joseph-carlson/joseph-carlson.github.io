@@ -1,0 +1,14 @@
+<hr>
+<div id="footer">
+    <p>@2025&nbsp;&nbsp;</p>
+    
+    <p><a href="mailto:jwcarlson.tech@gmail.com">jwcarlson.tech@gmail.com</a>&nbsp;</p>
+    
+    <span id="footerLinks">
+        <p><a href="https://www.linkedin.com/in/joseph-carlson-it/" target='_blank'>LinkedIn</a>&nbsp;&nbsp;</p>
+        
+        {{- with resources.Get "documents/resume.pdf" -}}
+            <p><a href="{{- .RelPermalink -}}" target="_blank">Resume</a>&nbsp;&nbsp;</p>
+        {{- end -}}
+    </span>
+</div>

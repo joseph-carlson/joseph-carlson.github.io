@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homelab on Joseph Carlson</title>
+    <link>http://localhost:1313/tags/homelab/</link>
+    <description>Recent content in Homelab on Joseph Carlson</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 21 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/homelab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AdGuard Home &#43; Unbound DNS</title>
+      <link>http://localhost:1313/projects/homelab/adguard-home/</link>
+      <pubDate>Thu, 21 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/homelab/adguard-home/</guid>
+      <description>&lt;p&gt;In this section, I will set up AdGuard Home with Unbound DNS in my home lab environment. I am doing this because it provides an added layer of security on my home network, blocking malicious domains at the network level before they have a chance to load. I chose Unbound DNS as the upstream server from AdGuard Home because of its&lt;/p&gt;&#xA;&lt;p&gt;Create an alpine linux lxc container&lt;/p&gt;&#xA;&lt;p&gt;update container&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/AdguardTeam/AdGuardHome&#34;&gt;https://github.com/AdguardTeam/AdGuardHome&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Proxmox VE</title>
+      <link>http://localhost:1313/projects/homelab/proxmox-ve/</link>
+      <pubDate>Wed, 20 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/homelab/proxmox-ve/</guid>
+      <description>&lt;h3 id=&#34;stage-2--proxmox-virtual-environment&#34;&gt;Stage 2.  Proxmox Virtual Environment&lt;/h3&gt;&#xA;&lt;p&gt;Hosted on my Framework 13 Laptop&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Create Proxmox VE Installer using Rufus&lt;/li&gt;&#xA;&lt;li&gt;Boot to Proxmox VE USB&lt;/li&gt;&#xA;&lt;li&gt;Accept the EULA&lt;/li&gt;&#xA;&lt;li&gt;Select disk and confirm format (ext4)&lt;/li&gt;&#xA;&lt;li&gt;Select Country, Time zone, and Keyboard layout&lt;/li&gt;&#xA;&lt;li&gt;Create root password and enter email&lt;/li&gt;&#xA;&lt;li&gt;A few more selections:&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Select the management interface&lt;/li&gt;&#xA;&lt;li&gt;FQDN: pve.localdomain&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Later changed to pve.home.arpa&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;IP Address (CIDR): 192.168.1.3 /24&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Will later be changed to a non-standard IP range to avoid conflicts&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;** DHCP Range 192.168.1.10 - 192.168.1.245 **&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Wireguard VPN</title>
+      <link>http://localhost:1313/projects/homelab/wireguard-vpn/</link>
+      <pubDate>Tue, 19 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/homelab/wireguard-vpn/</guid>
+      <description>&lt;h3 id=&#34;stage-3-remote-access&#34;&gt;Stage 3: Remote Access&lt;/h3&gt;&#xA;&lt;p&gt;This allows me to visit to a nice coffee shop, order a latte and pastry, open my laptop, and pick up where I left off (without exposing my network to the internet).&lt;/p&gt;&#xA;&lt;p&gt;At the time of writing this, I am running OPNsense version 25.7.2.&lt;/p&gt;&#xA;&lt;p&gt;First, I created a WireGuard instance, which defines the local tunnel address, port, and private/public key pair. Once created and enabled, this instance will listen for incoming traffic on the WAN IP through the designated port.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>OPNsense</title>
+      <link>http://localhost:1313/projects/homelab/opnsense/</link>
+      <pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/homelab/opnsense/</guid>
+      <description>&lt;h3 id=&#34;stage-1-opnsense-router--firewall&#34;&gt;Stage 1. OPNsense Router + Firewall&lt;/h3&gt;&#xA;&lt;p&gt;Hosted on a Topton Fanless Mini PC from AliExpress.&lt;/p&gt;&#xA;&lt;p&gt;Q: Why use this PC and not a router provided by my ISP, or even an off-the-shelf model?&lt;/p&gt;&#xA;&lt;p&gt;A: I&amp;rsquo;m not using a router from my ISP because after a couple years, this mini pc will pay for itself in the rental costs. As for the off-the-shelf model, I don&amp;rsquo;t trust the manufacturer to maintain security updates. These updates are especially high priority because I am exposing a port to the internet for VPN access.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>About This Lab</title>
+      <link>http://localhost:1313/projects/homelab/home-lab/</link>
+      <pubDate>Sun, 17 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/homelab/home-lab/</guid>
+      <description>&lt;h2 id=&#34;the-plan&#34;&gt;The Plan&lt;/h2&gt;&#xA;&lt;p&gt;Make things. Break things. Fix things. Then find a new way to break them.&lt;/p&gt;&#xA;&lt;p&gt;Along the way, there are a few points I would like to hit on my implementation.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Increase my network security.&lt;/li&gt;&#xA;&lt;li&gt;Network-wide ad-blocking with AdGuard Home.&lt;/li&gt;&#xA;&lt;li&gt;Remote network access with WireGuard VPN.&lt;/li&gt;&#xA;&lt;li&gt;Implement a reverse proxy to SSL/TLS encryption for local resources.&lt;/li&gt;&#xA;&lt;li&gt;Generate, aggregate, and analyze activity on the network.&lt;/li&gt;&#xA;&lt;li&gt;Display all this in a screenshot-worthy dashboard.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;div class=&#34;standardPadding&#34; style=&#34;text-align: center; max-width: 100%; height: auto;&#34;&gt; &#xA;  &#xA;    &lt;h3 class=&#34;caption&#34;&gt;Network Diagram:&lt;/h3&gt; &#xA;  &lt;div style=&#34;max-width: 1000px;&#34;&gt;&#xA;    &lt;img&#xA;      src=&#34;http://localhost:1313/projects/home-lab/network-diagram.png&#34; &#xA;      alt=&#34;Network Diagram&#34;&#xA;      loading=&#34;lazy&#34;&#xA;      style=&#34;display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;&#34;&gt; &#xA;      &#xA;    &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;roadmap&#34;&gt;Roadmap:&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;../opnsense&#34;&gt;OPNsense&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;../wireguard-vpn&#34;&gt;WireGuard VPN&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;../proxmox-ve&#34;&gt;Proxmox VE&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;../adguard-home&#34;&gt;AdGuard Home&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Lab Environment Clients&#xA;&lt;ul&gt;&#xA;&lt;li&gt;General Use VMs (Fedore 42 KDE, Windows 11)&lt;/li&gt;&#xA;&lt;li&gt;Windows 11 Bare Metal Device w/ RustDesk&lt;/li&gt;&#xA;&lt;li&gt;Raspberry Pi 3b&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;../siem-implementation&#34;&gt;Wazuh + ELK Stack SIEM&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;../nginx-reverse-proxy&#34;&gt;Nginx Reverse Proxy&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;../homepage&#34;&gt;Homepage&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; SIEM AI Summaries with MLX-LM&amp;hellip; maybe?&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;hardware-for-this-project&#34;&gt;Hardware for this Project&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;ISP Provided Modem&lt;/li&gt;&#xA;&lt;li&gt;MacBook Pro M3&#xA;&lt;ul&gt;&#xA;&lt;li&gt;M3 Pro, 18 GB Unified Memory, 500 GB SSD&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Topton Fanless Mini PC&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Intel N100, 16 GB DDR5 RAM, 265 GB NVMe SSD&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Framework 13 Laptop&#xA;&lt;ul&gt;&#xA;&lt;li&gt;AMD Ryzen 5 7640U, 32 GB DDR5 RAM, 1TB NVMe SSD&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;NETGEAR Switch (Amazon Sale)&lt;/li&gt;&#xA;&lt;li&gt;ASUS Router (Goodwill Purchase)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;ai&#34;&gt;AI&amp;hellip;&lt;/h2&gt;&#xA;&lt;p&gt;I decided to splurge and go for the paid tier of OpenAI&amp;rsquo;s ChatGPT.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Homepage</title>
+      <link>http://localhost:1313/projects/homelab/homepage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/homelab/homepage/</guid>
+      <description>&lt;p&gt;Soon, I&amp;rsquo;ll configure Homepage as a web dashboard for my home lab environment.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Nginx Reverse Proxy</title>
+      <link>http://localhost:1313/projects/homelab/nginx-reverse-proxy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/homelab/nginx-reverse-proxy/</guid>
+      <description>&lt;p&gt;Soon, I&amp;rsquo;ll configure Nginx as a reverse proxy to secure my local resources with SSL/TLS encryption.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SIEM Implementation</title>
+      <link>http://localhost:1313/projects/homelab/siem-implementation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/homelab/siem-implementation/</guid>
+      <description>&lt;p&gt;Soon, I&amp;rsquo;ll configure Wazuh and an ELK Stack to serve as a SIEM for my local network.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

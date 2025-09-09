@@ -1,0 +1,99 @@
+{{- $images := .Params -}}  <!-- assign the passed in parameters to a variable -->
+
+<div class="carousel standardPadding"> <!-- wrapper class to apply style -->
+
+  <div class="carousel-controls"> <!-- wrapper class for controls -->
+    <button class="carousel-prev" aria-label="Previous slide">‹</button> <!-- creates the previous button element -->
+    <span class="carousel-label"></span> <!-- creates a span where Javascript can inject index of current image  (x / y) -->
+    <button class="carousel-next" aria-label="Next slide">›</button> <!-- creates the previous button element -->
+  </div>
+
+  <div class="carousel-inner"> <!-- wrapper class for image array -->
+    {{- range $i, $img := $images -}} <!-- iterate through all passed in images -->
+      <img
+        src="{{- $img -}}" 
+        class="carousel-item {{ if eq $i 0 }}active{{ end }}" 
+        alt="Slide {{ add $i 1 }}"/> 
+        <!-- add image html element 
+              src pulls the path of the image with root in static folder 
+              every photo is in carousel-item class 
+              the first photo (index 0) is in the active class 
+          -->
+    {{- end -}} <!-- ends loop over images -->
+  </div>
+  
+</div>
+
+<style>
+
+  .carousel {
+    text-align: center;
+  }
+
+  .carousel-inner {
+    display: inline-block; /* centers the active image */
+  }
+
+  .carousel-item {
+    display: none;        /* hides all but the selected image */
+    max-width: 100%;      /* the image can occupy no more than 100% of the parent container #narrowOnDesktop */
+    max-height: 70vh;     /* the image can occupy no more than 70% of the viewport height */
+    width: auto;          /* retains aspect ratio before the max-width has been reached */
+    height: auto;         /* retains aspect ratio before the max-height has been reached */
+  } 
+
+  .carousel-item.active {
+    display: block;       /* changes from display: none to block, making visible the active image */
+  }
+
+  .carousel-controls {
+    margin: 0.5rem auto;  /* top, left/right, bottom */
+  }
+
+  .carousel-controls button,
+  .carousel-label {
+    vertical-align: middle;         /* vertical centers elements  */
+    margin: 1rem 0.5rem 0rem;       /* adds margin: top/botton left/right */
+  }
+
+  .carousel-controls button {
+    background: rgba(0,0,0,0.5);  /* background color of buttons */
+    color: #fff;                  /* text color in buttons */
+    font-size: 1.5rem;              /* text size in buttons */
+    padding: 0.5rem 1rem;           /* padding between character and edge of button: top/botton left/right */
+    cursor: pointer;                /* changes cursor to pointer icon on hover */
+    border-radius: 0.25rem;         /* round off the edges of the boxes */
+  }
+
+  .carousel-label {
+    font-weight: bold;         /* makes the text bold - x/y */
+  }
+
+</style>
+
+<script>
+
+  (function(){  // starts an IIFE (immediately invoked function expression)
+                // prevented from leaking into global scope
+    const carousel = document.currentScript.parentNode;         // reference to root carousel container
+    const items = carousel.querySelectorAll('.carousel-item');  // using the above const to grab container for images
+    const label = carousel.querySelector('.carousel-label');    // using the above const to grab container for navigation
+    let index = 0;  // sets the default image to the first
+
+    function show(i) {
+      index = (i + items.length) % items.length;            // changes index and enables wrap around navigation
+      items.forEach(el => el.classList.remove('active'));   // loops through active image to mark all as inactive
+      items[index].classList.add('active');                 // marks previously calculated index as active
+      label.textContent = `${index+1}/${items.length}`;     // updates the image index label
+    }
+
+    carousel.querySelector('.carousel-prev')  
+      .addEventListener('click', () => show(index - 1));  // adds event listener to change image index on click
+    carousel.querySelector('.carousel-next')
+      .addEventListener('click', () => show(index + 1)); // adds event listener to change image index on click
+
+    show(0); // makes the first image visible on first load
+
+  })(); // closing IIFE
+
+</script>

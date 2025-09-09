@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/css/style.css">
+
+        <title>About This Lab</title>
+    </head>
+    <body><div id="header">
+    <h1 class="title">
+        <a href="/">
+            <p>Joseph&nbsp;</p>
+            <p>Carlson</p>
+        </a>
+    </h1>
+    <span><a href="/"><img src="/logo.ico" alt="Logo" height="75" id="logo"></a>
+    </span>
+    <span><h3 id="headerCategories"><a href="/case-studies/">case-studies</a>&nbsp;&nbsp;</h3><h3 id="headerCategories"><a href="/projects/">projects</a>&nbsp;&nbsp;</h3><h3 id="headerCategories"><a href="/interesting-stuff/">interesting-stuff</a>&nbsp;&nbsp;</h3></span>
+</div><hr>
+
+        <div id="narrowOnDesktop"><div class="sticky">
+    <div id="breadcrumbs">
+        <h3>~</h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/">Root</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/projects/">Projects</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/projects/homelab/">Home Lab</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/projects/homelab/home-lab/">About This Lab</a></h3></div>
+    <hr>
+</div><div id="postBanner"><br>
+    Page content loading...&nbsp;<a href="/tags/all/">#all&nbsp;</a><a href="/tags/homelab/">#homelab&nbsp;</a><h2 id="the-plan">The Plan</h2>
+<p>Make things. Break things. Fix things. Then find a new way to break them.</p>
+<p>Along the way, there are a few points I would like to hit on my implementation.</p>
+<ul>
+<li>Increase my network security.</li>
+<li>Network-wide ad-blocking with AdGuard Home.</li>
+<li>Remote network access with WireGuard VPN.</li>
+<li>Implement a reverse proxy to SSL/TLS encryption for local resources.</li>
+<li>Generate, aggregate, and analyze activity on the network.</li>
+<li>Display all this in a screenshot-worthy dashboard.</li>
+</ul>
+<hr>
+<div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
+  
+    <h3 class="caption">Network Diagram:</h3> 
+  <div style="max-width: 1000px;">
+    <img
+      src="/projects/home-lab/network-diagram.png" 
+      alt="Network Diagram"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
+</div>
+<hr>
+<h3 id="roadmap">Roadmap:</h3>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> <a href="../opnsense">OPNsense</a></li>
+<li><input checked="" disabled="" type="checkbox"> <a href="../wireguard-vpn">WireGuard VPN</a></li>
+<li><input checked="" disabled="" type="checkbox"> <a href="../proxmox-ve">Proxmox VE</a></li>
+<li><input checked="" disabled="" type="checkbox"> <a href="../adguard-home">AdGuard Home</a></li>
+<li><input disabled="" type="checkbox"> Lab Environment Clients
+<ul>
+<li>General Use VMs (Fedore 42 KDE, Windows 11)</li>
+<li>Windows 11 Bare Metal Device w/ RustDesk</li>
+<li>Raspberry Pi 3b</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> <a href="../siem-implementation">Wazuh + ELK Stack SIEM</a></li>
+<li><input disabled="" type="checkbox"> <a href="../nginx-reverse-proxy">Nginx Reverse Proxy</a></li>
+<li><input disabled="" type="checkbox"> <a href="../homepage">Homepage</a></li>
+<li><input disabled="" type="checkbox"> SIEM AI Summaries with MLX-LM&hellip; maybe?</li>
+</ul>
+<hr>
+<h2 id="hardware-for-this-project">Hardware for this Project</h2>
+<ul>
+<li>ISP Provided Modem</li>
+<li>MacBook Pro M3
+<ul>
+<li>M3 Pro, 18 GB Unified Memory, 500 GB SSD</li>
+</ul>
+</li>
+<li>Topton Fanless Mini PC
+<ul>
+<li>Intel N100, 16 GB DDR5 RAM, 265 GB NVMe SSD</li>
+</ul>
+</li>
+<li>Framework 13 Laptop
+<ul>
+<li>AMD Ryzen 5 7640U, 32 GB DDR5 RAM, 1TB NVMe SSD</li>
+</ul>
+</li>
+<li>NETGEAR Switch (Amazon Sale)</li>
+<li>ASUS Router (Goodwill Purchase)</li>
+</ul>
+<hr>
+<h2 id="ai">AI&hellip;</h2>
+<p>I decided to splurge and go for the paid tier of OpenAI&rsquo;s ChatGPT.</p>
+<p>TLDR - it was worth it.</p>
+<p>It wasn&rsquo;t long ago when I was an AI cynic. Now don&rsquo;t mistake my words. AI is not to be trusted absolutely, but even with the occasional hallucinations, it&rsquo;s still worth it when I verify the output.</p>
+<p>I remember using one of the first ChatGPT models and being very impressed yet disappointed when using it. Impressed because something like that could run without an internet connection. The idea of compressing a large quantity of human knowledge into a neural network was fascinating. Yet, for my use case, it disappointed because it did not yet accommodate how I would use it.</p>
+<p>Next, there were the first models that started to reference online resources in real time. Still, it look me longer to determine where the model hallucinated than me doing it myself to begin with. It wasn&rsquo;t until I started using the most recent models from ChatGPT while working on this project when it became an asset. My understanding is the differentiator has been the larger context window.</p>
+<p>Though it is useful, all users should be aware of the current state of data confidentiality with these models.</p>
+<p><a href="https://openai.com/index/response-to-nyt-data-demands/">https://openai.com/index/response-to-nyt-data-demands/</a></p>
+<br><br><hr>
+<div id="footer">
+    <p>@2025&nbsp;&nbsp;</p>
+    
+    <p><a href="mailto:jwcarlson.tech@gmail.com">jwcarlson.tech@gmail.com</a>&nbsp;</p>
+    
+    <span id="footerLinks">
+        <p><a href="https://www.linkedin.com/in/joseph-carlson-it/" target='_blank'>LinkedIn</a>&nbsp;&nbsp;</p><p><a href="/documents/resume.pdf" target="_blank">Resume</a>&nbsp;&nbsp;</p></span>
+</div></div>
+        </div>
+    </body>
+</html>
+

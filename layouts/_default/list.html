@@ -1,0 +1,89 @@
+{{- define "main" -}}
+    {{- if .IsHome -}}
+        <div id="tags">
+            {{- range .Site.Taxonomies.tags -}}
+                <a href="{{- .Page.Permalink -}}">
+                    #{{- lower .Page.Title -}}
+                    <sup>&nbsp;{{- .Count -}}&nbsp;</sup>
+                </a>
+            {{- end -}}
+        </div>
+        <hr>
+    {{- end -}}
+
+    {{- if eq $.Title "Hot Takes" -}} 
+        <table>
+            <th>
+                <p style="font-weight: bold;">README:</p>
+                <p id="hotTakes">This is a collection of articles which cover some topics of interest on which I developed an opinion or two... These cover my opinion on the date of publication. I'm always open to new data and new ways to interpret existing data. This publication is merely intended to serve as a launch pad for further investigation.</p>
+            </th>
+        </table>
+    {{- end -}}
+
+    {{- if eq $.Title "Technical Concepts" -}} 
+        <table>
+            <th>
+                <p id="technicalConcepts">This section consists of articles on various technical concepts I have learned...</p>
+            </th>
+        </table>
+    {{- end -}}
+
+    {{- if .IsHome -}} <!-- Home Page -->
+        <br>
+        <div id="homePageLinks">
+            {{- partial "intro.html" . -}}
+
+            <br><br>
+            <hr>
+            {{- range .Site.Menus.main.ByWeight -}}
+                <h3><a href="{{- .URL -}}" class="categoryLinks">{{- strings.Title (replace .Name "-" " ") -}}</a></h3>
+            {{- end -}}
+        </div>
+    {{- else if ne .Kind "taxonomy" -}} <!-- Not Root Taxonomy Page - replace w/ term for specific tag page -->
+        <br>
+        <table>
+            <th>Title&nbsp;&nbsp;</th>
+            <th>Date&nbsp;&nbsp;</th>
+            <th class="removeOnMobile">Tags&nbsp;&nbsp;</th>
+        {{- range (where .Pages.ByDate.Reverse "Params.hidden" "ne" true) -}} <!-- hides articles with hidden param -->
+            <tr>
+            <td>
+                <a href="{{- .RelPermalink -}}">{{- .Title -}}</a>&nbsp;&nbsp;
+            </td>
+            <td>
+                {{- .Date | time.Format ":date_medium" -}}&nbsp;&nbsp;
+            </td>
+            <td class="removeOnMobile">
+                {{- with .GetTerms "tags" -}}
+                    {{- range . -}}
+                        {{- if ne (lower .LinkTitle) "all" -}}
+                            <a href="{{- .RelPermalink -}}" style="display: inline">#{{- lower .LinkTitle -}}</a>&nbsp;&nbsp;
+                        {{- end -}}
+                    {{- end -}}
+                {{- else -}}
+                    <p>none</p>
+                {{- end -}}
+            </td>
+            </tr>
+        {{- end -}}
+        </table>
+    {{- else -}} <!-- Root Taxonomy Page -->
+        <br>
+        <table>
+            <th>Title</th>
+            {{- range .Pages.ByDate.Reverse -}}
+                {{- if ne (lower .LinkTitle) "all" -}}
+                    <tr>
+                        <td>
+                            <a href="{{- .RelPermalink -}}">{{- .Title -}}</a>
+                        </td>
+                    </tr>
+                {{- end -}}
+            {{- end -}}
+            <tr>
+                <td><br>Just pick one and move on with your life.</td>
+            </tr>
+        </table>
+    {{- end -}}
+    <br>
+{{- end -}}

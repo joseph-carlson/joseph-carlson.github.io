@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/css/style.css">
+
+        <title>Local LLMs</title>
+    </head>
+    <body><div id="header">
+    <h1 class="title">
+        <a href="/">
+            <p>Joseph&nbsp;</p>
+            <p>Carlson</p>
+        </a>
+    </h1>
+    <span><a href="/"><img src="/logo.ico" alt="Logo" height="75" id="logo"></a>
+    </span>
+    <span><h3 id="headerCategories"><a href="/case-studies/">case-studies</a>&nbsp;&nbsp;</h3><h3 id="headerCategories"><a href="/projects/">projects</a>&nbsp;&nbsp;</h3><h3 id="headerCategories"><a href="/interesting-stuff/">interesting-stuff</a>&nbsp;&nbsp;</h3></span>
+</div><hr>
+
+        <div id="narrowOnDesktop"><div class="sticky">
+    <div id="breadcrumbs">
+        <h3>~</h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/">Root</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/projects/">Projects</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/projects/local-llms/">Local LLMs</a></h3></div>
+    <hr>
+</div><div id="postBanner"><br>
+    Page content loading...&nbsp;<a href="/tags/all/">#all&nbsp;</a><a href="/tags/ai/">#ai&nbsp;</a><p>You can use ChatGPT, Claude, Gemini, Apple Intelligence, or any number of models available on the internet nowadays. Just kidding, definitely not Apple Intelligence. For general queries, there&rsquo;s absolutely nothing wrong with that, but in the back of your mind, you have to wonder where all those chats go. Deleted into the abyss of unknown history, fragments of a memory as they make their own impact on training the next AI model<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, or stored just in case for a rainy day<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.</p>
+<p>Now I&rsquo;m not naive. Privacy simply does not exist in our modern world except for very few exceptions where the brightest minds went to great lengths to cover their tracks. If they can&rsquo;t track your IP because the endless YouTube NordVPN ads buried themselves into your subconscious, there are numerous known and unknown mechanisms that can be employed to rebuild your digital footprint.</p>
+<p>The good news is that they can&rsquo;t track what is run locally on your device (as far as we know). The better news is that some really smart people made our lives easy by developing user-friendly tools to run AI models locally on your device. Because of this, powerful hardware is critical for smooth operation. The performance bottleneck with most of these models is the VRAM (memory available to the GPU).</p>
+<p>To do this, we will be using two tools:</p>
+<ul>
+<li>Ollama (backend running the models)</li>
+<li>Open WebUI (self-hosted user-interface)</li>
+</ul>
+<hr>
+<h2 id="hahahugoshortcode9s0hbhb"><a href="https://ollama.com/" target="_blank" rel="noopener noreferrer">
+  Ollama
+</a></h2>
+<p>To install Ollama, navigate to <a href="https://ollama.com/download">https://ollama.com/download</a> to download and install the app for your platform.</p>
+<p>Since I&rsquo;m running MacOS, I downloaded the dmg file and dropped it into the Applications folder.</p>
+<p>If you&rsquo;re on another platform, I trust you know how to install an app.</p>
+<div style="padding: 0% 2%;"> 
+  
+  <div class="code-block"
+    style="border:1px solid grey; 
+              border-radius:1rem; 
+              overflow: hidden; "> 
+              
+
+    <div style="display:flex; 
+                justify-content:space-between; 
+                align-items:center; 
+                background:#a8a8a8; 
+                padding:0.5rem 1rem; 
+                font-size:0.9em;">
+                
+      
+      <span style="color:rgb(0, 0, 0); 
+                      background-color: rgb(229, 229, 229);
+                      padding: 0.25rem 0.5rem;
+                      border-radius: 0.25rem;
+                      font-weight: bold;"
+                      >TXT
+      </span>
+      <button onclick="(function(btn){
+                const code = btn.closest('.code-block').querySelector('pre code');
+                // selects the closest element that has class code-block
+                // then search for code element that is a descendent of a pre element
+                navigator.clipboard.writeText(code.textContent).then(function(){
+                  btn.textContent = 'Copied!';
+                  setTimeout(function(){ btn.textContent = 'Copy'; }, 2000);
+                }); // copies the text to clipboard and temporarily changes Copy to Copies!
+              })(this)"
+        >Copy</button> 
+
+    </div> 
+
+    
+    <div class="code-body"
+          style="overflow-x: auto; 
+                  padding: 0rem 0.5rem; 
+                  background-color: rgb(0, 50, 50);"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>josephcarlson@Josephs-MacBook-Pro ~ % ollama --version        
+</span></span><span style="display:flex;"><span>ollama version is 0.9.5
+</span></span><span style="display:flex;"><span>josephcarlson@Josephs-MacBook-Pro ~ % ollama --help
+</span></span><span style="display:flex;"><span>Large language model runner
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Usage:
+</span></span><span style="display:flex;"><span>  ollama [flags]
+</span></span><span style="display:flex;"><span>  ollama [command]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Available Commands:
+</span></span><span style="display:flex;"><span>  serve       Start ollama
+</span></span><span style="display:flex;"><span>  create      Create a model from a Modelfile
+</span></span><span style="display:flex;"><span>  show        Show information for a model
+</span></span><span style="display:flex;"><span>  run         Run a model
+</span></span><span style="display:flex;"><span>  stop        Stop a running model
+</span></span><span style="display:flex;"><span>  pull        Pull a model from a registry
+</span></span><span style="display:flex;"><span>  push        Push a model to a registry
+</span></span><span style="display:flex;"><span>  list        List models
+</span></span><span style="display:flex;"><span>  ps          List running models
+</span></span><span style="display:flex;"><span>  cp          Copy a model
+</span></span><span style="display:flex;"><span>  rm          Remove a model
+</span></span><span style="display:flex;"><span>  help        Help about any command
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Flags:
+</span></span><span style="display:flex;"><span>  -h, --help      help for ollama
+</span></span><span style="display:flex;"><span>  -v, --version   Show version information
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Use &#34;ollama [command] --help&#34; for more information about a command.
+</span></span><span style="display:flex;"><span>josephcarlson@Josephs-MacBook-Pro ~ % ollama list  
+</span></span><span style="display:flex;"><span>NAME                    ID              SIZE      MODIFIED     
+</span></span><span style="display:flex;"><span>deepseek-r1:latest      0a8c26691023    4.7 GB    4 months ago    
+</span></span><span style="display:flex;"><span>mistral-small:latest    d095cd553b04    12 GB     8 months ago    
+</span></span></code></pre></div>
+    </div> 
+
+  </div> 
+
+  <style>  
+    .code-body * { background-color: rgb(0, 50, 50); }
+  </style>
+
+</div> 
+<hr>
+<h2 id="hahahugoshortcode9s2hbhb"><a href="https://docs.openwebui.com/" target="_blank" rel="noopener noreferrer">
+  Open WebUI
+</a></h2>
+<p><a href="https://docs.openwebui.com/security/" target="_blank" rel="noopener noreferrer">
+  Security Policy
+</a>for curious minds.</p>
+<p>This is where the magic happens. After all, even though I can run all the Ollama models from the terminal, that&rsquo;s a pain and I really don&rsquo;t want to do that.</p>
+<p>Since I have Ollama and Docker installed on my device, this command will pull the Open WebUI Docker image from the GitHub Container Registry. Now this is a sizable download, so I would advise you do this at home and not at a coffee shop, which throttles your connection. Not that I would know&hellip;</p>
+<div style="padding: 0% 2%;"> 
+  
+  <div class="code-block"
+    style="border:1px solid grey; 
+              border-radius:1rem; 
+              overflow: hidden; "> 
+              
+
+    <div style="display:flex; 
+                justify-content:space-between; 
+                align-items:center; 
+                background:#a8a8a8; 
+                padding:0.5rem 1rem; 
+                font-size:0.9em;">
+                
+      
+      <span style="color:rgb(0, 0, 0); 
+                      background-color: rgb(229, 229, 229);
+                      padding: 0.25rem 0.5rem;
+                      border-radius: 0.25rem;
+                      font-weight: bold;"
+                      >ZSH
+      </span>
+      <button onclick="(function(btn){
+                const code = btn.closest('.code-block').querySelector('pre code');
+                // selects the closest element that has class code-block
+                // then search for code element that is a descendent of a pre element
+                navigator.clipboard.writeText(code.textContent).then(function(){
+                  btn.textContent = 'Copied!';
+                  setTimeout(function(){ btn.textContent = 'Copy'; }, 2000);
+                }); // copies the text to clipboard and temporarily changes Copy to Copies!
+              })(this)"
+        >Copy</button> 
+
+    </div> 
+
+    
+    <div class="code-body"
+          style="overflow-x: auto; 
+                  padding: 0rem 0.5rem; 
+                  background-color: rgb(0, 50, 50);"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>docker pull ghcr.io/open-webui/open-webui:main
+</span></span></code></pre></div>
+    </div> 
+
+  </div> 
+
+  <style>  
+    .code-body * { background-color: rgb(0, 50, 50); }
+  </style>
+
+</div> 
+<p>Next, this command will run that previously downloaded container with the default settings. It will also include volume mapping to ensure persistent data storage.
+<div style="padding: 0% 2%;"> 
+  
+  <div class="code-block"
+    style="border:1px solid grey; 
+              border-radius:1rem; 
+              overflow: hidden; "> 
+              
+
+    <div style="display:flex; 
+                justify-content:space-between; 
+                align-items:center; 
+                background:#a8a8a8; 
+                padding:0.5rem 1rem; 
+                font-size:0.9em;">
+                
+      
+      <span style="color:rgb(0, 0, 0); 
+                      background-color: rgb(229, 229, 229);
+                      padding: 0.25rem 0.5rem;
+                      border-radius: 0.25rem;
+                      font-weight: bold;"
+                      >ZSH
+      </span>
+      <button onclick="(function(btn){
+                const code = btn.closest('.code-block').querySelector('pre code');
+                // selects the closest element that has class code-block
+                // then search for code element that is a descendent of a pre element
+                navigator.clipboard.writeText(code.textContent).then(function(){
+                  btn.textContent = 'Copied!';
+                  setTimeout(function(){ btn.textContent = 'Copy'; }, 2000);
+                }); // copies the text to clipboard and temporarily changes Copy to Copies!
+              })(this)"
+        >Copy</button> 
+
+    </div> 
+
+    
+    <div class="code-body"
+          style="overflow-x: auto; 
+                  padding: 0rem 0.5rem; 
+                  background-color: rgb(0, 50, 50);"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>docker run -d -p 3000:8080 -v open-webui:/app/backend/data --name open-webui ghcr.io/open-webui/open-webui:main
+</span></span></code></pre></div>
+    </div> 
+
+  </div> 
+
+  <style>  
+    .code-body * { background-color: rgb(0, 50, 50); }
+  </style>
+
+</div> </p>
+<p>If you are using Windows with an Nvidia GPU, this command adds &lsquo;&ndash;gpus all&rsquo; to the previous command.
+<div style="padding: 0% 2%;"> 
+  
+  <div class="code-block"
+    style="border:1px solid grey; 
+              border-radius:1rem; 
+              overflow: hidden; "> 
+              
+
+    <div style="display:flex; 
+                justify-content:space-between; 
+                align-items:center; 
+                background:#a8a8a8; 
+                padding:0.5rem 1rem; 
+                font-size:0.9em;">
+                
+      
+      <span style="color:rgb(0, 0, 0); 
+                      background-color: rgb(229, 229, 229);
+                      padding: 0.25rem 0.5rem;
+                      border-radius: 0.25rem;
+                      font-weight: bold;"
+                      >ZSH
+      </span>
+      <button onclick="(function(btn){
+                const code = btn.closest('.code-block').querySelector('pre code');
+                // selects the closest element that has class code-block
+                // then search for code element that is a descendent of a pre element
+                navigator.clipboard.writeText(code.textContent).then(function(){
+                  btn.textContent = 'Copied!';
+                  setTimeout(function(){ btn.textContent = 'Copy'; }, 2000);
+                }); // copies the text to clipboard and temporarily changes Copy to Copies!
+              })(this)"
+        >Copy</button> 
+
+    </div> 
+
+    
+    <div class="code-body"
+          style="overflow-x: auto; 
+                  padding: 0rem 0.5rem; 
+                  background-color: rgb(0, 50, 50);"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>docker run -d -p 3000:8080 --gpus all -v open-webui:/app/backend/data --name open-webui ghcr.io/open-webui/open-webui:cuda
+</span></span></code></pre></div>
+    </div> 
+
+  </div> 
+
+  <style>  
+    .code-body * { background-color: rgb(0, 50, 50); }
+  </style>
+
+</div> </p>
+<p>Lastly, if you&rsquo;re like me, running this in single-user mode to disable login, use this command to set the WEBUI_AUTH environment variable to False.
+<div style="padding: 0% 2%;"> 
+  
+  <div class="code-block"
+    style="border:1px solid grey; 
+              border-radius:1rem; 
+              overflow: hidden; "> 
+              
+
+    <div style="display:flex; 
+                justify-content:space-between; 
+                align-items:center; 
+                background:#a8a8a8; 
+                padding:0.5rem 1rem; 
+                font-size:0.9em;">
+                
+      
+      <span style="color:rgb(0, 0, 0); 
+                      background-color: rgb(229, 229, 229);
+                      padding: 0.25rem 0.5rem;
+                      border-radius: 0.25rem;
+                      font-weight: bold;"
+                      >ZSH
+      </span>
+      <button onclick="(function(btn){
+                const code = btn.closest('.code-block').querySelector('pre code');
+                // selects the closest element that has class code-block
+                // then search for code element that is a descendent of a pre element
+                navigator.clipboard.writeText(code.textContent).then(function(){
+                  btn.textContent = 'Copied!';
+                  setTimeout(function(){ btn.textContent = 'Copy'; }, 2000);
+                }); // copies the text to clipboard and temporarily changes Copy to Copies!
+              })(this)"
+        >Copy</button> 
+
+    </div> 
+
+    
+    <div class="code-body"
+          style="overflow-x: auto; 
+                  padding: 0rem 0.5rem; 
+                  background-color: rgb(0, 50, 50);"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>docker run -d -p 3000:8080 -e WEBUI_AUTH<span style="color:#f92672">=</span>False -v open-webui:/app/backend/data --name open-webui ghcr.io/open-webui/open-webui:main
+</span></span></code></pre></div>
+    </div> 
+
+  </div> 
+
+  <style>  
+    .code-body * { background-color: rgb(0, 50, 50); }
+  </style>
+
+</div> </p>
+<p>When run, that Docker container is running on local port 3000, which can be accessed at http://localhost:3000 through the web browser of your choice.</p>
+<p>Remember, updating software is important&hellip;
+<div style="padding: 0% 2%;"> 
+  
+  <div class="code-block"
+    style="border:1px solid grey; 
+              border-radius:1rem; 
+              overflow: hidden; "> 
+              
+
+    <div style="display:flex; 
+                justify-content:space-between; 
+                align-items:center; 
+                background:#a8a8a8; 
+                padding:0.5rem 1rem; 
+                font-size:0.9em;">
+                
+      
+      <span style="color:rgb(0, 0, 0); 
+                      background-color: rgb(229, 229, 229);
+                      padding: 0.25rem 0.5rem;
+                      border-radius: 0.25rem;
+                      font-weight: bold;"
+                      >ZSH
+      </span>
+      <button onclick="(function(btn){
+                const code = btn.closest('.code-block').querySelector('pre code');
+                // selects the closest element that has class code-block
+                // then search for code element that is a descendent of a pre element
+                navigator.clipboard.writeText(code.textContent).then(function(){
+                  btn.textContent = 'Copied!';
+                  setTimeout(function(){ btn.textContent = 'Copy'; }, 2000);
+                }); // copies the text to clipboard and temporarily changes Copy to Copies!
+              })(this)"
+        >Copy</button> 
+
+    </div> 
+
+    
+    <div class="code-body"
+          style="overflow-x: auto; 
+                  padding: 0rem 0.5rem; 
+                  background-color: rgb(0, 50, 50);"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>docker rm -f open-webui
+</span></span><span style="display:flex;"><span>docker pull ghcr.io/open-webui/open-webui:main
+</span></span></code></pre></div>
+    </div> 
+
+  </div> 
+
+  <style>  
+    .code-body * { background-color: rgb(0, 50, 50); }
+  </style>
+
+</div> </p>
+<hr>
+<div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
+  
+    <h3 class="caption">Old UI:</h3> 
+  <div style="max-width: 1000px;">
+    <img
+      src="/projects/local-llms/Terminal%20Ollama.png" 
+      alt="Running Ollama in Terminal"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
+</div>
+<div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
+  
+    <h3 class="caption">New UI:</h3> 
+  <div style="max-width: 1000px;">
+    <img
+      src="/projects/local-llms/Open%20WebUI.png" 
+      alt="Running Ollama in Terminal"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
+</div>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance">https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://openai.com/index/response-to-nyt-data-demands/">https://openai.com/index/response-to-nyt-data-demands/</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+<br><br><hr>
+<div id="footer">
+    <p>@2025&nbsp;&nbsp;</p>
+    
+    <p><a href="mailto:jwcarlson.tech@gmail.com">jwcarlson.tech@gmail.com</a>&nbsp;</p>
+    
+    <span id="footerLinks">
+        <p><a href="https://www.linkedin.com/in/joseph-carlson-it/" target='_blank'>LinkedIn</a>&nbsp;&nbsp;</p><p><a href="/documents/resume.pdf" target="_blank">Resume</a>&nbsp;&nbsp;</p></span>
+</div></div>
+        </div>
+    </body>
+</html>
+

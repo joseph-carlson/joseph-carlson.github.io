@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/css/style.css">
+
+        <title>AdGuard Home &#43; Unbound DNS</title>
+    </head>
+    <body><div id="header">
+    <h1 class="title">
+        <a href="/">
+            <p>Joseph&nbsp;</p>
+            <p>Carlson</p>
+        </a>
+    </h1>
+    <span><a href="/"><img src="/logo.ico" alt="Logo" height="75" id="logo"></a>
+    </span>
+    <span><h3 id="headerCategories"><a href="/case-studies/">case-studies</a>&nbsp;&nbsp;</h3><h3 id="headerCategories"><a href="/projects/">projects</a>&nbsp;&nbsp;</h3><h3 id="headerCategories"><a href="/interesting-stuff/">interesting-stuff</a>&nbsp;&nbsp;</h3></span>
+</div><hr>
+
+        <div id="narrowOnDesktop"><div class="sticky">
+    <div id="breadcrumbs">
+        <h3>~</h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/">Root</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/projects/">Projects</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/projects/homelab/">Home Lab</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/projects/homelab/adguard-home/">AdGuard Home &#43; Unbound DNS</a></h3></div>
+    <hr>
+</div><div id="postBanner"><br>
+    Page content loading...&nbsp;<a href="/tags/all/">#all&nbsp;</a><a href="/tags/homelab/">#homelab&nbsp;</a><p>In this section, I will set up AdGuard Home with Unbound DNS in my home lab environment. I am doing this because it provides an added layer of security on my home network, blocking malicious domains at the network level before they have a chance to load. I chose Unbound DNS as the upstream server from AdGuard Home because of its</p>
+<p>Create an alpine linux lxc container</p>
+<p>update container</p>
+<p><a href="https://github.com/AdguardTeam/AdGuardHome">https://github.com/AdguardTeam/AdGuardHome</a></p>
+<pre tabindex="0"><code>curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/scripts/install.sh | sh -s -- -v
+</code></pre><p>navigate to http://192.168.1.4:3000, or your container IP</p>
+<p>http://192.168.1.4/#</p>
+<p>AdGuard Home Web Interface &gt; Settings &gt; DNS Settings
+Upstream DNS Servers
+Replace default with 192.168.1.1
+or your router&rsquo;s IP</p>
+<p>Navigate to OPNsense &gt; Services &gt; Unbound DNS &gt; General</p>
+<p>Ensure Unbound is enabled, listening on port 53 on all interfaces</p>
+<p>Change DNS Servers
+OPNsense &gt; System &gt; Settings &gt; General
+127.0.0.1
+OPNsense &gt; Services &gt; ISC DHCPv4 &gt; LAN
+192.168.1.4 (AdGuard Home IP)</p>
+<p>Clients → OPNsense DNS setting → AdGuard (LXC 192.168.1.4) → Unbound (192.168.1.1) → Internet</p>
+<br><br><hr>
+<div id="footer">
+    <p>@2025&nbsp;&nbsp;</p>
+    
+    <p><a href="mailto:jwcarlson.tech@gmail.com">jwcarlson.tech@gmail.com</a>&nbsp;</p>
+    
+    <span id="footerLinks">
+        <p><a href="https://www.linkedin.com/in/joseph-carlson-it/" target='_blank'>LinkedIn</a>&nbsp;&nbsp;</p><p><a href="/documents/resume.pdf" target="_blank">Resume</a>&nbsp;&nbsp;</p></span>
+</div></div>
+        </div>
+    </body>
+</html>
+
