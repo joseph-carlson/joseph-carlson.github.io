@@ -27,7 +27,7 @@ Three main factors aided in the obscurity of the malicious code:
 
 {{< img path="/case-studies/xz-utils.png" caption="Backdoor Infographic"  alt="Backdoor Infographic" >}}
 
-For more details, visit {{< newtablink url="https://daily.dev/blog/xz-backdoor-the-full-story-in-one-place" text="daily.dev" >}}or {{< newtablink url="https://www.akamai.com/blog/security-research/critical-linux-backdoor-xz-utils-discovered-what-to-know?utm_source=chatgpt.com" text="Akamai Breakdown" >}}for great breakdowns on the exploit.
+For more details, visit {{< newtablink url="https://daily.dev/blog/xz-backdoor-the-full-story-in-one-place" text="daily.dev" >}}or {{< newtablink url="https://www.akamai.com/blog/security-research/critical-linux-backdoor-xz-utils-discovered-what-to-know?utm_source=chatgpt.com" text="Akamai" >}}Breakdown for great breakdowns on the exploit.
 
 ---
 ### Open Source to Blame? 

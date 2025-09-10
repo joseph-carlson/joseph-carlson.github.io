@@ -81,4 +81,4 @@ This is the name server utilized by network client configured with DHCP.
 
 When properly configured, the traffic flows as follows...
 
-Network Clients → OPNsense DNS Setting → AdGuard (192.168.1.4:53) → Unbound (192.168.1.1:53) → Internet
+Local Network Client → OPNsense Router → AdGuard (192.168.1.4:53) → Unbound DNS (192.168.1.1:53) → Internet
