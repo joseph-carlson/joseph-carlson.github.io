@@ -8,7 +8,7 @@ tags:
   - homelab
 ---
 
-### Stage 3: Remote Access
+### Stage 2: Remote Access
 
 WireGuard is what makes it possible to visit to a nice coffee shop, order a latte and pastry, open my laptop, and pick up where I left off (without exposing my network to the internet). 
 

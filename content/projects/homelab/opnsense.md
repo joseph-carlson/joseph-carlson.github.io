@@ -8,7 +8,7 @@ tags:
   - homelab
 ---
 
-### Stage 1. OPNsense Router + Firewall
+### Stage 1: OPNsense Router + Firewall
 
 Hosted on a Topton Fanless Mini PC from AliExpress.
 

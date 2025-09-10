@@ -53,17 +53,15 @@ I entered 192.168.1.1 so DNS lookups get forward to the Unbound DNS Service in O
 
 Navigate to OPNsense > Services > Unbound DNS > General
 
-## Ensure Unbound is Configured
+## 5. Ensure Unbound is Configured
 
 Make sure Unbound DNS is enabled and listening at port 53 on all interfaces.
 
 {{< img path="/projects/home-lab/adguard-home/unbound-enabled.png" caption="Unbound Service Configured" alt="Unbound Service Configuration" >}}
 
-## Change OPNsense DNS Settings (System + DHCP)
+## 6. Change OPNsense DNS Settings (System + DHCP)
 
 OPNsense > System > Settings > General > DNS Servers: 127.0.0.1 
-
-This is the name server OPNsense will reference when downloading updates.
 
 {{< img path="/projects/home-lab/adguard-home/system-dns.png" caption="System DNS" alt="System DNS Config" >}}
 

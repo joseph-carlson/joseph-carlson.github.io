@@ -8,7 +8,7 @@ tags:
   - homelab
 ---
 
-### Stage 2.  Proxmox Virtual Environment
+### Stage 3: Proxmox Virtual Environment
 
 Hosted on my Framework 13 Laptop
 
