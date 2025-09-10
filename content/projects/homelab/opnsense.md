@@ -28,9 +28,7 @@ FQDN: opnsense.localdomain
 
 IP: 192.168.1.1/24
 
-*Will later be changed to a non-standard IP range to avoid conflicts*
-
-Later 
+*Will later be changed to a non-standard IP range to avoid conflicts* 
 
 0. Create OPNsense USB installer using Rufus
 1. Connect eth0 to my modem
@@ -55,28 +53,17 @@ Later
 
 Next to configure the LAN Bridge for igc1 and igc2: {{< newtablink url="https://docs.opnsense.org/manual/how-tos/lan_bridge.html" text="OPNSense Documentation" >}}
 
-{{< imgs
-    "/projects/home-lab/bridge-config.png"
-    "/projects/home-lab/interface-assignment.png"
-    "/projects/home-lab/lan-interface.png"
-    "/projects/home-lab/wap-interface.png"
-    "/projects/home-lab/tunable-member.png"
-    "/projects/home-lab/tunable-bridge.png"
->}}
-{{< credit >}}
-    #1 Bridge Configuration
-    <br>
-    #2 Interface Assignment
-    <br>
-    #3 LAN Interface
-    <br>
-    #4 WAP Interface
-    <br>
-    #5 Member Interface Tunable
-    <br>
-    #6 Bridge Interface Tunable
-    
-{{< /credit >}}
+
+{{< img path="/projects/home-lab/opnsense/bridge-config.png" caption="#1 Bridge Configuration" alt="Bridge Configuration" >}} 
+{{< img path="/projects/home-lab/opnsense/interface-assignment.png" caption="#2 Interface Assignment" alt="Interface Assignment" >}} 
+{{< img path="/projects/home-lab/opnsense/lan-interface.png" caption="#3 LAN Interface" alt="LAN Interface" >}} 
+{{< img path="/projects/home-lab/opnsense/wap-interface.png" caption="#4 WAP Interface" alt="WAP Interface" >}} 
+{{< img path="/projects/home-lab/opnsense/tunable-member.png" caption="#5 Member Interface Tunable" alt="Member Interface Tunable" >}} 
+{{< img path="/projects/home-lab/opnsense/tunable-bridge.png" caption="#6 Bridge Interface Tunable" alt="Bridge Interface Tunable" >}} 
+
+---
+{{< img path="/projects/home-lab/opnsense/opnsense.png" caption="OPNsense Dashboard" alt="OPNsense Dashboard" >}}
+
 
 ---
 

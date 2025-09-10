@@ -34,7 +34,6 @@
 <p><em>Later changed to opnsense.home.arpa</em></p>
 <p>IP: 192.168.1.1/24</p>
 <p><em>Will later be changed to a non-standard IP range to avoid conflicts</em></p>
-<p>Later</p>
 <ol start="0">
 <li>Create OPNsense USB installer using Rufus</li>
 <li>Connect eth0 to my modem</li>
@@ -68,138 +67,91 @@
 <p>Next to configure the LAN Bridge for igc1 and igc2: <a href="https://docs.opnsense.org/manual/how-tos/lan_bridge.html" target="_blank" rel="noopener noreferrer">
   OPNSense Documentation
 </a></p>
-<p>
-
-<div class="carousel standardPadding"> 
-
-  <div class="carousel-controls"> 
-    <button class="carousel-prev" aria-label="Previous slide">‹</button> 
-    <span class="carousel-label"></span> 
-    <button class="carousel-next" aria-label="Next slide">›</button> 
-  </div>
-
-  <div class="carousel-inner"> 
-      <img
-        src="/projects/home-lab/bridge-config.png" 
-        class="carousel-item active" 
-        alt="Slide 1"/> 
-        
-      <img
-        src="/projects/home-lab/interface-assignment.png" 
-        class="carousel-item " 
-        alt="Slide 2"/> 
-        
-      <img
-        src="/projects/home-lab/lan-interface.png" 
-        class="carousel-item " 
-        alt="Slide 3"/> 
-        
-      <img
-        src="/projects/home-lab/wap-interface.png" 
-        class="carousel-item " 
-        alt="Slide 4"/> 
-        
-      <img
-        src="/projects/home-lab/tunable-member.png" 
-        class="carousel-item " 
-        alt="Slide 5"/> 
-        
-      <img
-        src="/projects/home-lab/tunable-bridge.png" 
-        class="carousel-item " 
-        alt="Slide 6"/> 
-        
-  </div>
+<p><div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
   
+    <h3 class="caption">#1 Bridge Configuration:</h3> 
+  <div style="max-width: 1000px;">
+    <img
+      src="/projects/home-lab/opnsense/bridge-config.png" 
+      alt="Bridge Configuration"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
 </div>
-
-<style>
-
-  .carousel {
-    text-align: center;
-  }
-
-  .carousel-inner {
-    display: inline-block;  
-  }
-
-  .carousel-item {
-    display: none;         
-    max-width: 100%;       
-    max-height: 70vh;      
-    width: auto;           
-    height: auto;          
-  } 
-
-  .carousel-item.active {
-    display: block;        
-  }
-
-  .carousel-controls {
-    margin: 0.5rem auto;   
-  }
-
-  .carousel-controls button,
-  .carousel-label {
-    vertical-align: middle;          
-    margin: 1rem 0.5rem 0rem;        
-  }
-
-  .carousel-controls button {
-    background: rgba(0,0,0,0.5);   
-    color: #fff;                   
-    font-size: 1.5rem;               
-    padding: 0.5rem 1rem;            
-    cursor: pointer;                 
-    border-radius: 0.25rem;          
-  }
-
-  .carousel-label {
-    font-weight: bold;          
-  }
-
-</style>
-
-<script>
-
-  (function(){  
-                
-    const carousel = document.currentScript.parentNode;         
-    const items = carousel.querySelectorAll('.carousel-item');  
-    const label = carousel.querySelector('.carousel-label');    
-    let index = 0;  
-
-    function show(i) {
-      index = (i + items.length) % items.length;            
-      items.forEach(el => el.classList.remove('active'));   
-      items[index].classList.add('active');                 
-      label.textContent = `${index+1}/${items.length}`;     
-    }
-
-    carousel.querySelector('.carousel-prev')  
-      .addEventListener('click', () => show(index - 1));  
-    carousel.querySelector('.carousel-next')
-      .addEventListener('click', () => show(index + 1)); 
-
-    show(0); 
-
-  })(); 
-
-</script>
-<div style="text-align: center; padding-top: 1em;">
-    #1 Bridge Configuration
-    <br>
-    #2 Interface Assignment
-    <br>
-    #3 LAN Interface
-    <br>
-    #4 WAP Interface
-    <br>
-    #5 Member Interface Tunable
-    <br>
-    #6 Bridge Interface Tunable
-    
+<div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
+  
+    <h3 class="caption">#2 Interface Assignment:</h3> 
+  <div style="max-width: 1000px;">
+    <img
+      src="/projects/home-lab/opnsense/interface-assignment.png" 
+      alt="Interface Assignment"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
+</div>
+<div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
+  
+    <h3 class="caption">#3 LAN Interface:</h3> 
+  <div style="max-width: 1000px;">
+    <img
+      src="/projects/home-lab/opnsense/lan-interface.png" 
+      alt="LAN Interface"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
+</div>
+<div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
+  
+    <h3 class="caption">#4 WAP Interface:</h3> 
+  <div style="max-width: 1000px;">
+    <img
+      src="/projects/home-lab/opnsense/wap-interface.png" 
+      alt="WAP Interface"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
+</div>
+<div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
+  
+    <h3 class="caption">#5 Member Interface Tunable:</h3> 
+  <div style="max-width: 1000px;">
+    <img
+      src="/projects/home-lab/opnsense/tunable-member.png" 
+      alt="Member Interface Tunable"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
+</div>
+<div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
+  
+    <h3 class="caption">#6 Bridge Interface Tunable:</h3> 
+  <div style="max-width: 1000px;">
+    <img
+      src="/projects/home-lab/opnsense/tunable-bridge.png" 
+      alt="Bridge Interface Tunable"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
 </div></p>
+<hr>
+<div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
+  
+    <h3 class="caption">OPNsense Dashboard:</h3> 
+  <div style="max-width: 1000px;">
+    <img
+      src="/projects/home-lab/opnsense/opnsense.png" 
+      alt="OPNsense Dashboard"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
+</div>
 <hr>
 <p>Later, I will configure WireGuard for remote access, Unbound DNS to serve upstream of AdGuard Home, and igc3 as a secure VLAN isolated from my main network (configured for downstream ports on my managed switch).</p>
 <br><br><hr>

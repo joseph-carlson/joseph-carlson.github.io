@@ -24,9 +24,94 @@
     <hr>
 </div><div id="postBanner"><br>
     Page content loading...&nbsp;<a href="/tags/all/">#all&nbsp;</a><a href="/tags/homelab/">#homelab&nbsp;</a><h3 id="stage-3-remote-access">Stage 3: Remote Access</h3>
-<p>This allows me to visit to a nice coffee shop, order a latte and pastry, open my laptop, and pick up where I left off (without exposing my network to the internet).</p>
+<p>WireGuard is what makes it possible to visit to a nice coffee shop, order a latte and pastry, open my laptop, and pick up where I left off (without exposing my network to the internet).</p>
 <p>At the time of writing this, I am running OPNsense version 25.7.2.</p>
 <p>First, I created a WireGuard instance, which defines the local tunnel address, port, and private/public key pair. Once created and enabled, this instance will listen for incoming traffic on the WAN IP through the designated port.</p>
+<div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
+  
+    <h3 class="caption">WireGuard Instance:</h3> 
+  <div style="max-width: 1000px;">
+    <img
+      src="/projects/home-lab/wireguard/wireguard-instance.png" 
+      alt="WireGuard Instance"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
+</div>
+<p>Second, I enabled the WireGuard interface so I can configure the necessary firewall rules.</p>
+<div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
+  
+    <h3 class="caption">WireGuard Interface:</h3> 
+  <div style="max-width: 1000px;">
+    <img
+      src="/projects/home-lab/wireguard/wireguard-interface.png" 
+      alt="WireGuard Interface"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
+</div>
+<div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
+  
+    <h3 class="caption">WG Firewall Rules:</h3> 
+  <div style="max-width: 1000px;">
+    <img
+      src="/projects/home-lab/wireguard/wireguard-fw-rule.png" 
+      alt="WG Firewall Rules"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
+</div>
+<div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
+  
+    <h3 class="caption">WAN Firewall Rules:</h3> 
+  <div style="max-width: 1000px;">
+    <img
+      src="/projects/home-lab/wireguard/wan-fw-rule.png" 
+      alt="WAN Firewall Rules"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
+</div>
+<div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
+  
+    <h3 class="caption">WireGuard Interface:</h3> 
+  <div style="max-width: 1000px;">
+    <img
+      src="/projects/home-lab/wireguard/wireguard-interface.png" 
+      alt="WireGuard Interface"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
+</div>
+<div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
+  
+    <h3 class="caption">Mac Peer:</h3> 
+  <div style="max-width: 1000px;">
+    <img
+      src="/projects/home-lab/wireguard/mac-peer.png" 
+      alt="Mac Peer"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
+</div>
+<div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
+  
+    <h3 class="caption">IOS Peer:</h3> 
+  <div style="max-width: 1000px;">
+    <img
+      src="/projects/home-lab/wireguard/ios-peer.png" 
+      alt="IOS Peer"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
+</div>
 <br><br><hr>
 <div id="footer">
     <p>@2025&nbsp;&nbsp;</p>

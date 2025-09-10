@@ -23,25 +23,161 @@
         <h3>~</h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/">Root</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/projects/">Projects</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/projects/homelab/">Home Lab</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/projects/homelab/adguard-home/">AdGuard Home &#43; Unbound DNS</a></h3></div>
     <hr>
 </div><div id="postBanner"><br>
-    Page content loading...&nbsp;<a href="/tags/all/">#all&nbsp;</a><a href="/tags/homelab/">#homelab&nbsp;</a><p>In this section, I will set up AdGuard Home with Unbound DNS in my home lab environment. I am doing this because it provides an added layer of security on my home network, blocking malicious domains at the network level before they have a chance to load. I chose Unbound DNS as the upstream server from AdGuard Home because of its</p>
-<p>Create an alpine linux lxc container</p>
-<p>update container</p>
-<p><a href="https://github.com/AdguardTeam/AdGuardHome">https://github.com/AdguardTeam/AdGuardHome</a></p>
-<pre tabindex="0"><code>curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/scripts/install.sh | sh -s -- -v
-</code></pre><p>navigate to http://192.168.1.4:3000, or your container IP</p>
-<p>http://192.168.1.4/#</p>
-<p>AdGuard Home Web Interface &gt; Settings &gt; DNS Settings
-Upstream DNS Servers
-Replace default with 192.168.1.1
-or your router&rsquo;s IP</p>
+    Page content loading...&nbsp;<a href="/tags/all/">#all&nbsp;</a><a href="/tags/homelab/">#homelab&nbsp;</a><p>In this section, I will set up AdGuard Home with Unbound DNS in my home lab environment. This provides an added layer of security on my home network, blocking malicious domains at the network level before they have a chance to load. I selected Unbound DNS as the upstream server from AdGuard Home because of it&rsquo;s privacy, performance, reliability, and flexibility.</p>
+<h2 id="1-create-and-update-an-linux-container-lxc">1. Create and update an Linux Container (LXC)</h2>
+<p>I selected the Alpine linux container from the available Proxmox templates because of it&rsquo;s lightweight and secure characteristics. Configure this container with a static IP. This is necessary to redirect DNS queries to AdGuard Home before Unbound DNS.</p>
+<h2 id="2-install-adguard-home-within-lxc">2. Install AdGuard Home within LXC</h2>
+<div style="padding: 0% 2%;"> 
+  
+  <div class="code-block"
+    style="border:1px solid grey; 
+              border-radius:1rem; 
+              overflow: hidden; "> 
+              
+
+    <div style="display:flex; 
+                justify-content:space-between; 
+                align-items:center; 
+                background:#a8a8a8; 
+                padding:0.5rem 1rem; 
+                font-size:0.9em;">
+                
+      
+      <span style="color:rgb(0, 0, 0); 
+                      background-color: rgb(229, 229, 229);
+                      padding: 0.25rem 0.5rem;
+                      border-radius: 0.25rem;
+                      font-weight: bold;"
+                      >BASH
+      </span>
+      <button onclick="(function(btn){
+                const code = btn.closest('.code-block').querySelector('pre code');
+                // selects the closest element that has class code-block
+                // then search for code element that is a descendent of a pre element
+                navigator.clipboard.writeText(code.textContent).then(function(){
+                  btn.textContent = 'Copied!';
+                  setTimeout(function(){ btn.textContent = 'Copy'; }, 2000);
+                }); // copies the text to clipboard and temporarily changes Copy to Copies!
+              })(this)"
+        >Copy</button> 
+
+    </div> 
+
+    
+    <div class="code-body"
+          style="overflow-x: auto; 
+                  padding: 0rem 0.5rem; 
+                  background-color: rgb(0, 50, 50);"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-BASH" data-lang="BASH"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/scripts/install.sh | sh -s -- -v
+</span></span></code></pre></div>
+    </div> 
+
+  </div> 
+
+  <style>  
+    .code-body * { background-color: rgb(0, 50, 50); }
+  </style>
+
+</div> 
+<br>
+<a href="https://github.com/AdguardTeam/AdGuardHome" target="_blank" rel="noopener noreferrer">
+  Official AdGuard Home GitHub Repo
+</a>
+<h2 id="3-navigate-to-adguard-home-and-follow-setup-wizard">3. Navigate to AdGuard Home and Follow Setup Wizard</h2>
+<p>Navigate to &ldquo;http://&lt;YOUR-CONTAINER-IP&gt;:3000&rdquo;</p>
+<p>In my case, the address is &ldquo;http://192.168.1.4:3000&rdquo;</p>
+<p>The key is step 2, where you configure AdGuard Home to listen on all interfaces.</p>
+<p>Port 80 for the web interface and 53 for the DNS server.</p>
+<div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
+  
+    <h3 class="caption">AdGuard Home Interface:</h3> 
+  <div style="max-width: 1000px;">
+    <img
+      src="/projects/home-lab/adguard-home/adguard-home-interface.png" 
+      alt="AdGuard Home Interface Listening Ports 80 and 53"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
+</div>
+<p>For all further configuration, AdGuard Home can be reached at the container IP. No port should be specified because 80 is the default port for HTTP traffic.</p>
+<h2 id="4-configure-upstream-dns">4. Configure Upstream DNS</h2>
+<p>Navigate to &ldquo;AdGuard Home Web Interface &gt; Settings &gt; DNS Settings&rdquo;</p>
+<p>Under Upstream DNS Servers, replace default value with your desired DNS.</p>
+<p>I entered 192.168.1.1 so DNS lookups get forward to the Unbound DNS Service in OPNsense.</p>
+<div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
+  
+    <h3 class="caption">AdGuard Home Upstream DNS:</h3> 
+  <div style="max-width: 1000px;">
+    <img
+      src="/projects/home-lab/adguard-home/adguard-home-upstream-dns.png" 
+      alt="Upstream DNS Edited"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
+</div>
 <p>Navigate to OPNsense &gt; Services &gt; Unbound DNS &gt; General</p>
-<p>Ensure Unbound is enabled, listening on port 53 on all interfaces</p>
-<p>Change DNS Servers
-OPNsense &gt; System &gt; Settings &gt; General
-127.0.0.1
-OPNsense &gt; Services &gt; ISC DHCPv4 &gt; LAN
-192.168.1.4 (AdGuard Home IP)</p>
-<p>Clients → OPNsense DNS setting → AdGuard (LXC 192.168.1.4) → Unbound (192.168.1.1) → Internet</p>
+<h2 id="ensure-unbound-is-configured">Ensure Unbound is Configured</h2>
+<p>Make sure Unbound DNS is enabled and listening at port 53 on all interfaces.</p>
+<div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
+  
+    <h3 class="caption">Unbound Service Configured:</h3> 
+  <div style="max-width: 1000px;">
+    <img
+      src="/projects/home-lab/adguard-home/unbound-enabled.png" 
+      alt="Unbound Service Configuration"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
+</div>
+<h2 id="change-opnsense-dns-settings-system--dhcp">Change OPNsense DNS Settings (System + DHCP)</h2>
+<p>OPNsense &gt; System &gt; Settings &gt; General &gt; DNS Servers: 127.0.0.1</p>
+<p>This is the name server OPNsense will reference when downloading updates.</p>
+<div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
+  
+    <h3 class="caption">System DNS:</h3> 
+  <div style="max-width: 1000px;">
+    <img
+      src="/projects/home-lab/adguard-home/system-dns.png" 
+      alt="System DNS Config"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
+</div>
+<p>OPNsense &gt; Services &gt; ISC DHCPv4 &gt; LAN &gt; DNS Servers: 192.168.1.4</p>
+<p>Enter your AdGuard Home IP configured in step #1</p>
+<p>This is the name server utilized by network client configured with DHCP.</p>
+<div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
+  
+    <h3 class="caption">IPv4 DHCP DNS:</h3> 
+  <div style="max-width: 1000px;">
+    <img
+      src="/projects/home-lab/adguard-home/ipv4-dhcp-dns.png" 
+      alt="IPv4 DHCP DNS"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
+</div>
+<hr>
+<div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
+  
+    <h3 class="caption">AdGuard Home Dashboard:</h3> 
+  <div style="max-width: 1000px;">
+    <img
+      src="/projects/home-lab/adguard-home/adguard-home-dashboard.png" 
+      alt="AdGuard Home Dashboard"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
+</div>
+<hr>
+<p>When properly configured, the traffic flows as follows&hellip;</p>
+<p>Network Clients → OPNsense DNS Setting → AdGuard (192.168.1.4:53) → Unbound (192.168.1.1:53) → Internet</p>
 <br><br><hr>
 <div id="footer">
     <p>@2025&nbsp;&nbsp;</p>
