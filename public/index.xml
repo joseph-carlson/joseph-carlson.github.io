@@ -6,26 +6,26 @@
     <description>Recent content in Joseph Carlson Blog on Joseph Carlson</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 09 Sep 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AdGuard Home &#43; Unbound DNS</title>
       <link>http://localhost:1313/projects/homelab/adguard-home/</link>
-      <pubDate>Thu, 21 Aug 2025 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/homelab/adguard-home/</guid>
       <description>&lt;p&gt;In this section, I will set up AdGuard Home with Unbound DNS in my home lab environment. This provides an added layer of security on my home network, blocking malicious domains at the network level before they have a chance to load. I selected Unbound DNS as the upstream server from AdGuard Home because of it&amp;rsquo;s privacy, performance, reliability, and flexibility.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-create-and-update-an-linux-container-lxc&#34;&gt;1. Create and update an Linux Container (LXC)&lt;/h2&gt;&#xA;&lt;p&gt;I selected the Alpine linux container from the available Proxmox templates because of it&amp;rsquo;s lightweight and secure characteristics. Configure this container with a static IP. This is necessary to redirect DNS queries to AdGuard Home before Unbound DNS.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Proxmox VE</title>
       <link>http://localhost:1313/projects/homelab/proxmox-ve/</link>
-      <pubDate>Wed, 20 Aug 2025 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 08 Sep 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/homelab/proxmox-ve/</guid>
       <description>&lt;h3 id=&#34;stage-3-proxmox-virtual-environment&#34;&gt;Stage 3: Proxmox Virtual Environment&lt;/h3&gt;&#xA;&lt;p&gt;Hosted on my Framework 13 Laptop&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Create Proxmox VE Installer using Rufus&lt;/li&gt;&#xA;&lt;li&gt;Boot to Proxmox VE USB&lt;/li&gt;&#xA;&lt;li&gt;Accept the EULA&lt;/li&gt;&#xA;&lt;li&gt;Select disk and confirm format (ext4)&lt;/li&gt;&#xA;&lt;li&gt;Select Country, Time zone, and Keyboard layout&lt;/li&gt;&#xA;&lt;li&gt;Create root password and enter email&lt;/li&gt;&#xA;&lt;li&gt;A few more selections:&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Select the management interface&lt;/li&gt;&#xA;&lt;li&gt;FQDN: pve.localdomain&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Later changed to pve.home.arpa&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;IP Address (CIDR): 192.168.1.3 /24&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Will later be changed to a non-standard IP range to avoid conflicts&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;** DHCP Range 192.168.1.10 - 192.168.1.245 **&lt;/p&gt;</description>
     </item>
     <item>
       <title>Wireguard VPN</title>
       <link>http://localhost:1313/projects/homelab/wireguard-vpn/</link>
-      <pubDate>Tue, 19 Aug 2025 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/homelab/wireguard-vpn/</guid>
       <description>&lt;h3 id=&#34;stage-2-remote-access&#34;&gt;Stage 2: Remote Access&lt;/h3&gt;&#xA;&lt;p&gt;WireGuard is what makes it possible to visit to a nice coffee shop, order a latte and pastry, open my laptop, and pick up where I left off (without exposing my network to the internet).&lt;/p&gt;&#xA;&lt;p&gt;At the time of writing this, I am running OPNsense version 25.7.2.&lt;/p&gt;&#xA;&lt;p&gt;First, I created a WireGuard instance, which defines the local tunnel address, port, and private/public key pair. Once created and enabled, this instance will listen for incoming traffic on the WAN IP through the designated port.&lt;/p&gt;</description>
     </item>

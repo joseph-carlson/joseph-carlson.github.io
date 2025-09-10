@@ -1,5 +1,5 @@
 ---
-date: 2025-08-21
+date: 2025-09-09
 draft: false
 title: 'AdGuard Home + Unbound DNS'
 hidden: false

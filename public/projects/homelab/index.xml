@@ -6,12 +6,12 @@
     <description>Recent content in Home Lab on Joseph Carlson</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 09 Sep 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/projects/homelab/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AdGuard Home &#43; Unbound DNS</title>
       <link>http://localhost:1313/projects/homelab/adguard-home/</link>
-      <pubDate>Thu, 21 Aug 2025 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/homelab/adguard-home/</guid>
       <description>&lt;p&gt;In this section, I will set up AdGuard Home with Unbound DNS in my home lab environment. This provides an added layer of security on my home network, blocking malicious domains at the network level before they have a chance to load. I selected Unbound DNS as the upstream server from AdGuard Home because of it&amp;rsquo;s privacy, performance, reliability, and flexibility.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-create-and-update-an-linux-container-lxc&#34;&gt;1. Create and update an Linux Container (LXC)&lt;/h2&gt;&#xA;&lt;p&gt;I selected the Alpine linux container from the available Proxmox templates because of it&amp;rsquo;s lightweight and secure characteristics. Configure this container with a static IP. This is necessary to redirect DNS queries to AdGuard Home before Unbound DNS.&lt;/p&gt;</description>
     </item>

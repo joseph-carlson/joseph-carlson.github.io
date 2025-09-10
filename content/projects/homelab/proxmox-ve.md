@@ -1,5 +1,5 @@
 ---
-date: 2025-08-20
+date: 2025-09-08
 draft: false
 title: 'Proxmox VE'
 hidden: false
