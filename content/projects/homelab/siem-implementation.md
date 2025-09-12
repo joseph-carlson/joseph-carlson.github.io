@@ -8,4 +8,4 @@ tags:
   - homelab
 ---
 
-Soon, I'll configure Wazuh and an ELK Stack to serve as a SIEM for my local network.
+In this article, I will configure Wazuh and an ELK Stack to serve as a SIEM for my local network.
