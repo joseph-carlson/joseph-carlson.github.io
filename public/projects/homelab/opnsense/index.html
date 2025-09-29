@@ -23,7 +23,7 @@
         <h3>~</h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/">Root</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/projects/">Projects</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/projects/homelab/">Home Lab</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/projects/homelab/opnsense/">OPNsense</a></h3></div>
     <hr>
 </div><div id="postBanner"><br>
-    Page content loading...&nbsp;<a href="/tags/all/">#all&nbsp;</a><a href="/tags/homelab/">#homelab&nbsp;</a><h3 id="stage-1-opnsense-router--firewall">Stage 1: OPNsense Router + Firewall</h3>
+    Page content loading...&nbsp;<a href="/tags/all/">#all&nbsp;</a><a href="/tags/homelab/">#homelab&nbsp;</a><h2 id="stage-1-opnsense-router--firewall">Stage 1: OPNsense Router + Firewall</h2>
 <p>Hosted on a Topton Fanless Mini PC from AliExpress.</p>
 <p>Q: Why use this PC and not a router provided by my ISP, or even an off-the-shelf model?</p>
 <p>A: I&rsquo;m not using a router from my ISP because after a couple years, this mini pc will pay for itself in the rental costs. As for the off-the-shelf model, I don&rsquo;t trust the manufacturer to maintain security updates. These updates are especially high priority because I am exposing a port to the internet for VPN access.</p>
@@ -33,7 +33,7 @@
 <p>FQDN: opnsense.localdomain</p>
 <p><em>Later changed to opnsense.home.arpa</em></p>
 <p>IP: 192.168.1.1/24</p>
-<p><em>Will later be changed to a non-standard IP range to avoid conflicts</em></p>
+<p><em>Will later be changed to a non-standard IP range to avoid conflicts while connected with VPN</em></p>
 <ol start="0">
 <li>Create OPNsense USB installer using Rufus</li>
 <li>Connect eth0 to my modem</li>
@@ -154,6 +154,7 @@
 </div>
 <hr>
 <p>Later, I will configure WireGuard for remote access, Unbound DNS to serve upstream of AdGuard Home, and igc3 as a secure VLAN isolated from my main network (configured for downstream ports on my managed switch).</p>
+<p>Until next time, keep learning.</p>
 <br><br><hr>
 <div id="footer">
     <p>@2025&nbsp;&nbsp;</p>

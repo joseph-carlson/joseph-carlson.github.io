@@ -8,6 +8,6 @@ tags:
   - homelab
 ---
 
-Soon, I'll configure Homepage as a web dashboard for my home lab environment.
+Soon, I will configure Homepage to display all my local services on a single dashboard.
 
-
+https://gethomepage.dev/

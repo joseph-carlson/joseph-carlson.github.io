@@ -16,7 +16,7 @@ Along the way, there are a few points I would like to hit on my implementation.
 - Increase my network security.
 - Network-wide ad-blocking with AdGuard Home.
 - Remote network access with WireGuard VPN.
-- Implement a reverse proxy to SSL/TLS encryption for local resources.
+- Implement a reverse proxy to have valid certificates for local resources.
 - Generate, aggregate, and analyze activity on the network.
 - Display all this in a screenshot-worthy dashboard.
 
@@ -31,12 +31,12 @@ Along the way, there are a few points I would like to hit on my implementation.
 - [X] [WireGuard VPN](../wireguard-vpn)
 - [X] [Proxmox VE](../proxmox-ve)
 - [X] [AdGuard Home](../adguard-home)
+- [X] [Nginx Reverse Proxy](../nginx-reverse-proxy)
 - [ ] Lab Environment Clients
   - General Use VMs (Fedore 42 KDE, Windows 11)
   - Windows 11 Bare Metal Device w/ RustDesk
   - Raspberry Pi 3b
 - [ ] [Wazuh + ELK Stack SIEM](../siem-implementation)
-- [ ] [Nginx Reverse Proxy](../nginx-reverse-proxy)
 - [ ] [Homepage](../homepage)
 - [ ] SIEM AI Summaries with MLX-LM... maybe?
 

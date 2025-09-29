@@ -8,7 +8,7 @@ tags:
   - homelab
 ---
 
-### Stage 1: OPNsense Router + Firewall
+## Stage 1: OPNsense Router + Firewall
 
 Hosted on a Topton Fanless Mini PC from AliExpress.
 
@@ -28,7 +28,7 @@ FQDN: opnsense.localdomain
 
 IP: 192.168.1.1/24
 
-*Will later be changed to a non-standard IP range to avoid conflicts* 
+*Will later be changed to a non-standard IP range to avoid conflicts while connected with VPN* 
 
 0. Create OPNsense USB installer using Rufus
 1. Connect eth0 to my modem
@@ -68,3 +68,5 @@ Next to configure the LAN Bridge for igc1 and igc2: {{< newtablink url="https://
 ---
 
 Later, I will configure WireGuard for remote access, Unbound DNS to serve upstream of AdGuard Home, and igc3 as a secure VLAN isolated from my main network (configured for downstream ports on my managed switch).
+
+Until next time, keep learning.

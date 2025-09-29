@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Opensource on Joseph Carlson</title>
+    <link>http://localhost:1313/tags/opensource/</link>
+    <description>Recent content in Opensource on Joseph Carlson</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 20 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/opensource/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fixing MacOS</title>
+      <link>http://localhost:1313/interesting-stuff/fixing-macos/</link>
+      <pubDate>Sat, 20 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/interesting-stuff/fixing-macos/</guid>
+      <description>&lt;p&gt;Over the years, I have shifted between Windows, Linux, and MacOS for my daily use operating system. Originally, it was Windows 10, then MacOS, then Ubuntu, then Windows 11, then Fedora, and lastly, MacOS.&lt;/p&gt;&#xA;&lt;p&gt;The honest reason why I switched to Mac? I spent so much fixing Windows at Technician X, I couldn&amp;rsquo;t bear the idea of coming home to the same thing.&lt;/p&gt;&#xA;&lt;p&gt;Don&amp;rsquo;t get me wrong. Windows is great in enterprise environments. Compatibility is king. But I have found that MacOS is a far more pleasant operating system to use after some essential utilities.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

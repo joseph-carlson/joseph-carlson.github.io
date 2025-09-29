@@ -23,7 +23,599 @@
         <h3>~</h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/">Root</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/projects/">Projects</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/projects/homelab/">Home Lab</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/projects/homelab/nginx-reverse-proxy/">Nginx Reverse Proxy</a></h3></div>
     <hr>
 </div><div id="postBanner"><br>
-    Page content loading...&nbsp;<a href="/tags/all/">#all&nbsp;</a><a href="/tags/homelab/">#homelab&nbsp;</a><p>Soon, I&rsquo;ll configure Nginx as a reverse proxy to secure my local resources with SSL/TLS encryption.</p>
+    Page content loading...&nbsp;<a href="/tags/all/">#all&nbsp;</a><a href="/tags/homelab/">#homelab&nbsp;</a><h2 id="stage-5-nginx-reverse-proxy">Stage 5: Nginx Reverse Proxy</h2>
+<p>In this article, I will lay out how I implemented a reverse proxy so my local resources can have a proper <strong>signed certificate</strong> (i.e. OPNsense and Proxmox VE management consoles). Nginx will serve as the reverse proxy, installed via Docker Compose on a virtual machine, utilizing the free certificate provided by my domain registered with DuckDNS. After that, the only tasks remaining were to add the Hosts (the previously mentioned OPNsense and Proxmox VE), add a DNS Override in Unbound, and adjust some security settings in OPNsense. Simple as that, I can access OPNsense and Proxmox VE with those good &lsquo;ol padlocks next to the URL with <strong>no</strong> certificate warnings.</p>
+<h3 id="install-docker-compose">Install Docker Compose</h3>
+<p>Let&rsquo;s assume you have a machine (bare-metal or virtual), already provisioned and updated with a static IP. The next step is to install Docker Compose. I chose a Debian 12 virtual machine within Proxmox VE with the static IP 192.168.1.2.</p>
+<p>Docker maintains it&rsquo;s own repository separate from the default APT (Advanced Package Tool) for Debian-based linux distributions, so it must be manually added prior to installation.</p>
+<p>Source: <a href="https://docs.docker.com/engine/install/debian/#install-using-the-repository">https://docs.docker.com/engine/install/debian/#install-using-the-repository</a></p>
+<br>
+<div style="padding: 0% 2%;"> 
+  
+  <div class="code-block"
+    style="border:1px solid grey; 
+              border-radius:1rem; 
+              overflow: hidden; "> 
+              
+
+    <div style="display:flex; 
+                justify-content:space-between; 
+                align-items:center; 
+                background:#a8a8a8; 
+                padding:0.5rem 1rem; 
+                font-size:0.9em;">
+                
+      
+      <span style="color:rgb(0, 0, 0); 
+                      background-color: rgb(229, 229, 229);
+                      padding: 0.25rem 0.5rem;
+                      border-radius: 0.25rem;
+                      font-weight: bold;"
+                      >BASH
+      </span>
+      <button onclick="(function(btn){
+                const code = btn.closest('.code-block').querySelector('pre code');
+                // selects the closest element that has class code-block
+                // then search for code element that is a descendent of a pre element
+                navigator.clipboard.writeText(code.textContent).then(function(){
+                  btn.textContent = 'Copied!';
+                  setTimeout(function(){ btn.textContent = 'Copy'; }, 2000);
+                }); // copies the text to clipboard and temporarily changes Copy to Copies!
+              })(this)"
+        >Copy</button> 
+
+    </div> 
+
+    
+    <div class="code-body"
+          style="overflow-x: auto; 
+                  padding: 0rem 0.5rem; 
+                  background-color: rgb(0, 50, 50);"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add Docker&#39;s official GPG key:</span>
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install ca-certificates curl
+</span></span><span style="display:flex;"><span>sudo install -m <span style="color:#ae81ff">0755</span> -d /etc/apt/keyrings
+</span></span><span style="display:flex;"><span>sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+</span></span><span style="display:flex;"><span>sudo chmod a+r /etc/apt/keyrings/docker.asc
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Add the repository to Apt sources:</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  <span style="color:#e6db74">&#34;deb [arch=</span><span style="color:#66d9ef">$(</span>dpkg --print-architecture<span style="color:#66d9ef">)</span><span style="color:#e6db74"> signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  </span><span style="color:#66d9ef">$(</span>. /etc/os-release <span style="color:#f92672">&amp;&amp;</span> echo <span style="color:#e6db74">&#34;</span>$VERSION_CODENAME<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74"> stable&#34;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span></code></pre></div>
+    </div> 
+
+  </div> 
+
+  <style>  
+    .code-body * { background-color: rgb(0, 50, 50); }
+  </style>
+
+</div> 
+<h3 id="install-docker-packages">Install Docker Packages</h3>
+<p>Now that the repository has been added, the following command will install the required components.</p>
+<div style="padding: 0% 2%;"> 
+  
+  <div class="code-block"
+    style="border:1px solid grey; 
+              border-radius:1rem; 
+              overflow: hidden; "> 
+              
+
+    <div style="display:flex; 
+                justify-content:space-between; 
+                align-items:center; 
+                background:#a8a8a8; 
+                padding:0.5rem 1rem; 
+                font-size:0.9em;">
+                
+      
+      <span style="color:rgb(0, 0, 0); 
+                      background-color: rgb(229, 229, 229);
+                      padding: 0.25rem 0.5rem;
+                      border-radius: 0.25rem;
+                      font-weight: bold;"
+                      >BASH
+      </span>
+      <button onclick="(function(btn){
+                const code = btn.closest('.code-block').querySelector('pre code');
+                // selects the closest element that has class code-block
+                // then search for code element that is a descendent of a pre element
+                navigator.clipboard.writeText(code.textContent).then(function(){
+                  btn.textContent = 'Copied!';
+                  setTimeout(function(){ btn.textContent = 'Copy'; }, 2000);
+                }); // copies the text to clipboard and temporarily changes Copy to Copies!
+              })(this)"
+        >Copy</button> 
+
+    </div> 
+
+    
+    <div class="code-body"
+          style="overflow-x: auto; 
+                  padding: 0rem 0.5rem; 
+                  background-color: rgb(0, 50, 50);"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+</span></span></code></pre></div>
+    </div> 
+
+  </div> 
+
+  <style>  
+    .code-body * { background-color: rgb(0, 50, 50); }
+  </style>
+
+</div> 
+<h3 id="verify-docker-is-running">Verify Docker Is Running</h3>
+<p>Docker should auto-start after installation.
+<div style="padding: 0% 2%;"> 
+  
+  <div class="code-block"
+    style="border:1px solid grey; 
+              border-radius:1rem; 
+              overflow: hidden; "> 
+              
+
+    <div style="display:flex; 
+                justify-content:space-between; 
+                align-items:center; 
+                background:#a8a8a8; 
+                padding:0.5rem 1rem; 
+                font-size:0.9em;">
+                
+      
+      <span style="color:rgb(0, 0, 0); 
+                      background-color: rgb(229, 229, 229);
+                      padding: 0.25rem 0.5rem;
+                      border-radius: 0.25rem;
+                      font-weight: bold;"
+                      >BASH
+      </span>
+      <button onclick="(function(btn){
+                const code = btn.closest('.code-block').querySelector('pre code');
+                // selects the closest element that has class code-block
+                // then search for code element that is a descendent of a pre element
+                navigator.clipboard.writeText(code.textContent).then(function(){
+                  btn.textContent = 'Copied!';
+                  setTimeout(function(){ btn.textContent = 'Copy'; }, 2000);
+                }); // copies the text to clipboard and temporarily changes Copy to Copies!
+              })(this)"
+        >Copy</button> 
+
+    </div> 
+
+    
+    <div class="code-body"
+          style="overflow-x: auto; 
+                  padding: 0rem 0.5rem; 
+                  background-color: rgb(0, 50, 50);"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo systemctl status docker
+</span></span></code></pre></div>
+    </div> 
+
+  </div> 
+
+  <style>  
+    .code-body * { background-color: rgb(0, 50, 50); }
+  </style>
+
+</div> </p>
+<h3 id="provision-nginx-container">Provision Nginx Container</h3>
+<div style="padding: 0% 2%;"> 
+  
+  <div class="code-block"
+    style="border:1px solid grey; 
+              border-radius:1rem; 
+              overflow: hidden; "> 
+              
+
+    <div style="display:flex; 
+                justify-content:space-between; 
+                align-items:center; 
+                background:#a8a8a8; 
+                padding:0.5rem 1rem; 
+                font-size:0.9em;">
+                
+      
+      <span style="color:rgb(0, 0, 0); 
+                      background-color: rgb(229, 229, 229);
+                      padding: 0.25rem 0.5rem;
+                      border-radius: 0.25rem;
+                      font-weight: bold;"
+                      >BASH
+      </span>
+      <button onclick="(function(btn){
+                const code = btn.closest('.code-block').querySelector('pre code');
+                // selects the closest element that has class code-block
+                // then search for code element that is a descendent of a pre element
+                navigator.clipboard.writeText(code.textContent).then(function(){
+                  btn.textContent = 'Copied!';
+                  setTimeout(function(){ btn.textContent = 'Copy'; }, 2000);
+                }); // copies the text to clipboard and temporarily changes Copy to Copies!
+              })(this)"
+        >Copy</button> 
+
+    </div> 
+
+    
+    <div class="code-body"
+          style="overflow-x: auto; 
+                  padding: 0rem 0.5rem; 
+                  background-color: rgb(0, 50, 50);"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create the &#34;~/docker/nginx/&#34; directory and the docker compose file within</span>
+</span></span><span style="display:flex;"><span>cd ~
+</span></span><span style="display:flex;"><span>mkdir docker
+</span></span><span style="display:flex;"><span>cd docker
+</span></span><span style="display:flex;"><span>mkdir nginx
+</span></span><span style="display:flex;"><span>cd nginx
+</span></span><span style="display:flex;"><span>nano docker-compose.yml
+</span></span></code></pre></div>
+    </div> 
+
+  </div> 
+
+  <style>  
+    .code-body * { background-color: rgb(0, 50, 50); }
+  </style>
+
+</div> 
+<p>DOCKER COMPOSE FILE CONTENTS
+<div style="padding: 0% 2%;"> 
+  
+  <div class="code-block"
+    style="border:1px solid grey; 
+              border-radius:1rem; 
+              overflow: hidden; "> 
+              
+
+    <div style="display:flex; 
+                justify-content:space-between; 
+                align-items:center; 
+                background:#a8a8a8; 
+                padding:0.5rem 1rem; 
+                font-size:0.9em;">
+                
+      
+      <span style="color:rgb(0, 0, 0); 
+                      background-color: rgb(229, 229, 229);
+                      padding: 0.25rem 0.5rem;
+                      border-radius: 0.25rem;
+                      font-weight: bold;"
+                      >TXT
+      </span>
+      <button onclick="(function(btn){
+                const code = btn.closest('.code-block').querySelector('pre code');
+                // selects the closest element that has class code-block
+                // then search for code element that is a descendent of a pre element
+                navigator.clipboard.writeText(code.textContent).then(function(){
+                  btn.textContent = 'Copied!';
+                  setTimeout(function(){ btn.textContent = 'Copy'; }, 2000);
+                }); // copies the text to clipboard and temporarily changes Copy to Copies!
+              })(this)"
+        >Copy</button> 
+
+    </div> 
+
+    
+    <div class="code-body"
+          style="overflow-x: auto; 
+                  padding: 0rem 0.5rem; 
+                  background-color: rgb(0, 50, 50);"><pre tabindex="0"><code class="language-TXT" data-lang="TXT">
+services:
+  app:
+    image: &#39;jc21/nginx-proxy-manager:latest&#39;
+    restart: unless-stopped
+    ports:
+      # These ports are in format &lt;host-port&gt;:&lt;container-port&gt;
+      - &#39;80:80&#39; # Public HTTP Port
+      - &#39;443:443&#39; # Public HTTPS Port
+      - &#39;81:81&#39; # Admin Web Port
+      # Add any other Stream port you want to expose
+      # - &#39;21:21&#39; # FTP
+
+    #environment:
+      # Uncomment this if you want to change the location of
+      # the SQLite DB file within the container
+      # DB_SQLITE_FILE: &#34;/data/database.sqlite&#34;
+
+      # Uncomment this if IPv6 is not enabled on your host
+      # DISABLE_IPV6: &#39;true&#39;
+
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+</code></pre>
+    </div> 
+
+  </div> 
+
+  <style>  
+    .code-body * { background-color: rgb(0, 50, 50); }
+  </style>
+
+</div> </p>
+<p>The following command will start the docker compose container in detached mode so it can run in the background. This must be run from within the same directory as the previously saved docker compose file.</p>
+<div style="padding: 0% 2%;"> 
+  
+  <div class="code-block"
+    style="border:1px solid grey; 
+              border-radius:1rem; 
+              overflow: hidden; "> 
+              
+
+    <div style="display:flex; 
+                justify-content:space-between; 
+                align-items:center; 
+                background:#a8a8a8; 
+                padding:0.5rem 1rem; 
+                font-size:0.9em;">
+                
+      
+      <span style="color:rgb(0, 0, 0); 
+                      background-color: rgb(229, 229, 229);
+                      padding: 0.25rem 0.5rem;
+                      border-radius: 0.25rem;
+                      font-weight: bold;"
+                      >BASH
+      </span>
+      <button onclick="(function(btn){
+                const code = btn.closest('.code-block').querySelector('pre code');
+                // selects the closest element that has class code-block
+                // then search for code element that is a descendent of a pre element
+                navigator.clipboard.writeText(code.textContent).then(function(){
+                  btn.textContent = 'Copied!';
+                  setTimeout(function(){ btn.textContent = 'Copy'; }, 2000);
+                }); // copies the text to clipboard and temporarily changes Copy to Copies!
+              })(this)"
+        >Copy</button> 
+
+    </div> 
+
+    
+    <div class="code-body"
+          style="overflow-x: auto; 
+                  padding: 0rem 0.5rem; 
+                  background-color: rgb(0, 50, 50);"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Current Directory: ~/docker/nginx/</span>
+</span></span><span style="display:flex;"><span>sudo docker compose up -d
+</span></span></code></pre></div>
+    </div> 
+
+  </div> 
+
+  <style>  
+    .code-body * { background-color: rgb(0, 50, 50); }
+  </style>
+
+</div> 
+<p>Navigate to Admin Portal: http://192.168.1.2:81/</p>
+<div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
+  
+    <h3 class="caption">Nginx Proxy Manager Login:</h3> 
+  <div style="max-width: 1000px;">
+    <img
+      src="/projects/home-lab/nginx/nginx-proxy-manager-login.png" 
+      alt="Screenshot of Admin panel login"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
+</div>
+<p>And change the password! No defaults allowed here.</p>
+<p>Designating the port with &ldquo;:81&rdquo; following the IP address is necessary, because otherwise, the browser will navigate to the default ports 80 or 443. If you do that, be prepared to meet this very unhelpful page.</p>
+<div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
+  
+  <div style="max-width: 1000px;">
+    <img
+      src="/projects/home-lab/nginx/not-here.png" 
+      alt="Screenshot of web page"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
+</div>
+<h3 id="claim-free-duckdns-domain">Claim Free DuckDNS Domain</h3>
+<p>Unless you want to install your local certificate on every client device, you&rsquo;ll need a public domain with a publicly available certificate. And because I&rsquo;m cheap, DuckDNS was where I ended up for this stage of the Home Lab. DuckDNS is funded by donations to provide free domains with certificates.</p>
+<p>I chose the domain &ldquo;break2fix.duckdns.org&rdquo; because that&rsquo;s my favorite way of learning. I break something, struggle to fix it, eventually get it to work, and leave with a better understanding of how and why the system was architected in the way it was.</p>
+<div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
+  
+    <h3 class="caption">Select Duck DNS Domain:</h3> 
+  <div style="max-width: 1000px;">
+    <img
+      src="/projects/home-lab/nginx/select-duck-dns.png" 
+      alt="Screenshot of DuckDNS website"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
+</div>
+<h3 id="add-duckdns-certificate-to-nginx">Add DuckDNS Certificate to Nginx</h3>
+<div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
+  
+    <h3 class="caption">Add Certificate to Nginx:</h3> 
+  <div style="max-width: 1000px;">
+    <img
+      src="/projects/home-lab/nginx/add-certificate.png" 
+      alt="Screenshot of Nginx while adding certificate"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
+</div>
+<h3 id="add-hosts-to-nginx">Add Hosts to Nginx</h3>
+<p>
+
+<div class="carousel standardPadding"> 
+
+  <div class="carousel-controls"> 
+    <button class="carousel-prev" aria-label="Previous slide">‹</button> 
+    <span class="carousel-label"></span> 
+    <button class="carousel-next" aria-label="Next slide">›</button> 
+  </div>
+
+  <div class="carousel-inner"> 
+      <img
+        src="/projects/home-lab/nginx/proxmox-host-1.png" 
+        class="carousel-item active" 
+        alt="Slide 1"/> 
+        
+      <img
+        src="/projects/home-lab/nginx/proxmox-host-2.png" 
+        class="carousel-item " 
+        alt="Slide 2"/> 
+        
+  </div>
+  
+</div>
+
+<style>
+
+  .carousel {
+    text-align: center;
+  }
+
+  .carousel-inner {
+    display: inline-block;  
+  }
+
+  .carousel-item {
+    display: none;         
+    max-width: 100%;       
+    max-height: 70vh;      
+    width: auto;           
+    height: auto;          
+  } 
+
+  .carousel-item.active {
+    display: block;        
+  }
+
+  .carousel-controls {
+    margin: 0.5rem auto;   
+  }
+
+  .carousel-controls button,
+  .carousel-label {
+    vertical-align: middle;          
+    margin: 1rem 0.5rem 0rem;        
+  }
+
+  .carousel-controls button {
+    background: rgba(0,0,0,0.5);   
+    color: #fff;                   
+    font-size: 1.5rem;               
+    padding: 0.5rem 1rem;            
+    cursor: pointer;                 
+    border-radius: 0.25rem;          
+  }
+
+  .carousel-label {
+    font-weight: bold;          
+  }
+
+</style>
+
+<script>
+
+  (function(){  
+                
+    const carousel = document.currentScript.parentNode;         
+    const items = carousel.querySelectorAll('.carousel-item');  
+    const label = carousel.querySelector('.carousel-label');    
+    let index = 0;  
+
+    function show(i) {
+      index = (i + items.length) % items.length;            
+      items.forEach(el => el.classList.remove('active'));   
+      items[index].classList.add('active');                 
+      label.textContent = `${index+1}/${items.length}`;     
+    }
+
+    carousel.querySelector('.carousel-prev')  
+      .addEventListener('click', () => show(index - 1));  
+    carousel.querySelector('.carousel-next')
+      .addEventListener('click', () => show(index + 1)); 
+
+    show(0); 
+
+  })(); 
+
+</script>
+<div style="text-align: center; padding-top: 1em;">
+    1. Main Page
+    <br>
+    2. Select Certificate
+</div></p>
+<h3 id="opnsense-configuration-changes">OPNsense Configuration Changes</h3>
+<div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
+  
+    <h3 class="caption">Add Unbound DNS Override:</h3> 
+  <div style="max-width: 1000px;">
+    <img
+      src="/projects/home-lab/nginx/unbound-dns-override.png" 
+      alt="OPNsense Screenshot"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
+</div>
+<p>This happens because the domain is trying to access local resources (i.e. OPNsense). This built-in protection must be disabled to access the management console via the domain name (<a href="https://opnsense.break2fix.duckdns.org/">https://opnsense.break2fix.duckdns.org/</a>) instead of the IP address (https://192.168.1.1/ui/core/dashboard).</p>
+<div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
+  
+    <h3 class="caption">Disable DNS Rebind:</h3> 
+  <div style="max-width: 1000px;">
+    <img
+      src="/projects/home-lab/nginx/disable-dns-rebind.png" 
+      alt="OPNsense Screenshot"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
+</div>
+<div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
+  
+    <h3 class="caption">Disable HTTP Refer Enforcement:</h3> 
+  <div style="max-width: 1000px;">
+    <img
+      src="/projects/home-lab/nginx/disable-http-refer-enforcement.png" 
+      alt="OPNsense Screenshot"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
+</div>
+<hr>
+<h3 id="the-moment-of-truth">The Moment of Truth&hellip;</h3>
+<div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
+  
+    <h3 class="caption">Proxmox Through Nginx Reverse Proxy:</h3> 
+  <div style="max-width: 1000px;">
+    <img
+      src="/projects/home-lab/nginx/proxmox-with-nginx.png" 
+      alt="OPNsense Screenshot"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
+</div>
+<div class="standardPadding" style="text-align: center; max-width: 100%; height: auto;"> 
+  
+  <div style="max-width: 1000px;">
+    <img
+      src="/projects/home-lab/nginx/valid-certificate.png" 
+      alt="Screenshot of &#34;Verified by Let&#39;s Encrypt&#34;"
+      loading="lazy"
+      style="display: block; max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-left: auto; margin-right: auto;"> 
+      
+    </div>
+</div>
+<hr>
+<h2 id="future-plans">Future Plans</h2>
+<p>Now here&rsquo;s the deal. This was a neat project, but I don&rsquo;t like disabling those security settings and introducing DuckDNS with little-to-no true security benefit on my home network. Even without running the reverse proxy, I&rsquo;m still connected to OPNsense and Proxmox over HTTPS.</p>
+<p>For the moment, I have shut down Nginx and will not be using it as a reverse proxy. I also reverted the configuration changes within Unbound DNS and OPNsense. Eventually, I will purchase a domain and reconfigure my home lab environment to utilize that domain, but today is not that day.</p>
+<p>Until next time, keep learning.</p>
 <br><br><hr>
 <div id="footer">
     <p>@2025&nbsp;&nbsp;</p>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/css/style.css">
+
+        <title>Fixing MacOS</title>
+    </head>
+    <body><div id="header">
+    <h1 class="title">
+        <a href="/">
+            <p>Joseph&nbsp;</p>
+            <p>Carlson</p>
+        </a>
+    </h1>
+    <span><a href="/"><img src="/logo.ico" alt="Logo" height="75" id="logo"></a>
+    </span>
+    <span><h3 id="headerCategories"><a href="/case-studies/">case-studies</a>&nbsp;&nbsp;</h3><h3 id="headerCategories"><a href="/projects/">projects</a>&nbsp;&nbsp;</h3><h3 id="headerCategories"><a href="/interesting-stuff/">interesting-stuff</a>&nbsp;&nbsp;</h3></span>
+</div><hr>
+
+        <div id="narrowOnDesktop"><div class="sticky">
+    <div id="breadcrumbs">
+        <h3>~</h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/">Root</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/interesting-stuff/">Interesting Stuff</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/interesting-stuff/fixing-macos/">Fixing MacOS</a></h3></div>
+    <hr>
+</div><div id="postBanner"><br>
+    Page content loading...&nbsp;<a href="/tags/all/">#all&nbsp;</a><a href="/tags/opensource/">#opensource&nbsp;</a><p>Over the years, I have shifted between Windows, Linux, and MacOS for my daily use operating system. Originally, it was Windows 10, then MacOS, then Ubuntu, then Windows 11, then Fedora, and lastly, MacOS.</p>
+<p>The honest reason why I switched to Mac? I spent so much fixing Windows at Technician X, I couldn&rsquo;t bear the idea of coming home to the same thing.</p>
+<p>Don&rsquo;t get me wrong. Windows is great in enterprise environments. Compatibility is king. But I have found that MacOS is a far more pleasant operating system to use after some essential utilities.</p>
+<p>Starting off with the heavy hitter: Aerospace. This open-source project overrides the terrible built-in window management of MacOS. It heavily utilizes the option key to manage all open windows in virtual desktops without using the mouse. As of now, this project is still in beta, but I have been using it for several months and it&rsquo;s been an absolute game changer.</p>
+<div style="padding: 0% 2%;"> 
+  
+  <div class="code-block"
+    style="border:1px solid grey; 
+              border-radius:1rem; 
+              overflow: hidden; "> 
+              
+
+    <div style="display:flex; 
+                justify-content:space-between; 
+                align-items:center; 
+                background:#a8a8a8; 
+                padding:0.5rem 1rem; 
+                font-size:0.9em;">
+                
+      
+      <span style="color:rgb(0, 0, 0); 
+                      background-color: rgb(229, 229, 229);
+                      padding: 0.25rem 0.5rem;
+                      border-radius: 0.25rem;
+                      font-weight: bold;"
+                      >ZSH
+      </span>
+      <button onclick="(function(btn){
+                const code = btn.closest('.code-block').querySelector('pre code');
+                // selects the closest element that has class code-block
+                // then search for code element that is a descendent of a pre element
+                navigator.clipboard.writeText(code.textContent).then(function(){
+                  btn.textContent = 'Copied!';
+                  setTimeout(function(){ btn.textContent = 'Copy'; }, 2000);
+                }); // copies the text to clipboard and temporarily changes Copy to Copies!
+              })(this)"
+        >Copy</button> 
+
+    </div> 
+
+    
+    <div class="code-body"
+          style="overflow-x: auto; 
+                  padding: 0rem 0.5rem; 
+                  background-color: rgb(0, 50, 50);"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>brew install --cask nikitabobko/tap/aerospace
+</span></span></code></pre></div>
+    </div> 
+
+  </div> 
+
+  <style>  
+    .code-body * { background-color: rgb(0, 50, 50); }
+  </style>
+
+</div> 
+<p>GitHub Repository: <a href="https://github.com/nikitabobko/AeroSpace">https://github.com/nikitabobko/AeroSpace</a></p>
+<p>Speaking of brew, HomeBrew is an essential package manager for quickly installing applications. I tend to just use it for simple utilities, but some install nearly all apps using this method. To search available apps, visit <a href="https://brew.sh/">brew.sh</a>.</p>
+<p>Some utilities I install via HomeBrew are&hellip;</p>
+<ul>
+<li>Hugo: locally running this website</li>
+<li>Anki: smart flashcards</li>
+<li>alDente: stop charging laptop at 80% capacity</li>
+<li>Keeping You Awake: prevents laptop from sleeping for set duration</li>
+<li>BetterDisplay: monitor controls (Hi-DPI monitor resolution)</li>
+<li>Scroll Reverser - change scroll direction for trackpad and mouse independently</li>
+<li>RustDesk - remote access to Windows laptop in Home Lab</li>
+<li>balenaEtcher - creating bootable media</li>
+<li>App Cleaner - thoroughly remote residual files during app uninstalls</li>
+</ul>
+<p>Optimizing the small things in an operating system makes a world of a difference when you use it every day. If you use a Mac, maybe check out some of these tools. If the Apple ecosystem hasn&rsquo;t already lured you in to the walled garden, take some time to check out what&rsquo;s available for your operating system.</p>
+<br><br><hr>
+<div id="footer">
+    <p>@2025&nbsp;&nbsp;</p>
+    
+    <p><a href="mailto:jwcarlson.tech@gmail.com">jwcarlson.tech@gmail.com</a>&nbsp;</p>
+    
+    <span id="footerLinks">
+        <p><a href="https://www.linkedin.com/in/joseph-carlson-it/" target='_blank'>LinkedIn</a>&nbsp;&nbsp;</p><p><a href="/documents/resume.pdf" target="_blank">Resume</a>&nbsp;&nbsp;</p></span>
+</div></div>
+        </div>
+    </body>
+</html>
+

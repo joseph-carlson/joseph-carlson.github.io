@@ -8,7 +8,9 @@ tags:
   - homelab
 ---
 
-In this section, I will set up AdGuard Home with Unbound DNS in my home lab environment. This provides an added layer of security on my home network, blocking malicious domains at the network level before they have a chance to load. I selected Unbound DNS as the upstream server from AdGuard Home because of it's privacy, performance, reliability, and flexibility.
+## Stage 4: AdGuard Home with Unbound DNS
+
+In this article, I will set up AdGuard Home with Unbound DNS in my home lab environment. This provides an added layer of security on my home network, blocking malicious domains at the network level before they have a chance to load. I selected Unbound DNS as the upstream server from AdGuard Home because of it's privacy, performance, reliability, and flexibility.
 
 ## 1. Create and update an Linux Container (LXC)
 
@@ -82,3 +84,5 @@ This is the name server utilized by network client configured with DHCP.
 When properly configured, the traffic flows as follows...
 
 Local Network Client → OPNsense Router → AdGuard (192.168.1.4:53) → Unbound DNS (192.168.1.1:53) → Internet
+
+Until next time, keep learning.

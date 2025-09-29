@@ -23,7 +23,8 @@
         <h3>~</h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/">Root</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/projects/">Projects</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/projects/homelab/">Home Lab</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/projects/homelab/adguard-home/">AdGuard Home &#43; Unbound DNS</a></h3></div>
     <hr>
 </div><div id="postBanner"><br>
-    Page content loading...&nbsp;<a href="/tags/all/">#all&nbsp;</a><a href="/tags/homelab/">#homelab&nbsp;</a><p>In this section, I will set up AdGuard Home with Unbound DNS in my home lab environment. This provides an added layer of security on my home network, blocking malicious domains at the network level before they have a chance to load. I selected Unbound DNS as the upstream server from AdGuard Home because of it&rsquo;s privacy, performance, reliability, and flexibility.</p>
+    Page content loading...&nbsp;<a href="/tags/all/">#all&nbsp;</a><a href="/tags/homelab/">#homelab&nbsp;</a><h2 id="stage-4-adguard-home-with-unbound-dns">Stage 4: AdGuard Home with Unbound DNS</h2>
+<p>In this article, I will set up AdGuard Home with Unbound DNS in my home lab environment. This provides an added layer of security on my home network, blocking malicious domains at the network level before they have a chance to load. I selected Unbound DNS as the upstream server from AdGuard Home because of it&rsquo;s privacy, performance, reliability, and flexibility.</p>
 <h2 id="1-create-and-update-an-linux-container-lxc">1. Create and update an Linux Container (LXC)</h2>
 <p>I selected the Alpine linux container from the available Proxmox templates because of it&rsquo;s lightweight and secure characteristics. Configure this container with a static IP. This is necessary to redirect DNS queries to AdGuard Home before Unbound DNS.</p>
 <h2 id="2-install-adguard-home-within-lxc">2. Install AdGuard Home within LXC</h2>
@@ -177,6 +178,7 @@
 <hr>
 <p>When properly configured, the traffic flows as follows&hellip;</p>
 <p>Local Network Client → OPNsense Router → AdGuard (192.168.1.4:53) → Unbound DNS (192.168.1.1:53) → Internet</p>
+<p>Until next time, keep learning.</p>
 <br><br><hr>
 <div id="footer">
     <p>@2025&nbsp;&nbsp;</p>

@@ -8,7 +8,7 @@ tags:
   - homelab
 ---
 
-### Stage 2: Remote Access
+## Stage 2: Remote Access
 
 WireGuard is what makes it possible to visit to a nice coffee shop, order a latte and pastry, open my laptop, and pick up where I left off (without exposing my network to the internet). 
 
@@ -33,3 +33,6 @@ Lastly, I used the Peer Generator to add both my MacBook and iPhone as peers on 
 {{< img path="/projects/home-lab/wireguard/mac-peer.png" caption="Mac Peer" alt="Mac Peer" >}} 
 
 {{< img path="/projects/home-lab/wireguard/ios-peer.png" caption="IOS Peer" alt="IOS Peer" >}} 
+
+<br>
+Until next time, keep learning.
