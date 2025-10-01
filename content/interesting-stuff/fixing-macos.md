@@ -4,7 +4,7 @@ draft: false
 title: 'Fixing MacOS'
 tags: 
   - all
-  - opensource
+  - open-source
 ---
 
 Over the years, I have shifted between Windows, Linux, and MacOS for my daily use operating system. Originally, it was Windows 10, then MacOS, then Ubuntu, then Windows 11, then Fedora, and lastly, MacOS. 
