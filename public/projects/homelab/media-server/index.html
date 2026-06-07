@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/css/style.css">
+
+        <title>Media Server</title>
+    </head>
+    <body><div id="header">
+    <h1 class="title">
+        <a href="/">
+            <p>Joseph&nbsp;</p>
+            <p>Carlson</p>
+        </a>
+    </h1>
+    <span><a href="/"><img src="/logo.ico" alt="Logo" height="75" id="logo"></a>
+    </span>
+    <span><h3 id="headerCategories"><a href="/case-studies/">case-studies</a>&nbsp;&nbsp;</h3><h3 id="headerCategories"><a href="/projects/">projects</a>&nbsp;&nbsp;</h3><h3 id="headerCategories"><a href="/interesting-stuff/">interesting-stuff</a>&nbsp;&nbsp;</h3></span>
+</div><hr>
+
+        <div id="narrowOnDesktop"><div class="sticky">
+    <div id="breadcrumbs">
+        <h3>~</h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/">Root</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/projects/">Projects</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/projects/homelab/">Home Lab</a></h3><h3 class="breadcrumbPages">&nbsp;/&nbsp;<a href="/projects/homelab/media-server/">Media Server</a></h3></div>
+    <hr>
+</div><div id="postBanner"><br>
+    Page content loading...&nbsp;<a href="/tags/all/">#all&nbsp;</a><a href="/tags/homelab/">#homelab&nbsp;</a><p>Streaming platforms cost too much. Why pay Netflix when I can spend hundreds of dollars on hardware, hours of my time acquiring and ripping physical media, self-host a streaming service, then access that server over my WireGuard VPN? Ever since swapping out my laptop with a proper workstation in my home lab, I&rsquo;ve decided to deploy a Jellyfin media server. This article is a little more hands off because I didn&rsquo;t take screenshots throughout the process, and quite frankly I can&rsquo;t be bothered to run through this setup again for those screenshots.</p>
+<ol>
+<li>Create Windows VM</li>
+</ol>
+<p>If you&rsquo;re on Windows, I advise creating a windows ISO which automatically bypasses the Windows 11 hardware requirements with Rufus. Otherwise, you can edit the registry and make the following changes prior immediately you boot to the USB installer.</p>
+<ul>
+<li>Navigate to HKEY_LOCAL_MACHINE\SYSTEM\Setup</li>
+<li>Right Click &gt; New Key &gt; Name the key LabConfig</li>
+<li>Within LabConfig &gt; Create the following DWORD (32 bit) values and set to 1
+<ul>
+<li>BypassTPMCheck</li>
+<li>BypassSecureBootCheck</li>
+<li>BypassCPUCheck</li>
+<li>Optional Keys depending on hardware
+<ul>
+<li>BypassRAMCheck</li>
+<li>BypassCPUCheck</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>Configure Storage</li>
+</ol>
+<p>You can do several things for this. The easiest method is to pass through a USB SSD or HDD to the Windows VM. Alternatively, you can create a ZFS pool or configure the RAID array in the BIOS. What I chose to do was use mdadm to create a software RAID5 array which I can partition and format as NTFS. I then passed this through to my virtual machine.</p>
+<div style="padding: 0% 2%;"> 
+  
+  <div class="code-block"
+    style="border:1px solid grey; 
+              border-radius:1rem; 
+              overflow: hidden; "> 
+              
+
+    <div style="display:flex; 
+                justify-content:space-between; 
+                align-items:center; 
+                background:#a8a8a8; 
+                padding:0.5rem 1rem; 
+                font-size:0.9em;">
+                
+      
+      <span style="color:rgb(0, 0, 0); 
+                      background-color: rgb(229, 229, 229);
+                      padding: 0.25rem 0.5rem;
+                      border-radius: 0.25rem;
+                      font-weight: bold;"
+                      >BASH
+      </span>
+      <button onclick="(function(btn){
+                const code = btn.closest('.code-block').querySelector('pre code');
+                // selects the closest element that has class code-block
+                // then search for code element that is a descendent of a pre element
+                navigator.clipboard.writeText(code.textContent).then(function(){
+                  btn.textContent = 'Copied!';
+                  setTimeout(function(){ btn.textContent = 'Copy'; }, 2000);
+                }); // copies the text to clipboard and temporarily changes Copy to Copies!
+              })(this)"
+        >Copy</button> 
+
+    </div> 
+
+    
+    <div class="code-body"
+          style="overflow-x: auto; 
+                  padding: 0rem 0.5rem; 
+                  background-color: rgb(0, 50, 50);"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># install requisite packages</span>
+</span></span><span style="display:flex;"><span>apt install mdadm ntfs-3g parted
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># create the RAID5 array with the devices </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># you can find the available devices with the lsblk command</span>
+</span></span><span style="display:flex;"><span>mdadm --create /dev/md0 --level<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span> --raid-devices<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> /dev/sda /dev/sdb /dev/sdc
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># wipes any existing filesystem</span>
+</span></span><span style="display:flex;"><span>wipefs -a /dev/md0
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># partition the RAID array </span>
+</span></span><span style="display:flex;"><span>parted /dev/md0
+</span></span><span style="display:flex;"><span>mklabel gpt
+</span></span><span style="display:flex;"><span>mkprimary ntfs 0% 100%
+</span></span><span style="display:flex;"><span>quit
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># create the NTFS file system</span>
+</span></span><span style="display:flex;"><span>mkfs.ntfs -f /dev/md0p1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># pass through to guest OS</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 110 is the host ID</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># sata0 is the interface</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># /dev/md0 is the device</span>
+</span></span><span style="display:flex;"><span>qm set <span style="color:#ae81ff">110</span> -sata0 /dev/md0
+</span></span></code></pre></div>
+    </div> 
+
+  </div> 
+
+  <style>  
+    .code-body * { background-color: rgb(0, 50, 50); }
+  </style>
+
+</div> 
+<ol start="3">
+<li>Rip Media with Exact Audio Copy or MakeMKV</li>
+</ol>
+<p>The three software tools that I utilized while ripping CDs, DVDs and Blu-rays I purchased are Exact Audio Copy, MakeMKV, and Handbrake. After installing, configuring Exact Audio Copy (EAC) with AccurateRip and MusicBrainz makes quick work of creating a digital archive of media. Blu-rays are a bit more tricky due to the more advanced AACS encryption on the discs. MakeMKV can utilize LibreDrive with certain drives to read the raw data and from the discs and save to MKV files. Once ripped, its as simple as transcoding to MP4 with Handbrake for efficient storage and playback on the media server.</p>
+<ul>
+<li><a href="https://www.exactaudiocopy.de/download/">Exact Audio Copy</a></li>
+<li><a href="https://www.makemkv.com/download/">MakeMKV</a></li>
+<li><a href="https://handbrake.fr/downloads.php">Handbrake</a></li>
+</ul>
+<ol start="4">
+<li>Host Jellyfin Server and point to Storage with Media</li>
+</ol>
+<p>This is the easy part. I&rsquo;ll double back and add instructions for the install if I have to set up my media server from scratch, but until then, there are dozens of other resources to set this</p>
+<br><br><hr>
+<div id="footer">
+    <p>@2025&nbsp;&nbsp;</p>
+    
+    <p><a href="mailto:jwcarlson.tech@gmail.com">jwcarlson.tech@gmail.com</a>&nbsp;</p>
+    
+    <span id="footerLinks">
+        <p><a href="https://www.linkedin.com/in/joseph-carlson-it/" target='_blank'>LinkedIn</a>&nbsp;&nbsp;</p><p><a href="/documents/resume.pdf" target="_blank">Resume</a>&nbsp;&nbsp;</p></span>
+</div></div>
+        </div>
+    </body>
+</html>
+

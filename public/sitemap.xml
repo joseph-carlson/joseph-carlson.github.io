@@ -3,24 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/tags/all/</loc>
-    <lastmod>2025-09-29T00:00:00+00:00</lastmod>
+    <lastmod>2026-04-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/projects/homelab/</loc>
-    <lastmod>2025-09-29T00:00:00+00:00</lastmod>
+    <lastmod>2026-04-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/homelab/</loc>
-    <lastmod>2025-09-29T00:00:00+00:00</lastmod>
+    <lastmod>2026-04-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-09-29T00:00:00+00:00</lastmod>
+    <lastmod>2026-04-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/homelab/nginx-reverse-proxy/</loc>
-    <lastmod>2025-09-29T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/projects/homelab/media-server/</loc>
+    <lastmod>2026-04-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/projects/</loc>
-    <lastmod>2025-09-29T00:00:00+00:00</lastmod>
+    <lastmod>2026-04-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2026-04-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/homelab/nginx-reverse-proxy/</loc>
     <lastmod>2025-09-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/interesting-stuff/fixing-macos/</loc>
@@ -29,7 +32,7 @@
     <loc>http://localhost:1313/interesting-stuff/</loc>
     <lastmod>2025-09-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/opensource/</loc>
+    <loc>http://localhost:1313/tags/open-source/</loc>
     <lastmod>2025-09-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/projects/homelab/adguard-home/</loc>
@@ -54,9 +57,6 @@
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/malware/</loc>
-    <lastmod>2025-08-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/open-source/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/interesting-stuff/right-to-repair/</loc>

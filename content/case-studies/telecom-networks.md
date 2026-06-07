@@ -9,7 +9,7 @@ tags:
 
 ## Salt Typhoon's Breach of the Major US Telecom Networks
 
-Salt Typhoon is a Chinese state-sponsored threat actor with likely ties to the People's Republic of China, specifically the Ministry of State Security. Their bread and butter is cyber-espionage, exploiting cyber vulnerabilities to further the goals of the CCP. 
+Salt Typhoon, a state-sponsored Chinese threat actor with likely ties to the People's Republic of China, specifically the Ministry of State Security, is among the greatest threats to our cyber national security infrastructure. Their bread and butter is cyber-espionage, exploiting cyber vulnerabilities to further the goals of the CCP. 
 
 
 
@@ -25,9 +25,16 @@ Salt Typhoon exploited supply chain vulnerabilities in hardware, such as firewal
 
 ---
 ### References
-- https://www.congress.gov/crs-product/IF12798
-- https://umbc.edu/stories/what-is-salt-typhoon-a-security-expert-explains-the-chinese-hackers-and-their-attack-on-us-telecommunications-networks/
-- https://www.fcc.gov/document/implications-salt-typhoon-attack-and-fcc-response
+
+- [ ] Congress Analysis
+- [ ] Proton Analysis
+- [ ] NJ CCIC Analysis
+
+
+
+
+- https://proton.me/blog/salt-typhoon-hack
+- https://www.cyber.nj.gov/threat-landscape/nation-state-threat-analysis-reports/china-linked-cyber-operations-targeting-us-critical-infrastructure/salt-typhoon
 
 ---
 

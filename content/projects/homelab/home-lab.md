@@ -32,12 +32,9 @@ Along the way, there are a few points I would like to hit on my implementation.
 - [X] [Proxmox VE](../proxmox-ve)
 - [X] [AdGuard Home](../adguard-home)
 - [X] [Nginx Reverse Proxy](../nginx-reverse-proxy)
-- [ ] Lab Environment Clients
-  - General Use VMs (Fedore 42 KDE, Windows 11)
-  - Windows 11 Bare Metal Device w/ RustDesk
-  - Raspberry Pi 3b
-- [ ] [Wazuh + ELK Stack SIEM](../siem-implementation)
+- [X] [Media Server](../media-server)
 - [ ] [Homepage](../homepage)
+- [ ] [Wazuh + ELK Stack SIEM](../siem-implementation)
 - [ ] SIEM AI Summaries with MLX-LM... maybe?
 
 ---
@@ -49,10 +46,13 @@ Along the way, there are a few points I would like to hit on my implementation.
   - M3 Pro, 18 GB Unified Memory, 500 GB SSD
 - Topton Fanless Mini PC
   - Intel N100, 16 GB DDR5 RAM, 265 GB NVMe SSD
-- Framework 13 Laptop
-  - AMD Ryzen 5 7640U, 32 GB DDR5 RAM, 1TB NVMe SSD
+- Dell OptiPlex
+  - Intel Core i7-8700K, 32 GB DDR4 RAM, 512 GB NVMe SSD, 3x512 GB SATA SSDs
 - NETGEAR Switch (Amazon Sale)
 - ASUS Router (Goodwill Purchase)
+
+- Framework 13 Laptop
+  - AMD Ryzen 5 7640U, 32 GB DDR5 RAM, 1TB NVMe SSD
 
 ---
 
