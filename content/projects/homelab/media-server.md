@@ -52,7 +52,7 @@ qm set 110 -sata0 /dev/md0
 
 3. Rip Media with Exact Audio Copy or MakeMKV
 
-The three software tools that I utilized while ripping CDs, DVDs and Blu-rays I purchased are Exact Audio Copy, MakeMKV, and Handbrake. After installing, configuring Exact Audio Copy (EAC) with AccurateRip and MusicBrainz makes quick work of creating a digital archive of media. Blu-rays are a bit more tricky due to the more advanced AACS encryption on the discs. MakeMKV can utilize LibreDrive with certain drives to read the raw data and from the discs and save to MKV files. Once ripped, its as simple as transcoding to MP4 with Handbrake for efficient storage and playback on the media server.
+The three software tools that I utilized while ripping CDs, DVDs and Blu-rays I purchased are Exact Audio Copy, MakeMKV, and Handbrake. After installing, configuring Exact Audio Copy (EAC) with AccurateRip and MusicBrainz makes quick work of creating a digital archive of music. Blu-rays are a bit more tricky due to the more advanced AACS encryption on the discs. MakeMKV can utilize LibreDrive with certain drives to read the raw data and from the Blu-ray discs and save to MKV files. Once ripped, its as simple as transcoding to MP4 with Handbrake for efficient storage and playback on the media server.
 
 * [Exact Audio Copy](https://www.exactaudiocopy.de/download/)
 * [MakeMKV](https://www.makemkv.com/download/)
